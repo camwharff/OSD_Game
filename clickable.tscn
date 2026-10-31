@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqe0l8loftfj2"]
+
+[ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://clickable.gd" id="1_0jthp"]
+
+[node name="Clickable" type="Area2D"]
+script = ExtResource("1_0jthp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

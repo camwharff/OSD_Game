@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnqmjllxntkhn"]
+
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_fed4x"]
+
+[node name="Bathroom" type="Node"]
+
+[node name="Sink" parent="." instance=ExtResource("1_fed4x")]
+task_name = "BrushTeeth"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+
+[node name="Mirror" parent="." instance=ExtResource("1_fed4x")]
+task_name = "GetReady"
+time_cost = 2
+tidiness_change = 1
+energy_change = -2
+satisfaction_change = 1
+performance_change = 1
+
+[node name="Shower" parent="." instance=ExtResource("1_fed4x")]
+task_name = "Shower"
+time_cost = 2
+tidiness_change = 2
+energy_change = -2
+satisfaction_change = 1
+performance_change = 1
