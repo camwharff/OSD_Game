@@ -37,6 +37,7 @@ task_name = "FeedCat"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
+hover_message = "Feed cat"
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -55,6 +56,7 @@ position = Vector2(430, 386)
 task_name = "CleanCatBox"
 tidiness_change = 1
 energy_change = -1
+hover_message = "Clean cat's litter box"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -76,6 +78,7 @@ energy_change = -1
 satisfaction_change = -1
 performance_change = 1
 carryover_change = 2
+hover_message = "Review schedule"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -92,6 +95,7 @@ polygon = PackedVector2Array(-21.914207, -11.160061, -0.8116379, -12.569754, -1.
 [node name="Door" parent="." unique_id=184511040 groups=["home_portals"] instance=ExtResource("3_j0ocu")]
 position = Vector2(1255, 388)
 destination = "Bathroom"
+hover_message = "Go to bathroom"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -107,11 +111,13 @@ polygon = PackedVector2Array(-116, -294, 131, -244, 128, 323, -116, 202)
 [node name="Shoes" parent="." unique_id=1404418289 instance=ExtResource("2_j0ocu")]
 position = Vector2(1385, 761)
 task_name = "LeaveEarly"
-time_cost = 3
+time_cost = 0
 energy_change = -1
 satisfaction_change = -1
 performance_change = 3
 carryover_change = 3
+early_exit = true
+hover_message = "Go to work early"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -131,8 +137,8 @@ task_name = "MakeBed"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
+hover_message = "Make bed"
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" parent="Blanket" index="0" unique_id=1130463136]
 position = Vector2(161, 57)
@@ -142,7 +148,7 @@ texture = ExtResource("10_be72p")
 [node name="CollisionPolygon2D" parent="Blanket" index="1" unique_id=1662919460]
 visible = false
 position = Vector2(145, -34.999985)
-polygon = PackedVector2Array(-2.8407364, 4.581497, -1.9276428, 10.92511, -4.971283, 10.102791, -7.304741, 10.690163, -9.84111, 10.337738, -11.66729, 11.395008, -13.087658, 6.57856, -16.334206, 5.991188, -19.27639, 6.6960335, -21, 6, -20.29094, 4.2290726, -18.3633, 2.5844345, -16.942932, 1.0572662, -11.768745, 0.2349472, -11.058563, 1.2922173, -7.203285, 2.23201)
+polygon = PackedVector2Array(-2.8407364, 4.581497, -1.9276428, 10.92511, -4.971283, 10.102791, -7.304741, 10.690163, -9.84111, 10.337738, -11.66729, 11.395008, -13.087654, 6.6960335, -13.536701, 6.3840623, -12.27602, 5.8737144, -9.942558, 5.991188, -7.8120117, 5.6387634, -7.5076523, 5.168869, -7.8120117, 4.2290726, -8.319283, 3.4067535, -8.62365, 2.701908, -9.435287, 1.9970627, -11.362923, 1.8795891, -12.478928, 2.1145363, -13.696384, 2.466961, -14.508022, 3.054329, -14.812386, 3.054329, -14.913841, 3.7591782, -14.812386, 4.2290726, -14.812386, 5.0513954, -15.2182045, 5.2863426, -15.2182045, 5.8737144, -16.334206, 5.991188, -19.27639, 6.6960335, -21, 6, -20.29094, 4.2290726, -18.3633, 2.5844345, -16.942932, 1.0572662, -11.768745, 0.2349472, -11.058563, 1.2922173, -7.203285, 2.23201)
 
 [node name="OverlayCat" type="TextureRect" parent="." unique_id=197166416]
 offset_right = 40.0
@@ -157,6 +163,7 @@ task_name = "PetCat"
 tidiness_change = -2
 energy_change = 2
 satisfaction_change = 2
+hover_message = "Pet cat"
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -176,6 +183,7 @@ task_name = "TidyUp"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
+hover_message = "Fold laundry"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -195,6 +203,7 @@ task_name = "Coffee"
 tidiness_change = -2
 energy_change = 2
 performance_change = 1
+hover_message = "Have a coffee"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -215,6 +224,7 @@ tidiness_change = -3
 energy_change = 3
 satisfaction_change = 1
 performance_change = 1
+hover_message = "Have breakfast"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -233,6 +243,7 @@ position = Vector2(701, 517)
 task_name = "Doomscroll"
 satisfaction_change = 1
 performance_change = -1
+hover_message = "Doomscroll"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -251,6 +262,7 @@ task_name = "News"
 energy_change = -1
 satisfaction_change = -1
 performance_change = 2
+hover_message = "Check the news"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -272,6 +284,8 @@ tidiness_change = -1
 energy_change = 3
 satisfaction_change = 2
 performance_change = 1
+hover_message = "Sleep in"
+end = 1
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -291,6 +305,8 @@ task_name = "CallMom"
 time_cost = 2
 energy_change = 1
 satisfaction_change = 3
+hover_message = "Talk to mom"
+begin = 3
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Landline" index="0" unique_id=1130463136]

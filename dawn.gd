@@ -8,10 +8,11 @@ func _ready():
 		portal.update_scene.connect(_on_update_scene)
 	
 	active = $Apartment
+	GameState.start_phase(9)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_update_scene(destination: String) -> void:

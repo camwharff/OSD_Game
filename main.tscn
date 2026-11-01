@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://co15bi8ykav85"]
+
+[ext_resource type="PackedScene" uid="uid://80u5wi6ohlpx" path="res://dawn.tscn" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://hhto0p74eqtm" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://hud.tscn" id="2_h2yge"]
+
+[node name="Main" type="Node" unique_id=998919397]
+script = ExtResource("1_h2yge")
+
+[node name="Dawn" parent="." unique_id=864492622 instance=ExtResource("1_0xm2m")]
+
+[node name="HUD" parent="." unique_id=1066121775 instance=ExtResource("2_h2yge")]
