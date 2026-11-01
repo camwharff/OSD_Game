@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv7p37m6uko1k"
-path="res://.godot/imported/foreground.png-22aeecdf5abc31248dcda6a9d4d8d0be.ctex"
+uid="uid://cj4qfg5am6qnj"
+path="res://.godot/imported/overlay.png-abf5253ad2f666b700c6b8ccb5897806.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/apartment/foreground.png"
-dest_files=["res://.godot/imported/foreground.png-22aeecdf5abc31248dcda6a9d4d8d0be.ctex"]
+source_file="res://assets/bathroom/overlay.png"
+dest_files=["res://.godot/imported/overlay.png-abf5253ad2f666b700c6b8ccb5897806.ctex"]
 
 [params]
 

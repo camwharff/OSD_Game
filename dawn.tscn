@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://80u5wi6ohlpx"]
 
 [ext_resource type="Script" uid="uid://c8l1nv11fvbxx" path="res://dawn.gd" id="1_1dx16"]
-[ext_resource type="PackedScene" uid="uid://dnqmjllxntkhn" path="res://bathroom.tscn" id="1_7u4d6"]
-[ext_resource type="PackedScene" uid="uid://dpv6j0tvx13cq" path="res://apartment.tscn" id="2_1dx16"]
+[ext_resource type="PackedScene" uid="uid://dnqmjllxntkhn" path="res://rooms/bathroom.tscn" id="1_7u4d6"]
+[ext_resource type="PackedScene" uid="uid://dpv6j0tvx13cq" path="res://rooms/apartment.tscn" id="2_1dx16"]
 
-[node name="Dawn" type="Node" unique_id=864492622]
+[node name="Dawn" type="Node" unique_id=864492622 groups=["home_portals"]]
 script = ExtResource("1_1dx16")
 
 [node name="Bathroom" parent="." unique_id=346452763 instance=ExtResource("1_7u4d6")]
+visible = false
 
 [node name="Apartment" parent="." unique_id=1009610894 instance=ExtResource("2_1dx16")]

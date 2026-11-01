@@ -10,8 +10,8 @@ var performance = 0
 
 func apply_task(task: Clickable) -> void:
 	time_left -= task.time_cost
-	tidiness = clampi(tidiness + task.tidiness_change, 0, 100)
-	energy = clampi(energy + task.energy_change, 0, 100)
-	satisfaction = clampi(satisfaction + task.satisfaction_change, 0, 100)
-	performance = clampi(performance + task.performance_change, 0, 100)
+	tidiness += task.tidiness_change
+	energy += task.energy_change
+	satisfaction += task.satisfaction_change
+	performance += task.performance_change
 	stats_changed.emit()

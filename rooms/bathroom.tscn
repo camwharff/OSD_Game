@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dnqmjllxntkhn"]
+
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_fed4x"]
+[ext_resource type="Script" uid="uid://b77dricsbtb34" path="res://rooms/bathroom.gd" id="1_qb7wk"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_0ykx7"]
+[ext_resource type="Texture2D" uid="uid://cj4vwyorv0rgt" path="res://assets/bathroom/background.png" id="2_mc4l1"]
+[ext_resource type="Texture2D" uid="uid://dxy77go44uo57" path="res://assets/bathroom/toothbrush.png" id="3_dia5y"]
+[ext_resource type="Texture2D" uid="uid://dns3elu0u6er3" path="res://assets/bathroom/mirror.png" id="4_83h1y"]
+[ext_resource type="Texture2D" uid="uid://dvdtqa14aa2bs" path="res://assets/bathroom/overlay-toothbrush.png" id="5_2ykvt"]
+[ext_resource type="Texture2D" uid="uid://chlveh63ly80t" path="res://assets/bathroom/towel.png" id="5_mc4l1"]
+[ext_resource type="Texture2D" uid="uid://5i75bvyxheke" path="res://assets/bathroom/door.png" id="8_4wjle"]
+[ext_resource type="Texture2D" uid="uid://cj4qfg5am6qnj" path="res://assets/bathroom/overlay.png" id="10_fg2y2"]
+
+[node name="Bathroom" type="Node2D" unique_id=1064936501]
+script = ExtResource("1_qb7wk")
+
+[node name="Background" type="TextureRect" parent="." unique_id=69111838]
+offset_right = 2917.0
+offset_bottom = 1640.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mc4l1")
+metadata/_edit_lock_ = true
+
+[node name="Mirror" parent="." unique_id=408284135 instance=ExtResource("1_fed4x")]
+position = Vector2(1064, 156)
+scale = Vector2(0.5, 0.5)
+task_name = "Mirror"
+time_cost = 2
+tidiness_change = 1
+energy_change = -2
+satisfaction_change = 1
+performance_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Mirror" index="0" unique_id=1130463136]
+position = Vector2(-670, 508)
+texture = ExtResource("4_83h1y")
+
+[node name="CollisionPolygon2D" parent="Mirror" index="1" unique_id=1662919460]
+visible = false
+polygon = PackedVector2Array(-64.76119, -51.213654, 22.489822, -51.213654, 9.097809, 29.608665, 0.98143005, 28.668869, 1.1843414, 27.964027, -0.23602295, 27.494125, -1.6563873, 26.319382, -1.6563873, 23.969902, -2.8738403, 24.20485, -1.453476, 16.92144, -4.497116, 16.451546, -5.9174805, 23.734947, -6.729126, 23.734947, -7.540756, 25.849487, -10.787308, 27.024231, -10.830255, 27.927954, -62.529205, 22.795158, -62.529205, 21.855362, -61.51465, 21.385468, -61.51465, 18.096184, -62.732117, 18.096184, -63.74666, 19.505875, -64.15248, 22.560211, -68.41356, 22.560204)
+
+[node name="OverlayToothbrush" type="TextureRect" parent="." unique_id=232001416]
+offset_right = 2917.0
+offset_bottom = 1640.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_2ykvt")
+metadata/_edit_lock_ = true
+
+[node name="Towel" parent="." unique_id=594067695 instance=ExtResource("1_fed4x")]
+position = Vector2(124, 417)
+scale = Vector2(0.5, 0.5)
+task_name = "Shower"
+time_cost = 2
+tidiness_change = 2
+energy_change = -2
+satisfaction_change = 1
+performance_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Towel" index="0" unique_id=1130463136]
+position = Vector2(1210, -14)
+texture = ExtResource("5_mc4l1")
+
+[node name="CollisionPolygon2D" parent="Towel" index="1" unique_id=1662919460]
+visible = false
+polygon = PackedVector2Array(-5.105854, -0.46475983, -7.33786, 4.704109, -1.0476685, 27.494125, -3.482582, 32.193092, -1.8593063, 37.36197, -2.2651253, 41.82599, -4.9029465, 45.820114, -9.569862, 49.344337, -14.642593, 49.109398, -17.686234, 37.127014, -29.04916, 37.831863, -36.759712, 1.6497803, -37.165535, -0.93465424, -41.020813, -0.69970703, -44.87609, -3.0491943, -48.934277, -29.598389, -49.74591, -45.339943, -40.8179, -52.8583, -42.238266, -54.502937, -50.151733, -49.09912, -48.12264, -61.5514, -44.26736, -67.89501, -33.310257, -66.955215, -23.367699, -55.207787, -16.26587, -30.068283, -12.6135025, -18.555801)
+
+[node name="Toothbrush" parent="." unique_id=878596294 instance=ExtResource("1_fed4x")]
+position = Vector2(889, 334)
+scale = Vector2(0.5, 0.5)
+task_name = "Toothbrush"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Toothbrush" index="0" unique_id=1130463136]
+position = Vector2(-320, 152)
+texture = ExtResource("3_dia5y")
+
+[node name="CollisionPolygon2D" parent="Toothbrush" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-43.99994, 276)
+polygon = PackedVector2Array(6.493103, -41.585907, 6.459976, -38.29148, 5.478546, -37.82673, 5.242523, -32.652718, 7.474518, -31.947868, 7.8803406, -31.243027, 7.474518, -25.369308, 1.9959717, -25.134361, 1.7930603, -31.947868, 3.8221588, -32.41777, 3.8552704, -37.12188, 4.261093, -40.176216, 5.275635, -41.585907)
+
+[node name="Door" parent="." unique_id=184511040 instance=ExtResource("2_0ykx7")]
+position = Vector2(1344, 391)
+scale = Vector2(0.5, 0.5)
+destination = "Apartment"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
+position = Vector2(-1230, 38)
+texture = ExtResource("8_4wjle")
+
+[node name="CollisionPolygon2D" parent="Door" index="1" unique_id=325856230]
+visible = false
+polygon = PackedVector2Array(-318, 858, 16, -782, 228, -782, 230, 858)
+metadata/_edit_lock_ = true
+
+[node name="Overlay" type="TextureRect" parent="." unique_id=1012922033]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_fg2y2")
+metadata/_edit_lock_ = true
+
+[editable path="Mirror"]
+[editable path="Towel"]
+[editable path="Toothbrush"]
+[editable path="Door"]

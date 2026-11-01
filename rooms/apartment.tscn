@@ -1,0 +1,325 @@
+[gd_scene format=3 uid="uid://dpv6j0tvx13cq"]
+
+[ext_resource type="Script" uid="uid://ow8nxno5jvix" path="res://rooms/apartment.gd" id="1_y78ir"]
+[ext_resource type="Texture2D" uid="uid://1xvvv1t0plmg" path="res://assets/apartment/background.png" id="2_hq0fg"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="2_j0ocu"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="3_j0ocu"]
+[ext_resource type="Texture2D" uid="uid://wii58yktdppq" path="res://assets/apartment/cell.png" id="4_bv14x"]
+[ext_resource type="Texture2D" uid="uid://4qtcfyjmyjkc" path="res://assets/apartment/phone.png" id="4_irbrm"]
+[ext_resource type="Texture2D" uid="uid://debfkwqwr6w40" path="res://assets/apartment/food.png" id="4_ks0ae"]
+[ext_resource type="Texture2D" uid="uid://dvg7fkefjxopb" path="res://assets/apartment/clothes.png" id="4_n3380"]
+[ext_resource type="Texture2D" uid="uid://bgterhl7xiv6a" path="res://assets/apartment/tv.png" id="5_grl0p"]
+[ext_resource type="Texture2D" uid="uid://dqyt84rtr10qw" path="res://assets/apartment/bathroom.png" id="5_irbrm"]
+[ext_resource type="Texture2D" uid="uid://ui6rogdg7jof" path="res://assets/apartment/espresso.png" id="5_mmfh8"]
+[ext_resource type="Texture2D" uid="uid://b8ja4hk77f8fo" path="res://assets/apartment/litterbox.png" id="5_sm272"]
+[ext_resource type="Texture2D" uid="uid://vgqfqe51joge" path="res://assets/apartment/pillow.png" id="6_alr77"]
+[ext_resource type="Texture2D" uid="uid://dqowuypv06p1h" path="res://assets/apartment/toaster.png" id="6_e4ecs"]
+[ext_resource type="Texture2D" uid="uid://cvg27ju6jgujn" path="res://assets/apartment/calendar.png" id="6_jidnd"]
+[ext_resource type="Texture2D" uid="uid://bruunl3a6t8qy" path="res://assets/apartment/shoes.png" id="9_xaukh"]
+[ext_resource type="Texture2D" uid="uid://cub47ar30u7yv" path="res://assets/apartment/blanket.png" id="10_be72p"]
+[ext_resource type="Texture2D" uid="uid://bo34me3i6ekvb" path="res://assets/apartment/overlay-cat.png" id="11_m8h8t"]
+[ext_resource type="Texture2D" uid="uid://3jq4x40y1slc" path="res://assets/apartment/cat.png" id="12_dwwpd"]
+[ext_resource type="Texture2D" uid="uid://dv7p37m6uko1k" path="res://assets/apartment/overlay.png" id="20_k88e2"]
+
+[node name="Apartment" type="Node2D" unique_id=1271109376]
+script = ExtResource("1_y78ir")
+
+[node name="Background" type="TextureRect" parent="." unique_id=226239089]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_hq0fg")
+metadata/_edit_lock_ = true
+
+[node name="Bowl" parent="." unique_id=1803819743 instance=ExtResource("2_j0ocu")]
+position = Vector2(789, 751)
+task_name = "FeedCat"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Bowl" index="0" unique_id=1130463136]
+position = Vector2(-60, -341)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ks0ae")
+
+[node name="CollisionPolygon2D" parent="Bowl" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-30, 5.0000153)
+polygon = PackedVector2Array(4.0581894, -9.045517, 6.898918, -4.46402, 6.2901917, -1.4096909, 5.0727386, 1.1747437, 5.2756424, 3.7591782, 3.7538223, 5.2863464, 1.2174606, 5.403824, -0.30435944, 4.22908, -0.20291138, 1.2922211, -1.0145416, 0.23495483, 0, -6.9309845, 3.2465515, -7.9882507)
+
+[node name="Litter" parent="." unique_id=1313741587 instance=ExtResource("2_j0ocu")]
+position = Vector2(430, 386)
+task_name = "CleanCatBox"
+tidiness_change = 1
+energy_change = -1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Litter" index="0" unique_id=1130463136]
+position = Vector2(299, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_sm272")
+
+[node name="CollisionPolygon2D" parent="Litter" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(52, -38.999985)
+polygon = PackedVector2Array(-0.8116379, 0.2349472, 0.6087265, 1.5271645, 0.8116379, 3.9941254, -2.0290947, 4.8164444, -1.8261833, 8.105724, -7.5076447, 8.693096, -8.725101, 4.346546, -12.174561, 4.8164444, -11.768742, 2.9368553, -10.754196, 0.93979263, -3.2465515, 0.1174736)
+
+[node name="Calendar" parent="." unique_id=1658548734 instance=ExtResource("2_j0ocu")]
+position = Vector2(957, 211)
+task_name = "Schedule"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = -1
+performance_change = 1
+carryover_change = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Calendar" index="0" unique_id=1130463136]
+position = Vector2(-228, 199)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_jidnd")
+
+[node name="CollisionPolygon2D" parent="Calendar" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(124.00006, 33.000015)
+polygon = PackedVector2Array(-21.914207, -11.160061, -0.8116379, -12.569754, -1.6232681, 4.93392, -22.827301, 1.9970608)
+
+[node name="Door" parent="." unique_id=184511040 groups=["home_portals"] instance=ExtResource("3_j0ocu")]
+position = Vector2(1255, 388)
+destination = "Bathroom"
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
+position = Vector2(-528, 24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_irbrm")
+
+[node name="CollisionPolygon2D" parent="Door" index="1" unique_id=325856230]
+visible = false
+polygon = PackedVector2Array(-116, -294, 131, -244, 128, 323, -116, 202)
+
+[node name="Shoes" parent="." unique_id=1404418289 instance=ExtResource("2_j0ocu")]
+position = Vector2(1385, 761)
+task_name = "LeaveEarly"
+time_cost = 3
+energy_change = -1
+satisfaction_change = -1
+performance_change = 3
+carryover_change = 3
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Shoes" index="0" unique_id=1130463136]
+position = Vector2(-654, -358)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_xaukh")
+
+[node name="CollisionPolygon2D" parent="Shoes" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-228.99994, -132.99998)
+polygon = PackedVector2Array(18.464752, 4.8164444, 22.01567, 7.7533035, 24.349121, 6.813507, 27.18985, 12.217323, 29.523315, 12.922173, 30.436401, 15.624077, 28.407318, 16.563873, 27.18985, 17.62114, 19.986572, 17.50367, 12.986206, 15.624077, 13.189117, 7.7533035, 14.7109375, 5.8737106, 16.942932, 6.813507)
+
+[node name="Blanket" parent="." unique_id=841174042 instance=ExtResource("2_j0ocu")]
+position = Vector2(603, 349)
+task_name = "MakeBed"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Blanket" index="0" unique_id=1130463136]
+position = Vector2(161, 57)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_be72p")
+
+[node name="CollisionPolygon2D" parent="Blanket" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(145, -34.999985)
+polygon = PackedVector2Array(-2.8407364, 4.581497, -1.9276428, 10.92511, -4.971283, 10.102791, -7.304741, 10.690163, -9.84111, 10.337738, -11.66729, 11.395008, -13.087658, 6.57856, -16.334206, 5.991188, -19.27639, 6.6960335, -21, 6, -20.29094, 4.2290726, -18.3633, 2.5844345, -16.942932, 1.0572662, -11.768745, 0.2349472, -11.058563, 1.2922173, -7.203285, 2.23201)
+
+[node name="OverlayCat" type="TextureRect" parent="." unique_id=197166416]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_m8h8t")
+metadata/_edit_lock_ = true
+
+[node name="Cat" parent="." unique_id=1663209509 instance=ExtResource("2_j0ocu")]
+position = Vector2(638, 350)
+task_name = "PetCat"
+tidiness_change = -2
+energy_change = 2
+satisfaction_change = 2
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Cat" index="0" unique_id=1130463136]
+position = Vector2(91, 60)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_dwwpd")
+
+[node name="CollisionPolygon2D" parent="Cat" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(19, -26.999985)
+polygon = PackedVector2Array(-2.4349136, 0.82232285, 0.10145569, 1.05727, 1.6232758, 3.4067574, 1.5218201, 4.581497, -0.10145569, 4.933922, -2.9421883, 4.933922, -4.159645, 5.168869, -6.087284, 4.6989746, -5.681465, 3.9941292, -5.478554, 3.9941292, -5.5800095, 2.11454, -5.275646, 2.11454, -4.159645, 1.2922173)
+
+[node name="Clothes" parent="." unique_id=870267243 instance=ExtResource("2_j0ocu")]
+position = Vector2(937, 432)
+task_name = "TidyUp"
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Clothes" index="0" unique_id=1130463136]
+position = Vector2(-202, -23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_n3380")
+
+[node name="CollisionPolygon2D" parent="Clothes" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(58.00006, 13.000015)
+polygon = PackedVector2Array(-3.4494705, -9.045521, -0.40583038, -6.1086655, 2.5363617, 2.3494835, -2.536377, 3.7591782, -6.6960144, 1.7621117, -12.681847, -2.5844345, -14.609482, -4.34655, -10.246933, -5.2863464, -8.725113, -7.7533035)
+
+[node name="Coffee" parent="." unique_id=1429221052 instance=ExtResource("2_j0ocu")]
+position = Vector2(187, 465)
+task_name = "Coffee"
+tidiness_change = -2
+energy_change = 2
+performance_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Coffee" index="0" unique_id=1130463136]
+position = Vector2(542, -55)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_mmfh8")
+
+[node name="CollisionPolygon2D" parent="Coffee" index="1" unique_id=1662919460]
+visible = false
+polygon = PackedVector2Array(-29.759342, -27.718796, -21.135695, -27.366375, -21.338604, -25.839207, -22.657516, -24.78194, -22.657516, -23.72467, -17.178963, -23.607197, -15.657143, -18.555801, -16.367325, -16.793686, -18.19351, -16.558739, -18.19351, -16.08884, -12.106228, -15.501469, -12.309139, -13.504406, -19.309511, -13.62188, -19.613874, -13.034508, -17.178963, -12.799561, -15.555689, -11.7422905, -15.048414, -10.450073, -14.033867, -7.513218, -14.94696, -4.1064606, -17.483328, -1.2870789, -23.976427, -1.6395035, -24.382244, -4.458885, -31.686981, -10.802498, -36.25244, -9.510281, -35.94808, -17.96843, -34.426258, -23.489723, -33.716076, -23.842144, -28.744797, -24.194569, -28.643341, -24.899414, -29.962252, -26.191631)
+
+[node name="Toaster" parent="." unique_id=379871230 instance=ExtResource("2_j0ocu")]
+position = Vector2(162, 603)
+task_name = "Breakfast"
+time_cost = 2
+tidiness_change = -3
+energy_change = 3
+satisfaction_change = 1
+performance_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Toaster" index="0" unique_id=1130463136]
+position = Vector2(567, -193)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_e4ecs")
+
+[node name="CollisionPolygon2D" parent="Toaster" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(161, 24.000015)
+polygon = PackedVector2Array(-10.145466, -9.162994, -7.5076447, 7.1659317, -19.073479, 10.92511, -25.566578, 1.4096909, -26.885489, -5.991188, -26.07385, -12.687225, -17.551659, -15.154186)
+
+[node name="Cell" parent="." unique_id=1527210970 instance=ExtResource("2_j0ocu")]
+position = Vector2(701, 517)
+task_name = "Doomscroll"
+satisfaction_change = 1
+performance_change = -1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Cell" index="0" unique_id=1130463136]
+position = Vector2(28, -107)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bv14x")
+
+[node name="CollisionPolygon2D" parent="Cell" index="1" unique_id=1662919460]
+visible = false
+polygon = PackedVector2Array(-28.744797, -19.143173, -22.758972, -13.621883, -26.918617, -9.627754, -32.70153, -15.618946)
+
+[node name="TV" parent="." unique_id=2041736332 instance=ExtResource("2_j0ocu")]
+position = Vector2(304, 256)
+task_name = "News"
+energy_change = -1
+satisfaction_change = -1
+performance_change = 2
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="TV" index="0" unique_id=1130463136]
+position = Vector2(425, 153)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_grl0p")
+
+[node name="CollisionPolygon2D" parent="TV" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(214, 30.000015)
+polygon = PackedVector2Array(-24.450575, -11.39501, -19.986568, -11.512484, -18.66766, 1.9970627, -22.320026, 8.105724)
+
+[node name="Pillow" parent="." unique_id=1210239270 instance=ExtResource("2_j0ocu")]
+position = Vector2(749, 325)
+task_name = "SleepIn"
+time_cost = 2
+tidiness_change = -1
+energy_change = 3
+satisfaction_change = 2
+performance_change = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Pillow" index="0" unique_id=1130463136]
+position = Vector2(-21, 86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_alr77")
+
+[node name="CollisionPolygon2D" parent="Pillow" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-27, 3)
+polygon = PackedVector2Array(-0.5072708, -5.0513954, 3.550911, -3.8766518, 10.246918, -2.8193817, 9.13092, 3.7591782, 2.4349136, 2.2320137, -3.0436401, -0.5873718)
+
+[node name="Landline" parent="." unique_id=1040426584 instance=ExtResource("2_j0ocu")]
+position = Vector2(79, 265)
+task_name = "CallMom"
+time_cost = 2
+energy_change = 1
+satisfaction_change = 3
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="Landline" index="0" unique_id=1130463136]
+position = Vector2(650, 145)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_irbrm")
+
+[node name="CollisionPolygon2D" parent="Landline" index="1" unique_id=1662919460]
+visible = false
+polygon = PackedVector2Array(-31.07825, -23.372246, -28.541885, -24.077091, -25.802608, -21.61013, -24.889515, -12.56461, -27.730247, -4.6938286, -28.846249, -4.9287796, -29.252068, -4.811306, -31.07825, -5.633625)
+
+[node name="Overlay" type="TextureRect" parent="." unique_id=1983519047]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("20_k88e2")
+metadata/_edit_lock_ = true
+
+[editable path="Bowl"]
+[editable path="Litter"]
+[editable path="Calendar"]
+[editable path="Door"]
+[editable path="Shoes"]
+[editable path="Blanket"]
+[editable path="Cat"]
+[editable path="Clothes"]
+[editable path="Coffee"]
+[editable path="Toaster"]
+[editable path="Cell"]
+[editable path="TV"]
+[editable path="Pillow"]
+[editable path="Landline"]

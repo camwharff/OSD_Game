@@ -8,5 +8,6 @@ script = ExtResource("1_0r486")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405594283]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=325856230]
+polygon = PackedVector2Array(-66, -44, 256, -57, 163, 222)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,12 +1,14 @@
 extends Area2D
 
-signal change_scene(dest: String)
+signal update_scene(dest: String)
 
 @export var destination: String
 
+@onready var sprite: Sprite2D = $Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_to_group("portals")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -15,4 +17,4 @@ func _process(delta):
 # Called when a portal is clicked. Changes the scene to the destination.
 func _on_input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("leftclick"):
-		change_scene.emit(destination)
+		update_scene.emit(destination)
