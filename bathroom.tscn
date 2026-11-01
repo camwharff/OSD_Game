@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnqmjllxntkhn"]
+[gd_scene format=3 uid="uid://dnqmjllxntkhn"]
 
 [ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_fed4x"]
+[ext_resource type="Script" uid="uid://b77dricsbtb34" path="res://bathroom.gd" id="1_qb7wk"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_0ykx7"]
 
-[node name="Bathroom" type="Node"]
+[node name="Bathroom" type="Node" unique_id=346452763]
+script = ExtResource("1_qb7wk")
 
-[node name="Sink" parent="." instance=ExtResource("1_fed4x")]
+[node name="Sink" parent="." unique_id=878596294 instance=ExtResource("1_fed4x")]
 task_name = "BrushTeeth"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 
-[node name="Mirror" parent="." instance=ExtResource("1_fed4x")]
+[node name="Mirror" parent="." unique_id=408284135 instance=ExtResource("1_fed4x")]
 task_name = "GetReady"
 time_cost = 2
 tidiness_change = 1
@@ -18,10 +21,12 @@ energy_change = -2
 satisfaction_change = 1
 performance_change = 1
 
-[node name="Shower" parent="." instance=ExtResource("1_fed4x")]
+[node name="Shower" parent="." unique_id=594067695 instance=ExtResource("1_fed4x")]
 task_name = "Shower"
 time_cost = 2
 tidiness_change = 2
 energy_change = -2
 satisfaction_change = 1
 performance_change = 1
+
+[node name="Apartment" parent="." unique_id=184511040 instance=ExtResource("2_0ykx7")]

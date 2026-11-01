@@ -19,7 +19,7 @@ var is_done = false
 func _ready() -> void:
 		sprite.texture = alert_texture
 
-func _input_event(_viewport, event, _shape_idx) -> void:
+func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if is_done:
 		sprite.texture = normal_texture
 	if event.is_action_pressed("leftclick"):

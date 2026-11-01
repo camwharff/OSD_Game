@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqe0l8loftfj2"]
+[gd_scene format=3 uid="uid://dqe0l8loftfj2"]
 
 [ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://clickable.gd" id="1_0jthp"]
 
-[node name="Clickable" type="Area2D"]
+[node name="Clickable" type="Area2D" unique_id=1671882795]
 script = ExtResource("1_0jthp")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1130463136]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1662919460]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dsxvo881uhg3b"]
+
+[ext_resource type="Script" uid="uid://i7gbeaf127dr" path="res://portal.gd" id="1_0r486"]
+
+[node name="Portal" type="Area2D" unique_id=184511040]
+script = ExtResource("1_0r486")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1405594283]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=325856230]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
