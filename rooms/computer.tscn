@@ -21,6 +21,11 @@ metadata/_edit_lock_ = true
 
 [node name="Email" parent="." unique_id=1671882795 instance=ExtResource("1_gxl5a")]
 position = Vector2(563, 636)
+task_name = "email"
+energy_change = -1
+satisfaction_change = -1
+performance_change = 3
+hover_message = "Check your email"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -36,6 +41,9 @@ polygon = PackedVector2Array(-3.2465477, 4.816452, -1.0145454, 4.816452, -0.6087
 
 [node name="Groupchat" parent="." unique_id=839657444 instance=ExtResource("1_gxl5a")]
 position = Vector2(351, 202)
+task_name = "respond-groupchat"
+satisfaction_change = 1
+hover_message = "Respond to the groupchat"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -51,6 +59,10 @@ polygon = PackedVector2Array(-9.13092, 4.346548, 0.7101822, 4.346548, 0.8116379,
 
 [node name="Manager" parent="." unique_id=512883602 instance=ExtResource("1_gxl5a")]
 position = Vector2(352, 231)
+task_name = "respond-manager"
+energy_change = -1
+performance_change = 1
+hover_message = "Check message from manager"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -66,6 +78,14 @@ polygon = PackedVector2Array(-6.2901917, 1.64464, 3.550911, 1.7621136, 3.550911,
 
 [node name="RefineDeck" parent="." unique_id=1838661727 instance=ExtResource("1_gxl5a")]
 position = Vector2(1001, 485)
+task_name = "refine-presentation"
+time_cost = 2
+tidiness_change = 1
+energy_change = -1
+satisfaction_change = 1
+performance_change = 2
+hover_message = "Polish your presentation"
+prereqs = Array[String](["create-presentation"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -81,6 +101,14 @@ polygon = PackedVector2Array(-12.783295, -7.400879, 18.972015, -7.5183525, 19.17
 
 [node name="CreateDeck" parent="." unique_id=1139869008 instance=ExtResource("1_gxl5a")]
 position = Vector2(951, 478)
+task_name = "create-presentation"
+time_cost = 3
+tidiness_change = -1
+energy_change = -2
+satisfaction_change = 1
+performance_change = 3
+hover_message = "Create your presentation"
+prereqs = Array[String](["respond-manager"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -96,6 +124,8 @@ polygon = PackedVector2Array(-49.30697, -10.807636, -1.4203644, -10.92511, -1.21
 
 [node name="Desk" parent="." unique_id=184511040 instance=ExtResource("2_18hgq")]
 position = Vector2(219, 676)
+destination = "Office"
+hover_message = "Exit desktop"
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
