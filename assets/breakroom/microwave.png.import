@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0sxfcc2kqaa"
-path="res://.godot/imported/fridge.png-7544bc17573f21c6bb1caf601636af4b.ctex"
+uid="uid://d05yg3ekesrn5"
+path="res://.godot/imported/microwave.png-f909d30d4b67e1f5a79d6ddf46595092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breakroom /fridge.png"
-dest_files=["res://.godot/imported/fridge.png-7544bc17573f21c6bb1caf601636af4b.ctex"]
+source_file="res://assets/breakroom/microwave.png"
+dest_files=["res://.godot/imported/microwave.png-f909d30d4b67e1f5a79d6ddf46595092.ctex"]
 
 [params]
 

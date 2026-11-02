@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de3nwj86ctk5c"
-path="res://.godot/imported/coffee.png-6dd5a1f7208891180f84a4fbfa18d51d.ctex"
+uid="uid://dcpyjsk6ngdnb"
+path="res://.godot/imported/vending.png-8ae5f4d0aa5664e7801d0d8f9c770b49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breakroom /coffee.png"
-dest_files=["res://.godot/imported/coffee.png-6dd5a1f7208891180f84a4fbfa18d51d.ctex"]
+source_file="res://assets/breakroom/vending.png"
+dest_files=["res://.godot/imported/vending.png-8ae5f4d0aa5664e7801d0d8f9c770b49.ctex"]
 
 [params]
 

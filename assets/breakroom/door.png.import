@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cospybacjj03y"
-path="res://.godot/imported/water.png-575aaff81624c253be26aa4710b2505c.ctex"
+uid="uid://cee8s6x867nlo"
+path="res://.godot/imported/door.png-681a983fb6b19be5bb109e2a5bc8709b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breakroom /water.png"
-dest_files=["res://.godot/imported/water.png-575aaff81624c253be26aa4710b2505c.ctex"]
+source_file="res://assets/breakroom/door.png"
+dest_files=["res://.godot/imported/door.png-681a983fb6b19be5bb109e2a5bc8709b.ctex"]
 
 [params]
 

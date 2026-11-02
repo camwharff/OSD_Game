@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cee8s6x867nlo"
-path="res://.godot/imported/door.png-591aab6aee095b33433262ca476c4956.ctex"
+uid="uid://0sxfcc2kqaa"
+path="res://.godot/imported/fridge.png-41b9018bacfed29000b804bdea95cbd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breakroom /door.png"
-dest_files=["res://.godot/imported/door.png-591aab6aee095b33433262ca476c4956.ctex"]
+source_file="res://assets/breakroom/fridge.png"
+dest_files=["res://.godot/imported/fridge.png-41b9018bacfed29000b804bdea95cbd5.ctex"]
 
 [params]
 

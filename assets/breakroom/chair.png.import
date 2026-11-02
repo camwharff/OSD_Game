@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvmmadbph1eq6"
-path="res://.godot/imported/overlay.png-9f22dcb27464617cf9e78695cfc25186.ctex"
+uid="uid://dd06f0cd1lv4k"
+path="res://.godot/imported/chair.png-f7cca4635eb4efc218e3cad68f40db5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/breakroom /overlay.png"
-dest_files=["res://.godot/imported/overlay.png-9f22dcb27464617cf9e78695cfc25186.ctex"]
+source_file="res://assets/breakroom/chair.png"
+dest_files=["res://.godot/imported/chair.png-f7cca4635eb4efc218e3cad68f40db5a.ctex"]
 
 [params]
 
