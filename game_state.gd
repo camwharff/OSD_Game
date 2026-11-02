@@ -10,6 +10,7 @@ var energy = 0
 var satisfaction = 0
 var performance = 0
 var carryover = 0
+var completed_tasks = []
 
 func _ready():
 	get_viewport().physics_object_picking_sort = true
@@ -41,5 +42,8 @@ func apply_task(current_task: Clickable) -> void:
 			task.enable = false
 		else:
 			task.enable = true
+	completed_tasks.append(current_task)
+	for dependency in current_task.dependencies:
+		pass
 	current_task.complete = true
 	current_task.complete_task()

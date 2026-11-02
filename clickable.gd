@@ -14,6 +14,7 @@ signal hover(message: String, enable: bool)
 @export var hover_message: String
 @export var begin: int = 0
 @export var end: int = 100
+@export var dependencies = []
 
 var enable = false
 var complete = false
