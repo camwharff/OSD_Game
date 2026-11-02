@@ -14,11 +14,13 @@ signal hover(message: String, enable: bool)
 @export var hover_message: String
 @export var begin: int = 0
 @export var end: int = 100
-@export var dependencies = []
+@export var prereqs: Array[String] = []
+@export var blocked_by: Array[String] = []
 
 var enable = false
 var complete = false
 var is_done = false
+
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
