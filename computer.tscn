@@ -6,4 +6,19 @@
 
 [node name="Email" parent="." unique_id=1671882795 instance=ExtResource("1_gxl5a")]
 
+[node name="Desk" parent="." unique_id=448785501 instance=ExtResource("1_gxl5a")]
+
+[node name="Groupchat" parent="." unique_id=839657444 instance=ExtResource("1_gxl5a")]
+
+[node name="Manager" parent="." unique_id=512883602 instance=ExtResource("1_gxl5a")]
+
+[node name="CreateDeck" parent="." unique_id=1139869008 instance=ExtResource("1_gxl5a")]
+
+[node name="RefineDeck" parent="." unique_id=1838661727 instance=ExtResource("1_gxl5a")]
+
 [editable path="Email"]
+[editable path="Desk"]
+[editable path="Groupchat"]
+[editable path="Manager"]
+[editable path="CreateDeck"]
+[editable path="RefineDeck"]
