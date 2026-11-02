@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dnqmjllxntkhn"]
 
-[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_fed4x"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://ui/clickable.tscn" id="1_fed4x"]
 [ext_resource type="Script" uid="uid://b77dricsbtb34" path="res://rooms/bathroom.gd" id="1_qb7wk"]
-[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_0ykx7"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://ui/portal.tscn" id="2_0ykx7"]
 [ext_resource type="Texture2D" uid="uid://cj4vwyorv0rgt" path="res://assets/bathroom/background.png" id="2_mc4l1"]
 [ext_resource type="Texture2D" uid="uid://dxy77go44uo57" path="res://assets/bathroom/toothbrush.png" id="3_dia5y"]
 [ext_resource type="Texture2D" uid="uid://dns3elu0u6er3" path="res://assets/bathroom/mirror.png" id="4_83h1y"]
@@ -31,6 +31,7 @@ energy_change = -2
 satisfaction_change = 1
 performance_change = 1
 hover_message = "Do hair and makeup"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -59,6 +60,7 @@ energy_change = -2
 satisfaction_change = 1
 performance_change = 1
 hover_message = "Shower"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -78,6 +80,7 @@ tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 hover_message = "Brush Teeth"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -95,6 +98,7 @@ position = Vector2(1344, 391)
 scale = Vector2(0.5, 0.5)
 destination = "Apartment"
 hover_message = "Go to main room"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]

@@ -16,20 +16,26 @@ signal hover(message: String, enable: bool)
 @export var end: int = 100
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
+@export var phases: Array[String] = []
 
 var enable = false
 var complete = false
 var is_done = false
+var in_phase = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _ready() -> void:
 	add_to_group("tasks")
+	
+	for phase in phases:
+		add_to_group(phase)
+	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	if begin == 0:
 		enable = true
-	for task in get_tree().get_nodes_in_group("tasks"):
+	for task in GameState.tasks.values():
 		if task.enable == false:
 			task.sprite.hide()
 			task.input_pickable = false

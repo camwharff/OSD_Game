@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqe0l8loftfj2"]
 
-[ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://clickable.gd" id="1_0jthp"]
+[ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://ui/clickable.gd" id="1_0jthp"]
 
 [node name="Clickable" type="Area2D" unique_id=1671882795]
 script = ExtResource("1_0jthp")
@@ -10,6 +10,6 @@ script = ExtResource("1_0jthp")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1662919460]
 position = Vector2(276.32648, 123.95625)
 scale = Vector2(9.856618, 8.5125)
-polygon = PackedVector2Array(3, -9, 13, 1, 2, 16, -21, 6)
+polygon = PackedVector2Array(-20.932785, -7.2782674, 0.77851486, -7.2782674, 0.4741516, 6.348751, -21, 6)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

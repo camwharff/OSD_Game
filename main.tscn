@@ -1,12 +1,26 @@
 [gd_scene format=3 uid="uid://co15bi8ykav85"]
 
-[ext_resource type="PackedScene" uid="uid://80u5wi6ohlpx" path="res://dawn.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c3i0rpugn6n7x" path="res://phases/dawn.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://hhto0p74eqtm" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://hud.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cv62wp4oy27ba" path="res://ui/hud.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://btnnhq0jj4hlh" path="res://phases/morning.tscn" id="4_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bjlacx1i7po4a" path="res://phases/afternoon.tscn" id="5_7mycd"]
 
 [node name="Main" type="Node" unique_id=998919397]
 script = ExtResource("1_h2yge")
 
-[node name="Dawn" parent="." unique_id=864492622 instance=ExtResource("1_0xm2m")]
-
 [node name="HUD" parent="." unique_id=1066121775 instance=ExtResource("2_h2yge")]
+
+[node name="Dawn" parent="." unique_id=1546253595 instance=ExtResource("1_0xm2m")]
+phase_name = "Dawn"
+
+[node name="Morning" parent="." unique_id=1261390692 instance=ExtResource("4_lquwl")]
+visible = false
+phase_name = "Morning"
+
+[node name="Afternoon" parent="." unique_id=74967306 instance=ExtResource("5_7mycd")]
+visible = false
+phase_name = "Afternoon"
+
+[connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
+[connection signal="game_ready" from="HUD" to="." method="_begin_game"]

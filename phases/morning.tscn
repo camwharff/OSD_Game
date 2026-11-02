@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://btnnhq0jj4hlh"]
+
+[ext_resource type="PackedScene" uid="uid://bcsv3e4ovrxru" path="res://phases/phase.tscn" id="1_i5hr7"]
+[ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://rooms/breakroom.tscn" id="2_aqknj"]
+[ext_resource type="PackedScene" uid="uid://c6l4qi1wfq5ft" path="res://rooms/computer.tscn" id="3_8v60j"]
+[ext_resource type="PackedScene" uid="uid://cbrto2q4mp3bh" path="res://rooms/office.tscn" id="4_7ay3o"]
+
+[node name="Morning" unique_id=1546253595 node_paths=PackedStringArray("default_room") instance=ExtResource("1_i5hr7")]
+phase = "morning"
+default_room = NodePath("Office")
+time_limit = 20
+
+[node name="Office" parent="." index="0" unique_id=1266351472 instance=ExtResource("4_7ay3o")]
+
+[node name="Breakroom" parent="." index="1" unique_id=1501265523 instance=ExtResource("2_aqknj")]
+visible = false
+
+[node name="Computer" parent="." index="2" unique_id=651298257 instance=ExtResource("3_8v60j")]
+visible = false

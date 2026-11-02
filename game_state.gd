@@ -2,6 +2,7 @@ extends Node
 
 signal stats_changed
 signal time_end
+signal setup_complete
 
 var time_left: int = 0
 var time_max: int = 0
@@ -17,26 +18,40 @@ var dependencies: Dictionary = {}
 func _ready():
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
-	init_tasks()
-	build_dependencies()
 
-func _process(_delta):
-	if time_left <= 0:
-		time_end.emit()
+func setup():
+	_init_task_lists()
+	_build_dependencies()
+	_init_task_availabilities()
+	setup_complete.emit()
 
-func init_tasks():
+func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
+		completed[task.task_name] = false
 		tasks[task.task_name] = task
 
-func build_dependencies():
+func _build_dependencies():
 	for task in tasks.values():
 		for other_task in task.prereqs + task.blocked_by:
 			dependencies.get_or_add(other_task, []).append(task.task_name)
 
-func start_phase(time_limit: int):
-	time_left = time_limit + carryover
+func _init_task_availabilities():
+	for task in tasks.values():
+		_update_availability(task)
+
+func start_phase(phase: Node2D):
+	time_left = phase.time_limit + carryover
 	time_max = time_left
 	carryover = 0
+	_enable_phase_tasks(phase.phase_name)
+
+func _enable_phase_tasks(phase: String):
+	for task in tasks.values():
+		if task.phases.has(phase):
+			task.in_phase = true
+		else:
+			task.in_phase = false
+		_update_availability(task)
 
 func apply_task(current_task: Clickable) -> void:
 	time_left = clampi(time_left - current_task.time_cost, 0, 100)
@@ -46,31 +61,48 @@ func apply_task(current_task: Clickable) -> void:
 	performance += current_task.performance_change
 	stats_changed.emit()
 	
-	if current_task.early_exit:
-		carryover = time_left
-		time_left = 0
-	
-	if time_left <= 0:
-		time_end.emit()
+	completed[current_task.task_name] = true
 		
 	for task in tasks.values():
 		if task.begin > time_max - time_left || task.end < time_max - time_left:
 			task.enable = false
 		else:
 			task.enable = true
+		_update_availability(task)
 	
-	for task in current_task.dependencies:
-		update_availability(tasks[task.task_name])
+	if dependencies.has(current_task.task_name):
+		for task in dependencies[current_task.task_name]:
+			_update_availability(tasks[task])
 	
-	completed[current_task] = true
+	if current_task.early_exit:
+		carryover = time_left
+		time_left = 0
+	
+	if time_left <= 0:
+		time_end.emit()
+	
 	current_task.complete = true
 	current_task.complete_task()
 
-func update_availability(task: Clickable):
+func _update_availability(task: Clickable):
+	task.enable = _availability_handler(task)
+	if task.enable:
+		task.show()
+		task.input_pickable = true
+	else:
+		task.hide()
+		task.input_pickable = false
+
+func _availability_handler(task: Clickable) -> bool:
+	if not task.in_phase:
+		return false
 	if completed[task.task_name]:
 		return false
-		
-	for req in task.requires:
+	
+	if task.begin > time_max - time_left || task.end < time_max - time_left:
+		return false
+	
+	for req in task.prereqs:
 		if !completed[req]:
 			return false
 	for blocker in task.blocked_by:

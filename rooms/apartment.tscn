@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ow8nxno5jvix" path="res://rooms/apartment.gd" id="1_y78ir"]
 [ext_resource type="Texture2D" uid="uid://1xvvv1t0plmg" path="res://assets/apartment/background.png" id="2_hq0fg"]
-[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="2_j0ocu"]
-[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="3_j0ocu"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://ui/clickable.tscn" id="2_j0ocu"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://ui/portal.tscn" id="3_j0ocu"]
 [ext_resource type="Texture2D" uid="uid://wii58yktdppq" path="res://assets/apartment/cell.png" id="4_bv14x"]
 [ext_resource type="Texture2D" uid="uid://4qtcfyjmyjkc" path="res://assets/apartment/phone.png" id="4_irbrm"]
 [ext_resource type="Texture2D" uid="uid://debfkwqwr6w40" path="res://assets/apartment/food.png" id="4_ks0ae"]
@@ -33,11 +33,12 @@ metadata/_edit_lock_ = true
 
 [node name="Bowl" parent="." unique_id=1803819743 instance=ExtResource("2_j0ocu")]
 position = Vector2(789, 751)
-task_name = "FeedCat"
+task_name = "feed-cat"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 hover_message = "Feed cat"
+phases = Array[String](["Dawn"])
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -53,10 +54,11 @@ polygon = PackedVector2Array(4.0581894, -9.045517, 6.898918, -4.46402, 6.2901917
 
 [node name="Litter" parent="." unique_id=1313741587 instance=ExtResource("2_j0ocu")]
 position = Vector2(430, 386)
-task_name = "CleanCatBox"
+task_name = "clean-litter"
 tidiness_change = 1
 energy_change = -1
 hover_message = "Clean cat's litter box"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -72,13 +74,14 @@ polygon = PackedVector2Array(-0.8116379, 0.2349472, 0.6087265, 1.5271645, 0.8116
 
 [node name="Calendar" parent="." unique_id=1658548734 instance=ExtResource("2_j0ocu")]
 position = Vector2(957, 211)
-task_name = "Schedule"
+task_name = "check-calendar"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = -1
 performance_change = 1
 carryover_change = 2
 hover_message = "Review schedule"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -96,8 +99,9 @@ polygon = PackedVector2Array(-21.914207, -11.160061, -0.8116379, -12.569754, -1.
 position = Vector2(1255, 388)
 destination = "Bathroom"
 hover_message = "Go to bathroom"
-metadata/_edit_group_ = true
+phases = Array[String](["Dawn"])
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
 position = Vector2(-528, 24)
@@ -106,11 +110,12 @@ texture = ExtResource("5_irbrm")
 
 [node name="CollisionPolygon2D" parent="Door" index="1" unique_id=325856230]
 visible = false
-polygon = PackedVector2Array(-116, -294, 131, -244, 128, 323, -116, 202)
+position = Vector2(0, 0)
+polygon = PackedVector2Array(-116, -294, 131, -244, 128.10652, 302.86578, 121, 309, 81, 281, 72, 294, -116, 202)
 
 [node name="Shoes" parent="." unique_id=1404418289 instance=ExtResource("2_j0ocu")]
 position = Vector2(1385, 761)
-task_name = "LeaveEarly"
+task_name = "leave-early"
 time_cost = 0
 energy_change = -1
 satisfaction_change = -1
@@ -118,6 +123,7 @@ performance_change = 3
 carryover_change = 3
 early_exit = true
 hover_message = "Go to work early"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -129,16 +135,18 @@ texture = ExtResource("9_xaukh")
 [node name="CollisionPolygon2D" parent="Shoes" index="1" unique_id=1662919460]
 visible = false
 position = Vector2(-228.99994, -132.99998)
-polygon = PackedVector2Array(18.464752, 4.8164444, 22.01567, 7.7533035, 24.349121, 6.813507, 27.18985, 12.217323, 29.523315, 12.922173, 30.436401, 15.624077, 28.407318, 16.563873, 27.18985, 17.62114, 19.986572, 17.50367, 12.986206, 15.624077, 13.189117, 7.7533035, 14.7109375, 5.8737106, 16.942932, 6.813507)
+polygon = PackedVector2Array(18.363297, 5.0513916, 22.218582, 8.340675, 24.349121, 7.0484543, 27.18985, 12.217323, 29.523315, 12.922173, 30.436401, 15.624077, 28.407318, 16.563873, 27.18985, 17.62114, 19.986572, 17.50367, 12.986206, 15.624077, 13.189117, 7.7533035, 14.7109375, 5.8737106, 16.942932, 6.813507)
 
 [node name="Blanket" parent="." unique_id=841174042 instance=ExtResource("2_j0ocu")]
 position = Vector2(603, 349)
-task_name = "MakeBed"
+task_name = "make-bed"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 hover_message = "Make bed"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" parent="Blanket" index="0" unique_id=1130463136]
 position = Vector2(161, 57)
@@ -159,11 +167,13 @@ metadata/_edit_lock_ = true
 
 [node name="Cat" parent="." unique_id=1663209509 instance=ExtResource("2_j0ocu")]
 position = Vector2(638, 350)
-task_name = "PetCat"
+task_name = "pet-cat"
 tidiness_change = -2
 energy_change = 2
 satisfaction_change = 2
 hover_message = "Pet cat"
+prereqs = Array[String](["clean-litter", "feed-cat"])
+phases = Array[String](["Dawn"])
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -179,11 +189,12 @@ polygon = PackedVector2Array(-2.4349136, 0.82232285, 0.10145569, 1.05727, 1.6232
 
 [node name="Clothes" parent="." unique_id=870267243 instance=ExtResource("2_j0ocu")]
 position = Vector2(937, 432)
-task_name = "TidyUp"
+task_name = "fold-clothes"
 tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 hover_message = "Fold laundry"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -199,11 +210,12 @@ polygon = PackedVector2Array(-3.4494705, -9.045521, -0.40583038, -6.1086655, 2.5
 
 [node name="Coffee" parent="." unique_id=1429221052 instance=ExtResource("2_j0ocu")]
 position = Vector2(187, 465)
-task_name = "Coffee"
+task_name = "coffee"
 tidiness_change = -2
 energy_change = 2
 performance_change = 1
 hover_message = "Have a coffee"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -218,13 +230,14 @@ polygon = PackedVector2Array(-29.759342, -27.718796, -21.135695, -27.366375, -21
 
 [node name="Toaster" parent="." unique_id=379871230 instance=ExtResource("2_j0ocu")]
 position = Vector2(162, 603)
-task_name = "Breakfast"
+task_name = "eat-breakfast"
 time_cost = 2
 tidiness_change = -3
 energy_change = 3
 satisfaction_change = 1
 performance_change = 1
 hover_message = "Have breakfast"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -240,10 +253,11 @@ polygon = PackedVector2Array(-10.145466, -9.162994, -7.5076447, 7.1659317, -19.0
 
 [node name="Cell" parent="." unique_id=1527210970 instance=ExtResource("2_j0ocu")]
 position = Vector2(701, 517)
-task_name = "Doomscroll"
+task_name = "doomscroll"
 satisfaction_change = 1
 performance_change = -1
 hover_message = "Doomscroll"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -258,11 +272,12 @@ polygon = PackedVector2Array(-28.744797, -19.143173, -22.758972, -13.621883, -26
 
 [node name="TV" parent="." unique_id=2041736332 instance=ExtResource("2_j0ocu")]
 position = Vector2(304, 256)
-task_name = "News"
+task_name = "watch-news"
 energy_change = -1
 satisfaction_change = -1
 performance_change = 2
 hover_message = "Check the news"
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -278,14 +293,15 @@ polygon = PackedVector2Array(-24.450575, -11.39501, -19.986568, -11.512484, -18.
 
 [node name="Pillow" parent="." unique_id=1210239270 instance=ExtResource("2_j0ocu")]
 position = Vector2(749, 325)
-task_name = "SleepIn"
+task_name = "sleep-in"
 time_cost = 2
 tidiness_change = -1
 energy_change = 3
 satisfaction_change = 2
 performance_change = 1
 hover_message = "Sleep in"
-end = 1
+end = 0
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -301,13 +317,15 @@ polygon = PackedVector2Array(-0.5072708, -5.0513954, 3.550911, -3.8766518, 10.24
 
 [node name="Landline" parent="." unique_id=1040426584 instance=ExtResource("2_j0ocu")]
 position = Vector2(79, 265)
-task_name = "CallMom"
+task_name = "call-mom"
 time_cost = 2
 energy_change = 1
 satisfaction_change = 3
 hover_message = "Talk to mom"
 begin = 3
+phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" parent="Landline" index="0" unique_id=1130463136]
 position = Vector2(650, 145)

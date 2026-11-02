@@ -1,27 +1,26 @@
 extends CanvasLayer
 
+signal advance_phase
+signal game_ready
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameState.stats_changed.connect(_update_hud)
-	GameState.time_end.connect(_phase_end)
-	_update_hud()
-	
-	for task in get_tree().get_nodes_in_group("tasks"):
+	GameState.time_end.connect(_phase_end_display)
+	GameState.setup_complete.connect(_hud_setup)
+
+func _hud_setup():
+	for task in GameState.tasks.values():
 		task.hover.connect(_hover_handler)
 	for portal in get_tree().get_nodes_in_group("portals"):
 		portal.hover.connect(_hover_handler)
+	_update_hud()
+	game_ready.emit()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
-func _phase_end() -> void:
+func _phase_end_display() -> void:
 	$PhaseFlash.show()
 	$PhaseFlash/ExtraTime.text = str(GameState.carryover)
 	$PhaseFlash/Score.text = str(GameState.energy + GameState.satisfaction + GameState.performance + GameState.tidiness)
-	get_tree().paused = true
-	
 
 func _update_hud() -> void:
 	$Time.text = str(GameState.time_left)
@@ -34,3 +33,10 @@ func _hover_handler(message: String, enable: bool):
 	if enable:
 		$HoverInfo/HoverText.text = message
 		$HoverInfo.show()
+	else:
+		$HoverInfo.hide()
+
+func _on_advance_button_pressed() -> void:
+	advance_phase.emit()
+	$PhaseFlash.hide()
+	
