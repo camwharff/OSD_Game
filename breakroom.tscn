@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://btw2q168uxdwv"]
+
+[ext_resource type="Texture2D" uid="uid://d3krhh6iigwra" path="res://assets/breakroom /background.png" id="1_dgceo"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_e4rg8"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_xbi64"]
+[ext_resource type="Texture2D" uid="uid://dd06f0cd1lv4k" path="res://assets/breakroom /chair.png" id="3_2sest"]
+[ext_resource type="Texture2D" uid="uid://de3nwj86ctk5c" path="res://assets/breakroom /coffee.png" id="4_u2sgn"]
+[ext_resource type="Texture2D" uid="uid://cvmmadbph1eq6" path="res://assets/breakroom /overlay.png" id="6_b13k2"]
+
+[node name="Breakroom" type="Node2D" unique_id=1113780637]
+
+[node name="Background" type="TextureRect" parent="." unique_id=960095621]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_dgceo")
+metadata/_edit_lock_ = true
+
+[node name="Chair" parent="." unique_id=1671882795 instance=ExtResource("1_e4rg8")]
+position = Vector2(487, 654)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Chair" index="0" unique_id=1130463136]
+position = Vector2(242, -244)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_2sest")
+
+[node name="CollisionPolygon2D" parent="Chair" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(76, -148.99998)
+polygon = PackedVector2Array(-20.493843, 4.111599, -18.566204, 1.9970627, -14.60947, 0.3524208, -12.681831, 1.1747437, -11.464378, 2.9368553, -14.913834, 8.575623, -16.942928, 11.395004, -17.247292, 15.154182, 3.7538261, 13.627022, 4.666916, 29.133629, 2.8407326, 37.004402, 1.6232758, 37.004402, 0.30436707, 24.08223, -13.08765, 25.844345, -13.7978325, 33.127754, -18.972023, 37.12188, -20.18948, 37.12188, -17.957478, 13.979439, -17.754566, 10.690163, -21, 6)
+
+[node name="Coffee" parent="." unique_id=845083965 instance=ExtResource("1_e4rg8")]
+position = Vector2(946, 341)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Coffee" index="0" unique_id=1130463136]
+position = Vector2(-217, 69)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_u2sgn")
+
+[node name="CollisionPolygon2D" parent="Coffee" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(35.00006, -42.999985)
+polygon = PackedVector2Array(-6.1887436, -0.1174736, -1.0145569, -0.35242462, -1.0145569, 8.81057, -6.1887436, 8.693096)
+
+[node name="Fridge" parent="." unique_id=1845631786 instance=ExtResource("1_e4rg8")]
+visible = false
+
+[node name="Microwave" parent="." unique_id=489621305 instance=ExtResource("1_e4rg8")]
+visible = false
+
+[node name="Vending" parent="." unique_id=717359299 instance=ExtResource("1_e4rg8")]
+visible = false
+
+[node name="Water" parent="." unique_id=1596034695 instance=ExtResource("1_e4rg8")]
+visible = false
+
+[node name="Door" parent="." unique_id=184511040 instance=ExtResource("2_xbi64")]
+visible = false
+
+[node name="Overlay" type="TextureRect" parent="." unique_id=461924244]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_b13k2")
+metadata/_edit_lock_ = true
+
+[editable path="Chair"]
+[editable path="Coffee"]
+[editable path="Fridge"]
+[editable path="Microwave"]
+[editable path="Vending"]
+[editable path="Water"]
+[editable path="Door"]

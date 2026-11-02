@@ -1,24 +1,117 @@
 [gd_scene format=3 uid="uid://c6l4qi1wfq5ft"]
 
 [ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_gxl5a"]
+[ext_resource type="Texture2D" uid="uid://bjsx5vxc868c5" path="res://assets/computer/background.png" id="1_iiass"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_18hgq"]
+[ext_resource type="Texture2D" uid="uid://cun7if7pk0540" path="res://assets/computer/email.png" id="3_pgtsp"]
+[ext_resource type="Texture2D" uid="uid://rroakuj31e2v" path="res://assets/computer/groupchat.png" id="4_o7oi2"]
+[ext_resource type="Texture2D" uid="uid://b3bkrntti1yfp" path="res://assets/computer/manager.png" id="5_a1vod"]
+[ext_resource type="Texture2D" uid="uid://bjn0iomf5btdh" path="res://assets/computer/refine-deck.png" id="6_7rrbn"]
+[ext_resource type="Texture2D" uid="uid://cnvqnbrqfq4gs" path="res://assets/computer/new-deck.png" id="7_meoe4"]
+[ext_resource type="Texture2D" uid="uid://brwm07lev30bw" path="res://assets/computer/desk.png" id="9_pmph0"]
 
 [node name="Computer" type="Node2D" unique_id=651298257]
 
-[node name="Email" parent="." unique_id=1671882795 instance=ExtResource("1_gxl5a")]
+[node name="Background" type="TextureRect" parent="." unique_id=1309393523]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iiass")
+metadata/_edit_lock_ = true
 
-[node name="Desk" parent="." unique_id=448785501 instance=ExtResource("1_gxl5a")]
+[node name="Email" parent="." unique_id=1671882795 instance=ExtResource("1_gxl5a")]
+position = Vector2(563, 636)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Email" index="0" unique_id=1130463136]
+position = Vector2(166, -226)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_pgtsp")
+
+[node name="CollisionPolygon2D" parent="Email" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(19, -55.999985)
+polygon = PackedVector2Array(-3.2465477, 4.816452, -1.0145454, 4.816452, -0.6087265, 4.34655, 0.20291138, 4.34655, 0.5072746, 5.051399, 0.30436707, 5.638771, -0.20290756, 6.3436127, -1.0145454, 6.3436127, -1.0145454, 8.340675, -1.7247276, 8.458153, -2.4349098, 8.340675, -2.5363655, 6.46109, -3.449459, 6.226143, -3.6523666, 5.403816)
 
 [node name="Groupchat" parent="." unique_id=839657444 instance=ExtResource("1_gxl5a")]
+position = Vector2(351, 202)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Groupchat" index="0" unique_id=1130463136]
+position = Vector2(378, 208)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_o7oi2")
+
+[node name="CollisionPolygon2D" parent="Groupchat" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(43, -50.999985)
+polygon = PackedVector2Array(-9.13092, 4.346548, 0.7101822, 4.346548, 0.8116379, 7.5183544, -9.13092, 7.2834053)
 
 [node name="Manager" parent="." unique_id=512883602 instance=ExtResource("1_gxl5a")]
+position = Vector2(352, 231)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
-[node name="CreateDeck" parent="." unique_id=1139869008 instance=ExtResource("1_gxl5a")]
+[node name="Sprite2D" parent="Manager" index="0" unique_id=1130463136]
+position = Vector2(377, 179)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_a1vod")
+
+[node name="CollisionPolygon2D" parent="Manager" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(14, -27.999985)
+polygon = PackedVector2Array(-6.2901917, 1.64464, 3.550911, 1.7621136, 3.550911, 4.8164463, -6.188736, 4.93392)
 
 [node name="RefineDeck" parent="." unique_id=1838661727 instance=ExtResource("1_gxl5a")]
+position = Vector2(1001, 485)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="RefineDeck" index="0" unique_id=1130463136]
+position = Vector2(-272, -75)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_7rrbn")
+
+[node name="CollisionPolygon2D" parent="RefineDeck" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-29.999939, -19.999985)
+polygon = PackedVector2Array(-12.783295, -7.400879, 18.972015, -7.5183525, 19.174927, 13.392075, -12.681839, 13.274597)
+
+[node name="CreateDeck" parent="." unique_id=1139869008 instance=ExtResource("1_gxl5a")]
+position = Vector2(951, 478)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="CreateDeck" index="0" unique_id=1130463136]
+position = Vector2(-222, -68)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_meoe4")
+
+[node name="CollisionPolygon2D" parent="CreateDeck" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(243.00006, -36.999985)
+polygon = PackedVector2Array(-49.30697, -10.807636, -1.4203644, -10.92511, -1.217453, 19.383263, -49.104057, 19.030838)
+
+[node name="Desk" parent="." unique_id=184511040 instance=ExtResource("2_18hgq")]
+position = Vector2(219, 676)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Desk" index="0" unique_id=1405594283]
+position = Vector2(510, -266)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_pmph0")
+
+[node name="CollisionPolygon2D" parent="Desk" index="1" unique_id=325856230]
+visible = false
+position = Vector2(175, 623)
+polygon = PackedVector2Array(-182, -628, -177, -633, -168, -631, -166, -621, -174, -615, -182, -619)
 
 [editable path="Email"]
-[editable path="Desk"]
 [editable path="Groupchat"]
 [editable path="Manager"]
-[editable path="CreateDeck"]
 [editable path="RefineDeck"]
+[editable path="CreateDeck"]
+[editable path="Desk"]

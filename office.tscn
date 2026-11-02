@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cbrto2q4mp3bh"]
+
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_ei2s5"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://portal.tscn" id="2_u8nhc"]
+
+[node name="Office" type="Node2D" unique_id=1266351472]
+
+[node name="Background" type="TextureRect" parent="." unique_id=1048827331]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Boss" parent="." unique_id=1671882795 instance=ExtResource("1_ei2s5")]
+
+[node name="Breakroom" parent="." unique_id=184511040 instance=ExtResource("2_u8nhc")]
+
+[node name="Computer" parent="." unique_id=1961198455 instance=ExtResource("2_u8nhc")]
+
+[node name="Coworker" parent="." unique_id=1794220232 instance=ExtResource("1_ei2s5")]
+
+[node name="Exit" parent="." unique_id=1456918008 instance=ExtResource("1_ei2s5")]
+
+[node name="Files" parent="." unique_id=1476499127 instance=ExtResource("1_ei2s5")]
+
+[node name="Manager" parent="." unique_id=1938355417 instance=ExtResource("1_ei2s5")]
+
+[node name="Notepad" parent="." unique_id=2001862947 instance=ExtResource("1_ei2s5")]
+
+[node name="Trash" parent="." unique_id=1319587458 instance=ExtResource("1_ei2s5")]
+
+[node name="Whiteboard" parent="." unique_id=1503415850 instance=ExtResource("1_ei2s5")]
+
+[node name="Overlay" type="TextureRect" parent="." unique_id=1617602771]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[editable path="Boss"]
+[editable path="Breakroom"]
+[editable path="Computer"]
+[editable path="Coworker"]
+[editable path="Exit"]
+[editable path="Files"]
+[editable path="Manager"]
+[editable path="Notepad"]
+[editable path="Trash"]
+[editable path="Whiteboard"]
