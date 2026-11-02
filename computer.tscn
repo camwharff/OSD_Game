@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c6l4qi1wfq5ft"]
+
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://clickable.tscn" id="1_gxl5a"]
+
+[node name="Computer" type="Node2D" unique_id=651298257]
+
+[node name="Email" parent="." unique_id=1671882795 instance=ExtResource("1_gxl5a")]
+
+[editable path="Email"]
