@@ -11,9 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://bvvingv6pkmg1" path="res://assets/office/exit.png" id="8_bpy36"]
 [ext_resource type="Texture2D" uid="uid://du3hc8cvwbrqw" path="res://assets/office/files.png" id="9_bpy36"]
 [ext_resource type="Texture2D" uid="uid://elm6mcknihyn" path="res://assets/office/manager.png" id="10_gk8d0"]
-[ext_resource type="Texture2D" uid="uid://x31tpfeo7rk1" path="res://assets/office/notepad.png" id="11_4wjci"]
 [ext_resource type="Texture2D" uid="uid://boi0bxslil7ov" path="res://assets/office/trash.png" id="12_4wjci"]
+[ext_resource type="Texture2D" uid="uid://dfbnub3qseq2o" path="res://assets/office/notepad-proposal.png" id="13_50lb3"]
 [ext_resource type="Texture2D" uid="uid://x3qoo2v0i80n" path="res://assets/office/whiteboard.png" id="13_ca21n"]
+[ext_resource type="Texture2D" uid="uid://wx4fa4plquir" path="res://assets/office/notepad-note.png" id="14_8op43"]
+[ext_resource type="Texture2D" uid="uid://coxypb0umh60k" path="res://assets/office/notepad-empty.png" id="15_pnj6q"]
 
 [node name="Office" type="Node2D" unique_id=1266351472]
 
@@ -187,27 +189,6 @@ visible = false
 position = Vector2(19.000061, -5.9999847)
 polygon = PackedVector2Array(-8.420746, -1.9970627, 3.956726, -1.4096909, 3.7538147, 3.8766518, -8.62365, 2.9368591)
 
-[node name="Notepad" parent="." unique_id=2001862947 instance=ExtResource("1_ei2s5")]
-position = Vector2(581, 564)
-task_name = "jot-idea"
-tidiness_change = -1
-satisfaction_change = 2
-performance_change = 1
-hover_message = "Jot down some ideas"
-phases = Array[String](["Morning", "Afternoon"])
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" parent="Notepad" index="0" unique_id=1130463136]
-position = Vector2(148, -154)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_4wjci")
-
-[node name="CollisionPolygon2D" parent="Notepad" index="1" unique_id=1662919460]
-visible = false
-position = Vector2(5, 16.000015)
-polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247276, -0.5873718, -6.696007, -1.6446381)
-
 [node name="Trash" parent="." unique_id=1319587458 instance=ExtResource("1_ei2s5")]
 position = Vector2(191, 552)
 task_name = "tidy-desk"
@@ -254,9 +235,80 @@ visible = false
 position = Vector2(8, -21.999985)
 polygon = PackedVector2Array(-11.160015, -4.93392, 8.725101, -3.6417027, 8.250383, 2.1298933, 9.232376, 2.11454, 8.52219, 12.0998535, 7.710556, 12.0998535, 7.710556, 9.75037, -11.835118, 9.8468685, -11.971653, 12.334805, -12.681835, 12.217327, -12.276016, 1.6446419, -11.405033, 1.7048216)
 
+[node name="NotepadProposal" parent="." unique_id=2135291269 instance=ExtResource("1_ei2s5")]
+position = Vector2(581, 564)
+task_name = "write-proposal"
+tidiness_change = -1
+satisfaction_change = 2
+performance_change = 1
+hover_message = "Turn your ideas into a proposal"
+prereqs = Array[String](["refine-ideas"])
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="NotepadProposal" index="0" unique_id=1130463136]
+position = Vector2(148, -154)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_50lb3")
+
+[node name="CollisionPolygon2D" parent="NotepadProposal" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(5, 16.000015)
+polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247276, -0.5873718, -6.696007, -1.6446381)
+
+[node name="NotepadScribble" parent="." unique_id=1905443493 instance=ExtResource("1_ei2s5")]
+position = Vector2(581, 564)
+task_name = "refine-ideas"
+tidiness_change = -1
+satisfaction_change = 2
+performance_change = 1
+hover_message = "Refine your ideas"
+prereqs = Array[String](["jot-idea"])
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="NotepadScribble" index="0" unique_id=1130463136]
+position = Vector2(148, -154)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_8op43")
+
+[node name="CollisionPolygon2D" parent="NotepadScribble" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(5, 16.000015)
+polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247276, -0.5873718, -6.696007, -1.6446381)
+
+[node name="NotepadEmpty" parent="." unique_id=293665871 instance=ExtResource("1_ei2s5")]
+position = Vector2(581, 564)
+task_name = "jot-idea"
+tidiness_change = -1
+satisfaction_change = 2
+performance_change = 1
+hover_message = "Jot down some ideas"
+phases = Array[String](["Morning", "Afternoon"])
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" parent="NotepadEmpty" index="0" unique_id=1130463136]
+position = Vector2(148, -154)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_pnj6q")
+
+[node name="CollisionPolygon2D" parent="NotepadEmpty" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(5, 16.000015)
+polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247276, -0.5873718, -6.696007, -1.6446381)
+
+[node name="ManagerProposal" parent="." unique_id=2034211428 instance=ExtResource("1_ei2s5")]
+task_name = "manager-propose"
+hover_message = "Pitch your ideas to your manager"
+prereqs = Array[String](["jot-idea", "presentation-debrief"])
+phases = Array[String](["Afternoon"])
+
 [node name="Overlay" type="TextureRect" parent="." unique_id=1617602771]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2915.0
+offset_bottom = 1640.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_wttgf")
 metadata/_edit_lock_ = true
@@ -269,6 +321,9 @@ metadata/_edit_lock_ = true
 [editable path="Files"]
 [editable path="SocialManager"]
 [editable path="DebriefManager2"]
-[editable path="Notepad"]
 [editable path="Trash"]
 [editable path="Whiteboard"]
+[editable path="NotepadProposal"]
+[editable path="NotepadScribble"]
+[editable path="NotepadEmpty"]
+[editable path="ManagerProposal"]
