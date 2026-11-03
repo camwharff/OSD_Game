@@ -21,14 +21,21 @@ func _ready():
 
 func setup():
 	_init_task_lists()
+	_init_phase_groups()
 	_build_dependencies()
 	_init_task_availabilities()
+	
 	setup_complete.emit()
 
 func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
 		completed[task.task_name] = false
 		tasks[task.task_name] = task
+
+func _init_phase_groups():
+	for task in tasks.values():
+		for phase in task.phases:
+			task.add_to_group(phase)
 
 func _build_dependencies():
 	for task in tasks.values():
@@ -62,17 +69,14 @@ func apply_task(current_task: Clickable) -> void:
 	stats_changed.emit()
 	
 	completed[current_task.task_name] = true
-		
-	for task in tasks.values():
-		if task.begin > time_max - time_left || task.end < time_max - time_left:
-			task.enable = false
-		else:
-			task.enable = true
-		_update_availability(task)
 	
 	if dependencies.has(current_task.task_name):
 		for task in dependencies[current_task.task_name]:
 			_update_availability(tasks[task])
+	
+	# TODO: Fix this to only update availability for time sensitive tasks
+	for task in tasks.values():
+		_update_availability(task)
 	
 	if current_task.early_exit:
 		carryover = time_left

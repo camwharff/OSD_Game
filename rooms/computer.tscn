@@ -89,7 +89,7 @@ satisfaction_change = 1
 performance_change = 2
 hover_message = "Polish your presentation"
 prereqs = Array[String](["create-presentation"])
-phases = Array[String](["Morning"])
+phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 

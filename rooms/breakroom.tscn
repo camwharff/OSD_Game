@@ -66,6 +66,7 @@ polygon = PackedVector2Array(-20.493843, 4.111599, -18.566204, 1.9970627, -14.60
 
 [node name="Coffee" parent="." unique_id=845083965 instance=ExtResource("1_e4rg8")]
 position = Vector2(946, 341)
+task_name = "coffee"
 tidiness_change = -1
 energy_change = 2
 satisfaction_change = 1

@@ -8,12 +8,18 @@ func _ready():
 	GameState.setup()
 
 func _on_hud_advance_phase():
-	get_node(phases[current_phase]).visible = false
+	get_node(phases[current_phase]).hide()
 	current_phase += 1
 	print("advancing phase to ", phases[current_phase])
 	var new_phase = get_node(phases[current_phase])
-	new_phase.visible = true
+	new_phase.show()
 	GameState.start_phase(new_phase)
+	
+	# Debug
+	print("tasks that should be visible:")
+	for task in GameState.tasks.values():
+		if task.enable and task.in_phase and not task.complete:
+			print("	", task.task_name)
 
 func _begin_game():
 	print("begin game")

@@ -210,7 +210,7 @@ polygon = PackedVector2Array(-3.4494705, -9.045521, -0.40583038, -6.1086655, 2.5
 
 [node name="Coffee" parent="." unique_id=1429221052 instance=ExtResource("2_j0ocu")]
 position = Vector2(187, 465)
-task_name = "coffee"
+task_name = "espresso"
 tidiness_change = -2
 energy_change = 2
 performance_change = 1

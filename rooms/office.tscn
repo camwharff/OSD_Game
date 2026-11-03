@@ -50,7 +50,7 @@ polygon = PackedVector2Array(-1.5218277, -3.9941292, 14.812378, -4.111603, 14.10
 position = Vector2(1093, 274)
 destination = "Breakroom"
 hover_message = "Go to breakroom"
-phases = Array[String](["Morning", "Afternoon"])
+phases = Array[String](["Afternoon", "Morning"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -105,7 +105,7 @@ polygon = PackedVector2Array(-2.0291061, -5.40382, 11.261459, -4.581501, 11.0585
 
 [node name="Exit" parent="." unique_id=1456918008 instance=ExtResource("1_ei2s5")]
 position = Vector2(1320, 81)
-task_name = "leave-early"
+task_name = "leave-work-early"
 time_cost = 0
 early_exit = true
 hover_message = "Leave work early"

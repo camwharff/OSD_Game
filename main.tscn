@@ -12,15 +12,12 @@ script = ExtResource("1_h2yge")
 [node name="HUD" parent="." unique_id=1066121775 instance=ExtResource("2_h2yge")]
 
 [node name="Dawn" parent="." unique_id=1546253595 instance=ExtResource("1_0xm2m")]
-phase_name = "Dawn"
 
-[node name="Morning" parent="." unique_id=1261390692 instance=ExtResource("4_lquwl")]
+[node name="Morning" parent="." unique_id=51067107 instance=ExtResource("4_lquwl")]
 visible = false
-phase_name = "Morning"
 
 [node name="Afternoon" parent="." unique_id=74967306 instance=ExtResource("5_7mycd")]
 visible = false
-phase_name = "Afternoon"
 
 [connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
 [connection signal="game_ready" from="HUD" to="." method="_begin_game"]

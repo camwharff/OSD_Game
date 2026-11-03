@@ -9,6 +9,8 @@ signal hover(message: String, enable: bool)
 
 @onready var sprite: Sprite2D = $Sprite2D
 
+var portal = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("portals")
@@ -28,10 +30,6 @@ func _on_mouse_exited() -> void:
 	sprite.modulate = Color(1, 1, 1) # dim sprite
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	hover.emit(hover_message, false)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
 
 # Called when a portal is clicked. Changes the scene to the destination.
 func _on_input_event(_viewport, event, _shape_idx):

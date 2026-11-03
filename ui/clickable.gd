@@ -28,17 +28,8 @@ var in_phase = false
 func _ready() -> void:
 	add_to_group("tasks")
 	
-	for phase in phases:
-		add_to_group(phase)
-	
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
-	if begin == 0:
-		enable = true
-	for task in GameState.tasks.values():
-		if task.enable == false:
-			task.sprite.hide()
-			task.input_pickable = false
 
 func _on_mouse_entered() -> void:
 	sprite.modulate = Color(1.3, 1.3, 1.3) # brighten sprite
@@ -55,13 +46,9 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		sprite.visible = false
 		GameState.apply_task(self)
 		input_pickable = false
+		hover.emit("plonk", false)
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 
 func complete_task() -> void: 
-	for task in get_tree().get_nodes_in_group("tasks"):
-		if task.enable == false || task.complete == true:
-			task.sprite.hide()
-			task.input_pickable = false
-		else:
-			task.sprite.show()
-			task.input_pickable = true
 	is_done = true
+	complete = true

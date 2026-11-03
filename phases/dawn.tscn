@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dpv6j0tvx13cq" path="res://rooms/apartment.tscn" id="2_1dx16"]
 
 [node name="Dawn" unique_id=1546253595 node_paths=PackedStringArray("default_room") instance=ExtResource("1_mi2uk")]
-phase = "dawn"
+phase_name = "Dawn"
 default_room = NodePath("Apartment")
-time_limit = 9
+time_limit = 1
 
 [node name="Bathroom" parent="." index="0" unique_id=1064936501 instance=ExtResource("1_7u4d6")]
 visible = false
