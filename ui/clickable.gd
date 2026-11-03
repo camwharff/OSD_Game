@@ -14,6 +14,7 @@ signal hover(message: String, enable: bool)
 @export var hover_message: String
 @export var begin: int = 0
 @export var end: int = 100
+@export var repeatable: bool = false
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
 @export var phases: Array[String] = []

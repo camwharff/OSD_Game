@@ -1,26 +1,28 @@
 extends Node
 
-var phases = ["Dawn", "Morning", "Afternoon"]
+@onready var rooms = $Rooms
+@onready var phases: Array = $Phases.get_children()
 var current_phase = 0
+const LAST_PHASE = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameState.setup()
 
-func _on_hud_advance_phase():
-	get_node(phases[current_phase]).hide()
-	current_phase += 1
-	print("advancing phase to ", phases[current_phase])
-	var new_phase = get_node(phases[current_phase])
-	new_phase.show()
-	GameState.start_phase(new_phase)
-	
-	# Debug
-	print("tasks that should be visible:")
-	for task in GameState.tasks.values():
-		if task.enable and task.in_phase and not task.complete:
-			print("	", task.task_name)
-
 func _begin_game():
 	print("begin game")
-	GameState.start_phase(get_node(phases[0]))
+	_start_phase()
+
+func _on_hud_advance_phase():
+	current_phase += 1
+	if current_phase >= phases.size():
+		print("game over")  # end screen goes here
+		return
+	_start_phase()
+
+func _start_phase():
+	var phase: Phase = phases[current_phase]
+	print("starting phase ", phase.phase_name)
+	GameState.start_phase(phase)
+	rooms.enable_phase_portals(phase.phase_name)
+	rooms.go_to(phase.default_room)

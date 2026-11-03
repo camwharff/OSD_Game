@@ -46,7 +46,7 @@ func _init_task_availabilities():
 	for task in tasks.values():
 		_update_availability(task)
 
-func start_phase(phase: Node2D):
+func start_phase(phase: Phase):
 	time_left = phase.time_limit + carryover
 	time_max = time_left
 	carryover = 0
@@ -54,10 +54,11 @@ func start_phase(phase: Node2D):
 
 func _enable_phase_tasks(phase: String):
 	for task in tasks.values():
-		if task.phases.has(phase):
-			task.in_phase = true
-		else:
-			task.in_phase = false
+		task.in_phase = task.phases.has(phase)
+		if task.in_phase and task.repeatable:
+			completed[task.task_name] = false
+			task.complete = false
+			task.sprite.visible = true
 		_update_availability(task)
 
 func apply_task(current_task: Clickable) -> void:
