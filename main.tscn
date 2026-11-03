@@ -20,7 +20,7 @@ script = ExtResource("1_h2yge")
 [node name="Dawn" parent="Phases" unique_id=1685379031 node_paths=PackedStringArray("default_room") instance=ExtResource("3_1bvp3")]
 phase_name = "Dawn"
 default_room = NodePath("../../Rooms/Apartment")
-time_limit = 9
+time_limit = 7
 
 [node name="Morning" parent="Phases" unique_id=1520849030 node_paths=PackedStringArray("default_room") instance=ExtResource("3_1bvp3")]
 phase_name = "Morning"

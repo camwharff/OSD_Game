@@ -50,6 +50,7 @@ func start_phase(phase: Phase):
 	time_left = phase.time_limit + carryover
 	time_max = time_left
 	carryover = 0
+	stats_changed.emit()
 	_enable_phase_tasks(phase.phase_name)
 
 func _enable_phase_tasks(phase: String):
