@@ -168,7 +168,7 @@ visible = false
 position = Vector2(19.000061, -5.9999847)
 polygon = PackedVector2Array(-8.420746, -1.9970627, 3.956726, -1.4096909, 3.7538147, 3.8766518, -8.62365, 2.9368591)
 
-[node name="DebriefManager2" parent="." unique_id=655936711 instance=ExtResource("1_ei2s5")]
+[node name="DebriefManager" parent="." unique_id=655936711 instance=ExtResource("1_ei2s5")]
 position = Vector2(1297, 431)
 task_name = "presentation-debrief"
 satisfaction_change = 1
@@ -179,12 +179,12 @@ phases = Array[String](["Afternoon"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" parent="DebriefManager2" index="0" unique_id=1130463136]
+[node name="Sprite2D" parent="DebriefManager" index="0" unique_id=1130463136]
 position = Vector2(-568, -21)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_gk8d0")
 
-[node name="CollisionPolygon2D" parent="DebriefManager2" index="1" unique_id=1662919460]
+[node name="CollisionPolygon2D" parent="DebriefManager" index="1" unique_id=1662919460]
 visible = false
 position = Vector2(19.000061, -5.9999847)
 polygon = PackedVector2Array(-8.420746, -1.9970627, 3.956726, -1.4096909, 3.7538147, 3.8766518, -8.62365, 2.9368591)
@@ -238,9 +238,9 @@ polygon = PackedVector2Array(-11.160015, -4.93392, 8.725101, -3.6417027, 8.25038
 [node name="NotepadProposal" parent="." unique_id=2135291269 instance=ExtResource("1_ei2s5")]
 position = Vector2(581, 564)
 task_name = "write-proposal"
-tidiness_change = -1
-satisfaction_change = 2
-performance_change = 1
+time_cost = 2
+satisfaction_change = 1
+performance_change = 2
 hover_message = "Turn your ideas into a proposal"
 prereqs = Array[String](["refine-ideas"])
 phases = Array[String](["Morning", "Afternoon"])
@@ -260,9 +260,10 @@ polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247
 [node name="NotepadScribble" parent="." unique_id=1905443493 instance=ExtResource("1_ei2s5")]
 position = Vector2(581, 564)
 task_name = "refine-ideas"
-tidiness_change = -1
+time_cost = 3
+energy_change = -1
 satisfaction_change = 2
-performance_change = 1
+performance_change = 2
 hover_message = "Refine your ideas"
 prereqs = Array[String](["jot-idea"])
 phases = Array[String](["Morning", "Afternoon"])
@@ -303,8 +304,8 @@ polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247
 [node name="PitchManager" parent="." unique_id=1082681855 instance=ExtResource("1_ei2s5")]
 position = Vector2(1297, 431)
 task_name = "pitch-manager"
-satisfaction_change = 1
-performance_change = 1
+satisfaction_change = 2
+performance_change = 2
 hover_message = "Pitch your ideas to your manager"
 prereqs = Array[String](["jot-idea"])
 phases = Array[String](["Afternoon"])
@@ -335,7 +336,7 @@ metadata/_edit_lock_ = true
 [editable path="Exit"]
 [editable path="Files"]
 [editable path="SocialManager"]
-[editable path="DebriefManager2"]
+[editable path="DebriefManager"]
 [editable path="Trash"]
 [editable path="Whiteboard"]
 [editable path="NotepadProposal"]

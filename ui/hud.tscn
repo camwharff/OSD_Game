@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cv62wp4oy27ba"]
 
 [ext_resource type="Script" uid="uid://exrp2u2kl0n0" path="res://ui/hud.gd" id="1_37p78"]
+[ext_resource type="Theme" uid="uid://cd28cejhwjqxe" path="res://resources/style_theme.tres" id="2_276te"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_276te"]
 action = &"leftclick"
@@ -8,105 +9,44 @@ action = &"leftclick"
 [sub_resource type="Shortcut" id="Shortcut_rbyyf"]
 events = [SubResource("InputEventAction_276te")]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdpi0"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 30.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4p0ob"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p0ob"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="HUD" type="CanvasLayer" unique_id=1066121775]
 script = ExtResource("1_37p78")
-
-[node name="HUDBG" type="ColorRect" parent="." unique_id=1469708125]
-offset_left = 30.0
-offset_top = 20.0
-offset_right = 577.0
-offset_bottom = 106.0
-color = Color(0.61960787, 0.8509804, 1, 0.87058824)
-
-[node name="TimeText" type="Label" parent="." unique_id=539284780]
-offset_left = 38.0
-offset_top = 25.0
-offset_right = 123.0
-offset_bottom = 70.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Time:"
-
-[node name="Time" type="Label" parent="." unique_id=1710155374]
-offset_left = 117.0
-offset_top = 26.0
-offset_right = 181.0
-offset_bottom = 114.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
-
-[node name="EnergyText" type="Label" parent="." unique_id=1138675012]
-offset_left = 379.0
-offset_top = 60.0
-offset_right = 493.0
-offset_bottom = 105.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Energy:"
-
-[node name="Energy" type="Label" parent="." unique_id=1540255453]
-offset_left = 483.0
-offset_top = 62.0
-offset_right = 547.0
-offset_bottom = 150.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
-
-[node name="SatisfactionText" type="Label" parent="." unique_id=1993557457]
-offset_left = 382.0
-offset_top = 24.0
-offset_right = 572.0
-offset_bottom = 69.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Satisfaction:"
-
-[node name="Satisfaction" type="Label" parent="." unique_id=1831031485]
-offset_left = 544.0
-offset_top = 25.0
-offset_right = 608.0
-offset_bottom = 113.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
-
-[node name="PerformanceText" type="Label" parent="." unique_id=1086020731]
-offset_left = 156.0
-offset_top = 60.0
-offset_right = 365.0
-offset_bottom = 105.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Performance:"
-
-[node name="Performance" type="Label" parent="." unique_id=1366206620]
-offset_left = 332.0
-offset_top = 60.0
-offset_right = 396.0
-offset_bottom = 148.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
-
-[node name="TidinessText" type="Label" parent="." unique_id=1523918821]
-offset_left = 155.0
-offset_top = 28.0
-offset_right = 290.0
-offset_bottom = 73.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "Tidiness:"
-
-[node name="Tidiness" type="Label" parent="." unique_id=1074373502]
-offset_left = 272.0
-offset_top = 30.0
-offset_right = 336.0
-offset_bottom = 118.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "0"
 
 [node name="PhaseFlash" type="Node2D" parent="." unique_id=271714519]
 visible = false
@@ -202,27 +142,283 @@ offset_left = -172.0
 offset_top = 257.0
 offset_right = 161.0
 offset_bottom = 352.0
-theme_override_font_sizes/font_size = 48
+theme = ExtResource("2_276te")
 shortcut = SubResource("Shortcut_rbyyf")
 text = "Next Phase"
 
-[node name="HoverInfo" type="Node2D" parent="." unique_id=1467886629]
-visible = false
+[node name="EndScreen" type="GridContainer" parent="." unique_id=1263963995]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -276.0
+offset_right = 590.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/v_separation = 20
 
-[node name="HoverBG" type="ColorRect" parent="HoverInfo" unique_id=1639514437]
-offset_left = 29.0
-offset_top = 117.0
-offset_right = 576.0
-offset_bottom = 154.0
-color = Color(0.61960787, 0.8509804, 1, 0.87058824)
+[node name="StatsBG" type="PanelContainer" parent="EndScreen" unique_id=210348261]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pdpi0")
 
-[node name="HoverText" type="Label" parent="HoverInfo" unique_id=1857968969]
-offset_left = 35.0
-offset_top = 119.0
-offset_right = 120.0
-offset_bottom = 164.0
+[node name="Stats" type="GridContainer" parent="EndScreen/StatsBG" unique_id=1323523714]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="GameOverText" type="Label" parent="EndScreen/StatsBG/Stats" unique_id=1817783668]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TotalScore" type="GridContainer" parent="EndScreen/StatsBG/Stats" unique_id=971721881]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 40
+columns = 2
+
+[node name="ScoreText" type="Label" parent="EndScreen/StatsBG/Stats/TotalScore" unique_id=964445541]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Final Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/TotalScore" unique_id=236459768]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalStats" type="GridContainer" parent="EndScreen/StatsBG/Stats" unique_id=149725942]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 60
+columns = 4
+
+[node name="Energy" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=346840494]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Energy" unique_id=1256328456]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Energy:"
+
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Energy" unique_id=487919671]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Performance" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1362406732]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Performance" unique_id=1723974166]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Performance:"
+
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Performance" unique_id=370442443]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Satisfaction" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=87057454]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Satisfaction" unique_id=1935462544]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Satisfaction:"
+
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Satisfaction" unique_id=729888576]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Tidiness" type="GridContainer" parent="EndScreen/StatsBG/Stats/FinalStats" unique_id=1359839567]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="Label" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Tidiness" unique_id=1412952185]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Tidiness:"
+
+[node name="Score" type="Label" parent="EndScreen/StatsBG/Stats/FinalStats/Tidiness" unique_id=799514587]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Description" type="Label" parent="EndScreen/StatsBG/Stats" unique_id=2003010695]
+custom_minimum_size = Vector2(20, 20)
+custom_maximum_size = Vector2(1000, 1000)
+layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "Ur Hovering"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4p0ob")
+text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada facilisis diam, sit amet egestas urna euismod nec. Aliquam pulvinar egestas nunc. Pellentesque tempus, lectus non dignissim pulvinar, diam sem congue lorem, a eleifend leo tellus ac risus. Integer dignissim varius ornare."
+autowrap_mode = 2
+
+[node name="Buttons" type="GridContainer" parent="EndScreen" unique_id=1613090987]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 100
+columns = 2
+metadata/_edit_group_ = true
+
+[node name="Restart" type="Button" parent="EndScreen/Buttons" unique_id=773879199]
+layout_mode = 2
+theme = ExtResource("2_276te")
+shortcut = SubResource("Shortcut_rbyyf")
+text = "Start Over"
+
+[node name="Quit" type="Button" parent="EndScreen/Buttons" unique_id=1286678780]
+layout_mode = 2
+theme = ExtResource("2_276te")
+shortcut = SubResource("Shortcut_rbyyf")
+text = "Quit To Title"
+
+[node name="Display" type="GridContainer" parent="." unique_id=217778712]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 682.0
+offset_bottom = 212.0
+theme_override_constants/v_separation = 20
+
+[node name="Scores" type="PanelContainer" parent="Display" unique_id=93455582]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4p0ob")
+
+[node name="ScoreGrid" type="GridContainer" parent="Display/Scores" unique_id=1438082029]
+layout_mode = 2
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Time" type="GridContainer" parent="Display/Scores/ScoreGrid" unique_id=1875941292]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Text" type="Label" parent="Display/Scores/ScoreGrid/Time" unique_id=539284780]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Time Left:"
+
+[node name="Score" type="Label" parent="Display/Scores/ScoreGrid/Time" unique_id=1710155374]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Energy" type="GridContainer" parent="Display/Scores/ScoreGrid" unique_id=58274952]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Text" type="Label" parent="Display/Scores/ScoreGrid/Energy" unique_id=1138675012]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Energy:"
+
+[node name="Score" type="Label" parent="Display/Scores/ScoreGrid/Energy" unique_id=1540255453]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Satisfaction" type="GridContainer" parent="Display/Scores/ScoreGrid" unique_id=1049244012]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Text" type="Label" parent="Display/Scores/ScoreGrid/Satisfaction" unique_id=1993557457]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Satisfaction:"
+
+[node name="Score" type="Label" parent="Display/Scores/ScoreGrid/Satisfaction" unique_id=1831031485]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Performance" type="GridContainer" parent="Display/Scores/ScoreGrid" unique_id=1995681555]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Text" type="Label" parent="Display/Scores/ScoreGrid/Performance" unique_id=1086020731]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Performance:"
+
+[node name="Score" type="Label" parent="Display/Scores/ScoreGrid/Performance" unique_id=1366206620]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="Tidiness" type="GridContainer" parent="Display/Scores/ScoreGrid" unique_id=606427344]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="Text" type="Label" parent="Display/Scores/ScoreGrid/Tidiness" unique_id=1523918821]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tidiness:"
+
+[node name="Score" type="Label" parent="Display/Scores/ScoreGrid/Tidiness" unique_id=1074373502]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "0"
+
+[node name="HoverText" type="Label" parent="Display" unique_id=1857968969]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_276te")
+text = "Hover Text"
+vertical_alignment = 1
 
 [connection signal="pressed" from="PhaseFlash/AdvanceButton" to="." method="_on_advance_button_pressed"]
+[connection signal="pressed" from="EndScreen/Buttons/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="EndScreen/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="resized" from="Display/HoverText" to="." method="_on_hover_text_resized"]

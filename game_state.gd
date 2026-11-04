@@ -1,8 +1,11 @@
 extends Node
 
 signal stats_changed
-signal time_end
 signal setup_complete
+signal phase_end
+signal game_end
+
+const LAST_PHASE = 2
 
 var time_left: int = 0
 var time_max: int = 0
@@ -14,6 +17,7 @@ var carryover: int = 0
 var completed: Dictionary = {}
 var tasks: Dictionary = {}
 var dependencies: Dictionary = {}
+var current_phase = 0
 
 func _ready():
 	get_viewport().physics_object_picking_sort = true
@@ -26,6 +30,22 @@ func setup():
 	_init_task_availabilities()
 	
 	setup_complete.emit()
+
+func new_game_setup():
+	for task in tasks.values():
+		completed[task.task_name] = false
+	_init_task_availabilities()
+	_reset_stats()
+
+func _reset_stats():
+	time_left = 0
+	time_max = 0
+	tidiness = 0
+	energy = 0
+	satisfaction = 0
+	performance = 0
+	carryover = 0
+	current_phase = 0
 
 func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
@@ -85,7 +105,7 @@ func apply_task(current_task: Clickable) -> void:
 		time_left = 0
 	
 	if time_left <= 0:
-		time_end.emit()
+		time_out()
 	
 	current_task.complete = true
 	current_task.complete_task()
@@ -116,3 +136,9 @@ func _availability_handler(task: Clickable) -> bool:
 			return false
 	
 	return true
+
+func time_out():
+	if current_phase >= LAST_PHASE:
+		game_end.emit()
+	else:
+		phase_end.emit()
