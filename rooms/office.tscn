@@ -300,11 +300,26 @@ visible = false
 position = Vector2(5, 16.000015)
 polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247276, -0.5873718, -6.696007, -1.6446381)
 
-[node name="ManagerProposal" parent="." unique_id=2034211428 instance=ExtResource("1_ei2s5")]
-task_name = "manager-propose"
+[node name="PitchManager" parent="." unique_id=1082681855 instance=ExtResource("1_ei2s5")]
+position = Vector2(1297, 431)
+task_name = "pitch-manager"
+satisfaction_change = 1
+performance_change = 1
 hover_message = "Pitch your ideas to your manager"
-prereqs = Array[String](["jot-idea", "presentation-debrief"])
+prereqs = Array[String](["jot-idea"])
 phases = Array[String](["Afternoon"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="PitchManager" index="0" unique_id=1130463136]
+position = Vector2(-568, -21)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_gk8d0")
+
+[node name="CollisionPolygon2D" parent="PitchManager" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(19.000061, -5.9999847)
+polygon = PackedVector2Array(-8.420746, -1.9970627, 3.956726, -1.4096909, 3.7538147, 3.8766518, -8.62365, 2.9368591)
 
 [node name="Overlay" type="TextureRect" parent="." unique_id=1617602771]
 offset_right = 2915.0
@@ -326,4 +341,4 @@ metadata/_edit_lock_ = true
 [editable path="NotepadProposal"]
 [editable path="NotepadScribble"]
 [editable path="NotepadEmpty"]
-[editable path="ManagerProposal"]
+[editable path="PitchManager"]

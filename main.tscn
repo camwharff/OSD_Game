@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://rooms/breakroom.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://c6l4qi1wfq5ft" path="res://rooms/computer.tscn" id="8_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cbrto2q4mp3bh" path="res://rooms/office.tscn" id="9_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://cu2siuum2jlef" path="res://title.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node" unique_id=998919397]
 script = ExtResource("1_h2yge")
 
 [node name="HUD" parent="." unique_id=1066121775 instance=ExtResource("2_h2yge")]
+visible = false
 
 [node name="Phases" type="Node" parent="." unique_id=748608740]
 
@@ -45,5 +47,10 @@ script = ExtResource("6_7mycd")
 
 [node name="Office" parent="Rooms" unique_id=1266351472 instance=ExtResource("9_ycdy4")]
 
+[node name="Title" parent="." unique_id=1068749284 instance=ExtResource("10_4c57u")]
+
 [connection signal="advance_phase" from="HUD" to="." method="_on_hud_advance_phase"]
 [connection signal="game_ready" from="HUD" to="." method="_begin_game"]
+[connection signal="phases_start" from="Title/StartButton" to="." method="_start_first_phase"]
+
+[editable path="Title"]

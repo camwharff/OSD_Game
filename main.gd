@@ -11,7 +11,12 @@ func _ready():
 
 func _begin_game():
 	print("begin game")
+
+func _start_first_phase():
+	$Title.hide()
+	$HUD.show()
 	_start_phase()
+	print("first phase started")
 
 func _on_hud_advance_phase():
 	current_phase += 1

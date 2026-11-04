@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cu2siuum2jlef"]
+
+[ext_resource type="Texture2D" uid="uid://dvd7cqum686d5" path="res://assets/Title page.png" id="1_kpexm"]
+[ext_resource type="Texture2D" uid="uid://b013nmvsefhf8" path="res://assets/start button.png" id="2_3xoar"]
+[ext_resource type="Script" uid="uid://cfbk0fwb0x84p" path="res://start_button.gd" id="2_kpexm"]
+[ext_resource type="Script" uid="uid://bw6swiwl3ek6y" path="res://hover_start.gd" id="4_3xoar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g61v0"]
+size = Vector2(740, 198)
+
+[node name="Title" type="Node2D" unique_id=1068749284]
+
+[node name="Background" type="TextureRect" parent="." unique_id=2043512267]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kpexm")
+
+[node name="StartButton" type="Area2D" parent="." unique_id=2050105803]
+script = ExtResource("2_kpexm")
+
+[node name="Sprite2D" type="Sprite2D" parent="StartButton" unique_id=1961112547]
+position = Vector2(729, 410)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3xoar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartButton" unique_id=1507043150]
+visible = false
+position = Vector2(729, 346)
+shape = SubResource("RectangleShape2D_g61v0")
+
+[node name="HoverStart" type="Node2D" parent="." unique_id=696310965]
+visible = false
+script = ExtResource("4_3xoar")
+
+[node name="HoverBG" type="ColorRect" parent="HoverStart" unique_id=2144503481]
+offset_left = 27.0
+offset_top = 25.0
+offset_right = 198.0
+offset_bottom = 62.0
+color = Color(0.61960787, 0.8509804, 1, 0.87058824)
+
+[node name="HoverText" type="Label" parent="HoverStart" unique_id=1671533790]
+offset_left = 36.0
+offset_top = 26.0
+offset_right = 175.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Click to Start"
+
+[connection signal="hover_start" from="StartButton" to="HoverStart" method="_on_start_button_hover_start"]
+[connection signal="input_event" from="StartButton" to="StartButton" method="_on_input_event"]
