@@ -40,11 +40,5 @@ theme = ExtResource("4_mom7w")
 text = "Click to Start"
 script = ExtResource("4_3xoar")
 
-[node name="Button" type="Button" parent="." unique_id=934970119]
-offset_right = 8.0
-offset_bottom = 8.0
-theme = ExtResource("4_mom7w")
-text = "Exit"
-
 [connection signal="hover_start" from="StartButton" to="HoverStart" method="_on_start_button_hover_start"]
 [connection signal="input_event" from="StartButton" to="StartButton" method="_on_input_event"]

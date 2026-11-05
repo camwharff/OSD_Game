@@ -19,7 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://cub47ar30u7yv" path="res://assets/apartment/blanket.png" id="10_be72p"]
 [ext_resource type="Texture2D" uid="uid://bo34me3i6ekvb" path="res://assets/apartment/overlay-cat.png" id="11_m8h8t"]
 [ext_resource type="Texture2D" uid="uid://3jq4x40y1slc" path="res://assets/apartment/cat.png" id="12_dwwpd"]
+[ext_resource type="AudioStream" uid="uid://cmttv4ooawdku" path="res://assets/audio/Blastwave_FX_CatMeow_SFXB.203.mp3" id="13_sm272"]
+[ext_resource type="AudioStream" uid="uid://d0h14gnrvy14p" path="res://assets/audio/Sonic_Soundfx_household_kitchen_toaster_pop_up.mp3" id="17_xaukh"]
 [ext_resource type="Texture2D" uid="uid://dv7p37m6uko1k" path="res://assets/apartment/overlay.png" id="20_k88e2"]
+[ext_resource type="AudioStream" uid="uid://cy5jd1viiicx" path="res://assets/audio/master_of_dreams_phone3_526.mp3" id="21_jidnd"]
 
 [node name="Apartment" type="Node2D" unique_id=1271109376]
 script = ExtResource("1_y78ir")
@@ -38,6 +41,7 @@ tidiness_change = 1
 energy_change = -1
 satisfaction_change = 1
 hover_message = "Feed cat"
+ending_flag = true
 phases = Array[String](["Dawn"])
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -58,6 +62,7 @@ task_name = "clean-litter"
 tidiness_change = 1
 energy_change = -1
 hover_message = "Clean cat's litter box"
+ending_flag = true
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -172,6 +177,7 @@ tidiness_change = -2
 energy_change = 2
 satisfaction_change = 2
 hover_message = "Pet cat"
+ending_flag = true
 prereqs = Array[String](["clean-litter", "feed-cat"])
 phases = Array[String](["Dawn"])
 metadata/_edit_lock_ = true
@@ -186,6 +192,10 @@ texture = ExtResource("12_dwwpd")
 visible = false
 position = Vector2(19, -26.999985)
 polygon = PackedVector2Array(-2.4349136, 0.82232285, 0.10145569, 1.05727, 1.6232758, 3.4067574, 1.5218201, 4.581497, -0.10145569, 4.933922, -2.9421883, 4.933922, -4.159645, 5.168869, -6.087284, 4.6989746, -5.681465, 3.9941292, -5.478554, 3.9941292, -5.5800095, 2.11454, -5.275646, 2.11454, -4.159645, 1.2922173)
+
+[node name="AudioStreamPlayer2D" parent="Cat" index="2" unique_id=1612303609]
+stream = ExtResource("13_sm272")
+volume_db = 5.0
 
 [node name="Clothes" parent="." unique_id=870267243 instance=ExtResource("2_j0ocu")]
 position = Vector2(937, 432)
@@ -250,6 +260,10 @@ texture = ExtResource("6_e4ecs")
 visible = false
 position = Vector2(161, 24.000015)
 polygon = PackedVector2Array(-10.145466, -9.162994, -7.5076447, 7.1659317, -19.073479, 10.92511, -25.566578, 1.4096909, -26.885489, -5.991188, -26.07385, -12.687225, -17.551659, -15.154186)
+
+[node name="AudioStreamPlayer2D" parent="Toaster" index="2" unique_id=1612303609]
+stream = ExtResource("17_xaukh")
+volume_db = 5.0
 
 [node name="Cell" parent="." unique_id=1527210970 instance=ExtResource("2_j0ocu")]
 position = Vector2(701, 517)
@@ -323,6 +337,7 @@ energy_change = 1
 satisfaction_change = 3
 hover_message = "Talk to mom"
 begin = 3
+ending_flag = true
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -335,6 +350,10 @@ texture = ExtResource("4_irbrm")
 [node name="CollisionPolygon2D" parent="Landline" index="1" unique_id=1662919460]
 visible = false
 polygon = PackedVector2Array(-31.07825, -23.372246, -28.541885, -24.077091, -25.802608, -21.61013, -24.889515, -12.56461, -27.730247, -4.6938286, -28.846249, -4.9287796, -29.252068, -4.811306, -31.07825, -5.633625)
+
+[node name="AudioStreamPlayer2D" parent="Landline" index="2" unique_id=1612303609]
+stream = ExtResource("21_jidnd")
+volume_db = 5.0
 
 [node name="Overlay" type="TextureRect" parent="." unique_id=1983519047]
 offset_right = 40.0

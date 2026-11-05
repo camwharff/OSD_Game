@@ -8,6 +8,8 @@ func _ready():
 	GameState.setup()
 
 func _start_first_phase():
+	_play_click_audio()
+	$Rooms.show()
 	$Title.hide()
 	$HUD.show()
 	_start_phase()
@@ -25,11 +27,18 @@ func _start_phase():
 	rooms.enable_phase_portals(phase.phase_name)
 	rooms.go_to(phase.default_room)
 
-func _on_hud_new_game() -> void:
+func _on_new_game() -> void:
 	GameState.new_game_setup()
+	$Rooms.show()
 	$HUD.start_new_game()
 	_start_phase()
 
-func _on_hud_go_to_title() -> void:
+func _on_to_title() -> void:
 	$Rooms.hide()
 	$Title.show()
+
+func _on_menu_open_credits() -> void:
+	$HUD.open_credits()
+
+func _play_click_audio():
+	$ClickSound.play()

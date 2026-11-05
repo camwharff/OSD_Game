@@ -14,10 +14,13 @@ var energy: int = 0
 var satisfaction: int = 0
 var performance: int = 0
 var carryover: int = 0
+var current_phase = 0
+
 var completed: Dictionary = {}
 var tasks: Dictionary = {}
 var dependencies: Dictionary = {}
-var current_phase = 0
+
+var flags: Array[String] = []
 
 func _ready():
 	get_viewport().physics_object_picking_sort = true
@@ -34,8 +37,8 @@ func setup():
 func new_game_setup():
 	for task in tasks.values():
 		completed[task.task_name] = false
-	_init_task_availabilities()
 	_reset_stats()
+	_init_task_availabilities()
 
 func _reset_stats():
 	time_left = 0
@@ -46,6 +49,7 @@ func _reset_stats():
 	performance = 0
 	carryover = 0
 	current_phase = 0
+	flags = []
 
 func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):

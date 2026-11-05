@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameState="*res://game_state.gd"
+Endings="*uid://badkmj8y8ak8x"
 
 [display]
 

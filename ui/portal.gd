@@ -8,6 +8,7 @@ signal hover(message: String, enable: bool)
 @export var phases: Array[String] = []
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var portal = true
 
@@ -34,4 +35,5 @@ func _on_mouse_exited() -> void:
 # Called when a portal is clicked. Changes the scene to the destination.
 func _on_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("leftclick"):
+		audio.play()
 		update_scene.emit(destination)

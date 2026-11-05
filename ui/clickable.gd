@@ -15,6 +15,7 @@ signal hover(message: String, enable: bool)
 @export var begin: int = 0
 @export var end: int = 100
 @export var repeatable: bool = false
+@export var ending_flag: bool = false
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
 @export var phases: Array[String] = []
@@ -25,6 +26,7 @@ var is_done = false
 var in_phase = false
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	add_to_group("tasks")
@@ -44,11 +46,13 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("leftclick"):
-		sprite.visible = false
 		GameState.apply_task(self)
 		input_pickable = false
 		hover.emit("plonk", false)
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
+		audio.play()
+		if ending_flag == true:
+			GameState.flags.append(task_name)
 
 func complete_task() -> void: 
 	is_done = true
