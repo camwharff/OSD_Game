@@ -3,6 +3,8 @@ extends Node
 @onready var rooms = $Rooms
 @onready var phases: Array = $Phases.get_children()
 
+var first_game = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +13,10 @@ func _ready():
 
 func _start_first_phase():
 	_play_click_audio()
+	if first_game:
+		$Menu/HowTo.show()
+		$Menu/DimBG.show()
+		first_game = false
 	GameState.new_game_setup()
 	$Rooms.show()
 	$Title.hide()

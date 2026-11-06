@@ -31,20 +31,26 @@ func _on_title_pressed() -> void:
 func _on_credits_pressed() -> void:
 	click_sound.emit()
 	$RunHistory.hide()
+	$HowTo.hide()
 	if $Credits.visible:
 		$Credits.hide()
+		$DimBG.hide()
 	else:
 		$Credits.show()
+		$DimBG.show()
 
 
 func _on_history_pressed() -> void:
 	click_sound.emit()
 	$Credits.hide()
+	$HowTo.hide()
 	$RunHistory.show_runs()
 	if $RunHistory.visible:
 		$RunHistory.hide()
+		$DimBG.hide()
 	else:
 		$RunHistory.show()
+		$DimBG.show()
 
 
 func _input(event: InputEvent) -> void:
@@ -61,3 +67,15 @@ func _on_clear_history_pressed() -> void:
 	click_sound.emit()
 	RunManager.clear_runs()
 	$RunHistory.show_runs()
+
+
+func _on_how_to_pressed() -> void:
+	click_sound.emit()
+	$Credits.hide()
+	$RunHistory.hide()
+	if $HowTo.visible:
+		$HowTo.hide()
+		$DimBG.hide()
+	else:
+		$HowTo.show()
+		$DimBG.show()

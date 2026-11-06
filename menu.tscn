@@ -59,22 +59,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8720001, 0.04000002, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
 content_margin_left = 60.0
 content_margin_top = 30.0
@@ -91,8 +75,33 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8720001, 0.04000002, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Menu" type="CanvasLayer" unique_id=1192830433]
 script = ExtResource("1_lti8b")
+
+[node name="DimBG" type="ColorRect" parent="." unique_id=1123136157]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
 
 [node name="RunHistory" type="PanelContainer" parent="." unique_id=1832876778]
 visible = false
@@ -129,6 +138,74 @@ layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/h_separation = 40
 columns = 6
+
+[node name="Credits" type="PanelContainer" parent="." unique_id=1158651291]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -457.5
+offset_top = -128.5
+offset_right = 457.5
+offset_bottom = 128.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="Label" type="Label" parent="Credits" unique_id=1946741727]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Created by Camille Wharff
+Background Music:
+\"Long Stroll\" Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 4.0
+https://creativecommons.org/licenses/by/4.0/
+Audio Assets:
+\"Bright button click 3\", Produced by ZapSplat - https://www.zapsplat.com/music/bright-button-click-3/
+\"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
+\"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
+\"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
+
+[node name="HowTo" type="VBoxContainer" parent="." unique_id=820304819]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -259.0
+offset_right = 397.5
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="HowTo" unique_id=397566798]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+text = "Close"
+
+[node name="TextBG" type="PanelContainer" parent="HowTo" unique_id=29795059]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="Label" type="Label" parent="HowTo/TextBG" unique_id=2071235110]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Welcome to one short day in the life of Jo, a perfectly average person working as an analyst at a perfectly average company. Over the course of three phases you'll decide what Jo does with her time by selecting tasks for her to complete. Hover over tasks to see a short description, and click on tasks to complete them, but be careful what you prioritize! Jo only has a set amount of time in her day, which you can see counting down in the top left corner of the screen. It is up to you what her day looks like - will you conquer the office and end the day triumphant, or will you crash and burn in poor Jo's shoes?"
+autowrap_mode = 2
 
 [node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
 anchors_preset = 1
@@ -183,6 +260,13 @@ theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Game History"
 
+[node name="HowTo" type="Button" parent="MenuControl/MenuList" unique_id=706626614]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "How To"
+
 [node name="Restart" type="Button" parent="MenuControl/MenuList" unique_id=716019636]
 layout_mode = 2
 size_flags_horizontal = 8
@@ -197,40 +281,12 @@ theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Title"
 
-[node name="Credits" type="PanelContainer" parent="." unique_id=1158651291]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -266.5
-offset_top = -93.5
-offset_right = 266.5
-offset_bottom = 93.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
-
-[node name="Label" type="Label" parent="Credits" unique_id=1946741727]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Created by Camille Wharff
-Background Music:
-\"Long Stroll\" Kevin MacLeod (incompetech.com)
-Licensed under Creative Commons: By Attribution 4.0
-https://creativecommons.org/licenses/by/4.0/
-Audio Assets:
-\"Bright button click 3\", Produced by ZapSplat - https://www.zapsplat.com/music/bright-button-click-3/
-\"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
-\"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
-\"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
-
 [connection signal="pressed" from="RunHistory/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
+[connection signal="pressed" from="HowTo/Close" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/History" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/HowTo" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Title" to="." method="_on_title_pressed"]
