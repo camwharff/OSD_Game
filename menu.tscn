@@ -2,6 +2,30 @@
 
 [ext_resource type="Script" uid="uid://thlx8604lnml" path="res://menu.gd" id="1_lti8b"]
 [ext_resource type="Theme" uid="uid://dipy5bsiebjqs" path="res://resources/menu_button.tres" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://bkcnxmbg10j6c" path="res://run_history.gd" id="3_mae5d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+content_margin_left = 200.0
+content_margin_top = 90.0
+content_margin_right = 200.0
+content_margin_bottom = 90.0
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
 content_margin_left = 15.0
@@ -51,24 +75,28 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
-content_margin_left = 60.0
-content_margin_top = 30.0
-content_margin_right = 60.0
-content_margin_bottom = 30.0
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [node name="Menu" type="CanvasLayer" unique_id=1192830433]
 script = ExtResource("1_lti8b")
+
+[node name="RunHistory" type="PanelContainer" parent="." unique_id=1832876778]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+script = ExtResource("3_mae5d")
+
+[node name="HistScroll" type="ScrollContainer" parent="RunHistory" unique_id=1145369435]
+clip_contents = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ytr4m")
+
+[node name="HistGrid" type="GridContainer" parent="RunHistory/HistScroll" unique_id=1238952911]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 6
 
 [node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
 anchors_preset = 1
@@ -166,27 +194,6 @@ Audio Assets:
 \"Cat meow, hungry\", Produced by Blastwave FX - https://www.zapsplat.com/music/cat-meow-hungry/
 \"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
 \"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
-
-[node name="History" type="PanelContainer" parent="." unique_id=276754700]
-visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -266.5
-offset_top = -93.5
-offset_right = 266.5
-offset_bottom = 93.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
-
-[node name="Label" type="Label" parent="History" unique_id=941568864]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 12
-text = "Game History Coming Soon"
 
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]

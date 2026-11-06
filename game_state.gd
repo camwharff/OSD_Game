@@ -154,7 +154,18 @@ func _availability_handler(task: Clickable) -> bool:
 
 func time_out():
 	if current_phase >= LAST_PHASE:
+		var stats = normalize_stats()
 		game_end.emit()
+		RunManager.add_run(
+			{
+				"timestamp": Time.get_unix_time_from_system(),
+				"energy": stats[0],
+				"performance": stats[1],
+				"satisfaction": stats[2],
+				"tidiness": stats[3],
+				"total": stats[0] + stats[1] + stats[2] + stats[3],
+			}
+		)
 	else:
 		phase_end.emit()
 

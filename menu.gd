@@ -30,7 +30,7 @@ func _on_title_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	click_sound.emit()
-	$History.hide()
+	$RunHistory.hide()
 	if $Credits.visible:
 		$Credits.hide()
 	else:
@@ -40,10 +40,11 @@ func _on_credits_pressed() -> void:
 func _on_history_pressed() -> void:
 	click_sound.emit()
 	$Credits.hide()
-	if $History.visible:
-		$History.hide()
+	$RunHistory.show_runs()
+	if $RunHistory.visible:
+		$RunHistory.hide()
 	else:
-		$History.show()
+		$RunHistory.show()
 
 
 func _input(event: InputEvent) -> void:
