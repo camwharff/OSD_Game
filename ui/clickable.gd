@@ -51,8 +51,6 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		hover.emit("plonk", false)
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		audio.play()
-		if ending_flag == true:
-			GameState.flags.append(task_name)
 
 func complete_task() -> void: 
 	is_done = true

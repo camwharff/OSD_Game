@@ -29,6 +29,10 @@ Endings="*uid://badkmj8y8ak8x"
 window/size/viewport_width=1458
 window/size/viewport_height=820
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+
 [global_group]
 
 portals=""

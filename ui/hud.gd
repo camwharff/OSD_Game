@@ -19,6 +19,7 @@ signal click_sound
 @onready var final_tidy: Label = $EndScreen/StatsBG/Stats/FinalStats/Tidiness/Score
 @onready var final_description: Label = $EndScreen/StatsBG/Stats/Description
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GameState.stats_changed.connect(_update_hud)
@@ -26,18 +27,34 @@ func _ready():
 	GameState.game_end.connect(_on_game_end)
 	GameState.setup_complete.connect(_hud_setup)
 
+
 func _hud_setup():
 	for task in GameState.tasks.values():
 		task.hover.connect(_hover_handler)
 	for portal in get_tree().get_nodes_in_group("portals"):
 		portal.hover.connect(_hover_handler)
 	_update_hud()
+	_show_component($Display)
+	$DimBG.hide()
 	game_ready.emit()
 
+
 func _on_phase_end() -> void:
-	$PhaseFlash/ExtraTime.text = str(GameState.carryover)
-	$PhaseFlash/Score.text = str(GameState.energy + GameState.satisfaction + GameState.performance + GameState.tidiness)
-	$PhaseFlash.show()
+	var normed_stats = GameState.normalize_stats()
+	$PhaseFlash/Content/Stats/ExtraTime/ExtraTime.text = str(
+		GameState.carryover
+	)
+	$PhaseFlash/Content/Stats/Score/Score.text = str(
+		normed_stats.reduce(
+			func(accum, num):
+				return accum + num,
+			0,
+		)
+		/ 4
+	) + "/100"
+	_show_component($PhaseFlash)
+	$DimBG.show()
+
 
 func _update_hud() -> void:
 	time_text.text = str(GameState.time_left)
@@ -46,6 +63,7 @@ func _update_hud() -> void:
 	perf_text.text = str(GameState.performance)
 	tidy_text.text = str(GameState.tidiness)
 
+
 func _hover_handler(message: String, enable: bool):
 	if enable:
 		hover_text.text = message
@@ -53,31 +71,55 @@ func _hover_handler(message: String, enable: bool):
 	else:
 		hover_text.hide()
 
+
 func _on_advance_button_pressed() -> void:
 	click_sound.emit()
 	advance_phase.emit()
-	$PhaseFlash.hide()
+	_show_component($Display)
+	$DimBG.hide()
+
 
 func _on_game_end():
-	$Display.hide()
-	final_score.text = str(GameState.energy + GameState.satisfaction + GameState.performance + GameState.tidiness)
-	final_energy.text = str(GameState.energy)
-	final_sat.text = str(GameState.satisfaction)
-	final_perf.text = str(GameState.performance)
-	final_tidy.text = str(GameState.tidiness)
+	var normed_stats = GameState.normalize_stats()
+	final_score.text = str(
+		normed_stats.reduce(
+			func(accum, num):
+				return accum + num,
+			0,
+		)
+		/ 4
+	) + "/100"
+	final_energy.text = str(normed_stats[0]) + "/100"
+	final_perf.text = str(normed_stats[1]) + "/100"
+	final_sat.text = str(normed_stats[2]) + "/100"
+	final_tidy.text = str(normed_stats[3]) + "/100"
 	final_description.text = Endings.generate_description()
-	$EndScreen.show()
+	_show_component($EndScreen)
+	$DimBG.show()
+
 
 func _on_quit_pressed() -> void:
 	click_sound.emit()
+	_show_component($Display)
+	$DimBG.hide()
 	hide()
 	go_to_title.emit()
+
 
 func _on_restart_pressed() -> void:
 	click_sound.emit()
 	new_game.emit()
+	_show_component($Display)
+	$DimBG.hide()
+
 
 func start_new_game():
 	_update_hud()
-	$Display.show()
-	$EndScreen.hide()
+	_show_component($Display)
+	$DimBG.hide()
+
+
+func _show_component(node):
+	for child in get_children():
+		child.hide()
+	node.show()

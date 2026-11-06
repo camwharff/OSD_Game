@@ -125,6 +125,31 @@ visible = false
 position = Vector2(-81.99994, -25.000015)
 polygon = PackedVector2Array(2.9421844, -1.2922153, 4.666916, -1.2922153, 4.666916, -6.696033, 5.478546, -6.696033, 5.478546, -1.2922153, 10.855652, -1.4096894, 10.957108, -6.578559, 11.768738, -6.578559, 11.979416, -1.1981344, 13.797836, -1.1747408, 14.3050995, 6.813512, 2.8407288, 6.6960373)
 
+[node name="Lunch" parent="." unique_id=275433970 instance=ExtResource("1_ei2s5")]
+position = Vector2(1320, 81)
+task_name = "long-lunch"
+time_cost = 0
+tidiness_change = -1
+energy_change = 6
+satisfaction_change = 5
+performance_change = -4
+early_exit = true
+hover_message = "Go for a long lunch"
+ending_flag = true
+phases = Array[String](["Morning"])
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" parent="Lunch" index="0" unique_id=1130463136]
+position = Vector2(-591, 329)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_bpy36")
+
+[node name="CollisionPolygon2D" parent="Lunch" index="1" unique_id=1662919460]
+visible = false
+position = Vector2(-81.99994, -25.000015)
+polygon = PackedVector2Array(2.9421844, -1.2922153, 4.666916, -1.2922153, 4.666916, -6.696033, 5.478546, -6.696033, 5.478546, -1.2922153, 10.855652, -1.4096894, 10.957108, -6.578559, 11.768738, -6.578559, 11.979416, -1.1981344, 13.797836, -1.1747408, 14.3050995, 6.813512, 2.8407288, 6.6960373)
+
 [node name="Files" parent="." unique_id=1476499127 instance=ExtResource("1_ei2s5")]
 position = Vector2(610, 688)
 task_name = "organize-files"
@@ -198,6 +223,7 @@ energy_change = -1
 satisfaction_change = 1
 performance_change = 1
 hover_message = "Clean your desk"
+repeatable = true
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -220,6 +246,7 @@ tidiness_change = -1
 energy_change = -2
 satisfaction_change = 2
 performance_change = 3
+hover_message = "Practice giving your presentation"
 prereqs = Array[String](["create-presentation"])
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
@@ -334,6 +361,7 @@ metadata/_edit_lock_ = true
 [editable path="Computer"]
 [editable path="Coworker"]
 [editable path="Exit"]
+[editable path="Lunch"]
 [editable path="Files"]
 [editable path="SocialManager"]
 [editable path="DebriefManager"]

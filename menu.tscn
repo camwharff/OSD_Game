@@ -79,12 +79,13 @@ offset_top = 20.0
 offset_right = -20.0
 offset_bottom = 179.0
 grow_horizontal = 0
-size_flags_horizontal = 8
+size_flags_horizontal = 3
 size_flags_vertical = 0
 theme_override_constants/separation = 10
 
 [node name="Menu" type="Button" parent="MenuControl" unique_id=1604634769]
 layout_mode = 2
+size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -102,31 +103,39 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
+[node name="Credits" type="Button" parent="MenuControl/MenuList" unique_id=1503253874]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Credits"
+
 [node name="Exit" type="Button" parent="MenuControl/MenuList" unique_id=1550480109]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 text = "Exit"
 
+[node name="History" type="Button" parent="MenuControl/MenuList" unique_id=53574238]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+theme_override_font_sizes/font_size = 24
+text = "Game History"
+
 [node name="Restart" type="Button" parent="MenuControl/MenuList" unique_id=716019636]
 layout_mode = 2
+size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
 [node name="Title" type="Button" parent="MenuControl/MenuList" unique_id=1006087139]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Title"
-
-[node name="Credits" type="Button" parent="MenuControl/MenuList" unique_id=1503253874]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_ouk20")
-theme_override_font_sizes/font_size = 24
-text = "Credits"
 
 [node name="Credits" type="PanelContainer" parent="." unique_id=1158651291]
 visible = false
@@ -158,8 +167,30 @@ Audio Assets:
 \"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
 \"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
 
+[node name="History" type="PanelContainer" parent="." unique_id=276754700]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.5
+offset_top = -93.5
+offset_right = 266.5
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+
+[node name="Label" type="Label" parent="History" unique_id=941568864]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "Game History Coming Soon"
+
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/History" to="." method="_on_history_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Title" to="." method="_on_title_pressed"]
-[connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]

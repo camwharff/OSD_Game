@@ -34,6 +34,7 @@ func _on_new_game() -> void:
 	_start_phase()
 
 func _on_to_title() -> void:
+	$HUD.hide()
 	$Rooms.hide()
 	$Title.show()
 
