@@ -117,6 +117,7 @@ func start_new_game():
 	_update_hud()
 	_show_component($Display)
 	$DimBG.hide()
+	show()
 
 
 func _show_component(node):

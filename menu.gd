@@ -55,3 +55,9 @@ func _input(event: InputEvent) -> void:
 			$MenuControl.get_global_mouse_position()
 		):
 			$MenuControl/MenuList.hide()
+
+
+func _on_clear_history_pressed() -> void:
+	click_sound.emit()
+	RunManager.clear_runs()
+	$RunHistory.show_runs()

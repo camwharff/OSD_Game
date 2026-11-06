@@ -163,7 +163,7 @@ func time_out():
 				"performance": stats[1],
 				"satisfaction": stats[2],
 				"tidiness": stats[3],
-				"total": stats[0] + stats[1] + stats[2] + stats[3],
+				"total": (stats[0] + stats[1] + stats[2] + stats[3]) / 4,
 			}
 		)
 	else:

@@ -1,5 +1,7 @@
 extends Node
 
+signal click_sound
+
 const SAVE_PATH = "user://run_history.json"
 var runs: Array = []
 
@@ -25,3 +27,13 @@ func load_runs():
 		var json = JSON.new()
 		if json.parse(file.get_as_text()) == OK:
 			runs = json.get_data()
+		else:
+			runs = []
+
+
+func clear_runs():
+	click_sound.emit()
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify([], "\t"))
+	load_runs()

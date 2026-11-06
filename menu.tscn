@@ -6,44 +6,12 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
 content_margin_left = 200.0
-content_margin_top = 90.0
-content_margin_right = 200.0
-content_margin_bottom = 90.0
+content_margin_top = 120.0
+content_margin_right = 250.0
+content_margin_bottom = 120.0
 bg_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8720001, 0.04000002, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
 content_margin_left = 15.0
 content_margin_top = 5.0
 content_margin_right = 15.0
@@ -75,6 +43,54 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
+content_margin_left = 15.0
+content_margin_top = 5.0
+content_margin_right = 15.0
+content_margin_bottom = 5.0
+bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.8720001, 0.04000002, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
+content_margin_left = 60.0
+content_margin_top = 30.0
+content_margin_right = 60.0
+content_margin_bottom = 30.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [node name="Menu" type="CanvasLayer" unique_id=1192830433]
 script = ExtResource("1_lti8b")
 
@@ -88,14 +104,30 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
 script = ExtResource("3_mae5d")
 
-[node name="HistScroll" type="ScrollContainer" parent="RunHistory" unique_id=1145369435]
+[node name="VBoxContainer" type="VBoxContainer" parent="RunHistory" unique_id=1210770646]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ClearHistory" type="Button" parent="RunHistory/VBoxContainer" unique_id=462889681]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+text = "Clear History"
+
+[node name="HistScroll" type="ScrollContainer" parent="RunHistory/VBoxContainer" unique_id=1145369435]
 clip_contents = false
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.8
 theme_override_styles/panel = SubResource("StyleBoxFlat_ytr4m")
 
-[node name="HistGrid" type="GridContainer" parent="RunHistory/HistScroll" unique_id=1238952911]
+[node name="HistGrid" type="GridContainer" parent="RunHistory/VBoxContainer/HistScroll" unique_id=1238952911]
 layout_mode = 2
-theme_override_constants/h_separation = 20
+size_flags_horizontal = 6
+theme_override_constants/h_separation = 40
 columns = 6
 
 [node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
@@ -178,7 +210,7 @@ offset_right = 266.5
 offset_bottom = 93.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
 
 [node name="Label" type="Label" parent="Credits" unique_id=1946741727]
 layout_mode = 2
@@ -195,6 +227,7 @@ Audio Assets:
 \"Phone ring, digital, higher pitched\", Produced by Master of Dreams - https://www.zapsplat.com/music/phone-ring-digital-higher-pitched/
 \"Toaster pop up, medium, kitchen\", Produced by Sonic SoundFX - https://www.zapsplat.com/music/toaster-pop-up-medium-kitchen/"
 
+[connection signal="pressed" from="RunHistory/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]
