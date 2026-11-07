@@ -1,6 +1,6 @@
-extends PanelContainer
+extends MarginContainer
 
-@onready var grid: GridContainer = $VBoxContainer/HistScroll/HistGrid
+@onready var grid: GridContainer = $RunHistorySorting/RunHistoryBG/VBoxContainer/HistScroll/HistGrid
 
 const HEADERS = [
 	"Completion Time",

@@ -5,17 +5,10 @@
 [ext_resource type="Script" uid="uid://bkcnxmbg10j6c" path="res://run_history.gd" id="3_mae5d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
-content_margin_left = 200.0
-content_margin_top = 120.0
-content_margin_right = 250.0
-content_margin_bottom = 120.0
-bg_color = Color(1, 1, 1, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
 border_width_top = 5
@@ -55,40 +48,59 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.5882353)
 
-[node name="RunHistory" type="PanelContainer" parent="." unique_id=1832876778]
-visible = false
+[node name="RunHistory" type="MarginContainer" parent="." unique_id=1831420268]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+theme_override_constants/margin_left = 210
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 250
+theme_override_constants/margin_bottom = 120
 script = ExtResource("3_mae5d")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="RunHistory" unique_id=1210770646]
+[node name="RunHistorySorting" type="VBoxContainer" parent="RunHistory" unique_id=1738411679]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ClearHistory" type="Button" parent="RunHistory/VBoxContainer" unique_id=462889681]
+[node name="Close" type="Button" parent="RunHistory/RunHistorySorting" unique_id=1769784807]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_ouk20")
-text = "Clear History"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
 
-[node name="HistScroll" type="ScrollContainer" parent="RunHistory/VBoxContainer" unique_id=1145369435]
-clip_contents = false
+[node name="RunHistoryBG" type="PanelContainer" parent="RunHistory/RunHistorySorting" unique_id=1832876778]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4hy44")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG" unique_id=1210770646]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HistScroll" type="ScrollContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer" unique_id=1145369435]
+custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 5.8
-theme_override_styles/panel = SubResource("StyleBoxFlat_ytr4m")
 
-[node name="HistGrid" type="GridContainer" parent="RunHistory/VBoxContainer/HistScroll" unique_id=1238952911]
+[node name="HistGrid" type="GridContainer" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer/HistScroll" unique_id=1238952911]
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_constants/h_separation = 40
 columns = 6
 
-[node name="Credits" type="PanelContainer" parent="." unique_id=1158651291]
+[node name="ClearHistory" type="Button" parent="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer" unique_id=462889681]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+text = "Clear History"
+
+[node name="Credits" type="VBoxContainer" parent="." unique_id=624210788]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -96,14 +108,28 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -457.5
-offset_top = -128.5
+offset_top = -152.5
 offset_right = 457.5
-offset_bottom = 128.5
+offset_bottom = 152.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="Credits" unique_id=1454463422]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Close"
+
+[node name="CreditsBG" type="PanelContainer" parent="Credits" unique_id=1158651291]
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
 
-[node name="Label" type="Label" parent="Credits" unique_id=1946741727]
+[node name="Label" type="Label" parent="Credits/CreditsBG" unique_id=1946741727]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
@@ -155,6 +181,7 @@ text = "Welcome to one short day in the life of Jo, a perfectly average person w
 autowrap_mode = 2
 
 [node name="Settings" type="VBoxContainer" parent="." unique_id=138740382]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -357,7 +384,9 @@ size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 text = "Exit"
 
-[connection signal="pressed" from="RunHistory/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
+[connection signal="pressed" from="RunHistory/RunHistorySorting/Close" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="RunHistory/RunHistorySorting/RunHistoryBG/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
+[connection signal="pressed" from="Credits/Close" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="HowTo/Close" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="Settings/Close" to="." method="_on_settings_pressed"]
 [connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
