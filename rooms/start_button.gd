@@ -16,7 +16,7 @@ func _ready() -> void:
 
 func _on_mouse_entered() -> void:
 	if color_accessible:
-		sprite.modulate = Color("00fff2ff")
+		sprite.modulate = Color("00aaffff")
 	else:
 		sprite.modulate = Color(1.3, 1.3, 1.3)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
@@ -25,7 +25,7 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	if color_accessible:
-		sprite.modulate = Color("00b5acff")
+		sprite.modulate = Color("00fff2ff")
 	else:
 		sprite.modulate = Color(1, 1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
@@ -39,7 +39,7 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 
 func enable_accessible_colors(enable: bool):
 	if enable:
-		sprite.modulate = Color("00b5acff")
+		sprite.modulate = Color("00fff2ff")
 		color_accessible = true
 	else:
 		sprite.modulate = Color(1, 1, 1)
