@@ -58,3 +58,12 @@ func _on_menu_open_credits() -> void:
 
 func _play_click_audio():
 	$ClickSound.play()
+
+
+func _on_menu_music_changed(value: float) -> void:
+	$BackgroundMusic.volume_db = linear_to_db(value)
+
+
+func _on_menu_sounds_changed(value: float) -> void:
+	var bus_index = AudioServer.get_bus_index("Sounds")
+	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))

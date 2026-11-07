@@ -207,6 +207,104 @@ theme_override_font_sizes/font_size = 24
 text = "Welcome to one short day in the life of Jo, a perfectly average person working as an analyst at a perfectly average company. Over the course of three phases you'll decide what Jo does with her time by selecting tasks for her to complete. Hover over tasks to see a short description, and click on tasks to complete them, but be careful what you prioritize! Jo only has a set amount of time in her day, which you can see counting down in the top left corner of the screen. It is up to you what her day looks like - will you conquer the office and end the day triumphant, or will you crash and burn in poor Jo's shoes?"
 autowrap_mode = 2
 
+[node name="Settings" type="VBoxContainer" parent="." unique_id=138740382]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -397.5
+offset_top = -259.0
+offset_right = 397.5
+offset_bottom = 259.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Close" type="Button" parent="Settings" unique_id=527880765]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
+text = "Close"
+
+[node name="TextBG" type="PanelContainer" parent="Settings" unique_id=1124940535]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/TextBG" unique_id=1769529423]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=112774506]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[b]SETTINGS[/b]"
+fit_content = true
+autowrap_mode = 2
+
+[node name="AudioSettings" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=80613843]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "AUDIO VOLUME"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Music" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1766980392]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Music" unique_id=8193625]
+custom_maximum_size = Vector2(120, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Music: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MusicVolume" type="HSlider" parent="Settings/TextBG/VBoxContainer/Music" unique_id=1957513314]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+max_value = 3.0
+step = 0.01
+value = 1.0
+
+[node name="Sounds" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1946194523]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Sounds" unique_id=99249786]
+custom_maximum_size = Vector2(120, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Sounds: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="SoundsVolume" type="HSlider" parent="Settings/TextBG/VBoxContainer/Sounds" unique_id=1647936550]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+max_value = 3.0
+step = 0.01
+value = 1.0
+
 [node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
 anchors_preset = 1
 anchor_left = 1.0
@@ -240,18 +338,19 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 
-[node name="Credits" type="Button" parent="MenuControl/MenuList" unique_id=1503253874]
+[node name="Settings" type="Button" parent="MenuControl/MenuList" unique_id=1787119575]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
-text = "Credits"
+text = "Settings"
 
-[node name="Exit" type="Button" parent="MenuControl/MenuList" unique_id=1550480109]
+[node name="HowTo" type="Button" parent="MenuControl/MenuList" unique_id=706626614]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
-text = "Exit"
+theme_override_font_sizes/font_size = 24
+text = "How To"
 
 [node name="History" type="Button" parent="MenuControl/MenuList" unique_id=53574238]
 layout_mode = 2
@@ -260,12 +359,12 @@ theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Game History"
 
-[node name="HowTo" type="Button" parent="MenuControl/MenuList" unique_id=706626614]
+[node name="Credits" type="Button" parent="MenuControl/MenuList" unique_id=1503253874]
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
-text = "How To"
+text = "Credits"
 
 [node name="Restart" type="Button" parent="MenuControl/MenuList" unique_id=716019636]
 layout_mode = 2
@@ -281,12 +380,22 @@ theme = ExtResource("2_ouk20")
 theme_override_font_sizes/font_size = 24
 text = "Title"
 
+[node name="Exit" type="Button" parent="MenuControl/MenuList" unique_id=1550480109]
+layout_mode = 2
+size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
+text = "Exit"
+
 [connection signal="pressed" from="RunHistory/VBoxContainer/ClearHistory" to="." method="_on_clear_history_pressed"]
 [connection signal="pressed" from="HowTo/Close" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="Settings/Close" to="." method="_on_settings_pressed"]
+[connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Sounds/SoundsVolume" to="." method="_on_sounds_volume_value_changed"]
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
-[connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="MenuControl/MenuList/History" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/HowTo" to="." method="_on_how_to_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/History" to="." method="_on_history_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Title" to="." method="_on_title_pressed"]
+[connection signal="pressed" from="MenuControl/MenuList/Exit" to="." method="_on_exit_pressed"]

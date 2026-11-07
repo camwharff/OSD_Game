@@ -3,6 +3,8 @@ extends CanvasLayer
 signal new_game
 signal to_title
 signal click_sound
+signal music_changed(value: float)
+signal sounds_changed(value: float)
 
 
 func _on_menu_pressed() -> void:
@@ -30,27 +32,18 @@ func _on_title_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	click_sound.emit()
-	$RunHistory.hide()
-	$HowTo.hide()
 	if $Credits.visible:
-		$Credits.hide()
-		$DimBG.hide()
+		_show_menu_window($Credits, false)
 	else:
-		$Credits.show()
-		$DimBG.show()
+		_show_menu_window($Credits, true)
 
 
 func _on_history_pressed() -> void:
 	click_sound.emit()
-	$Credits.hide()
-	$HowTo.hide()
-	$RunHistory.show_runs()
 	if $RunHistory.visible:
-		$RunHistory.hide()
-		$DimBG.hide()
+		_show_menu_window($RunHistory, false)
 	else:
-		$RunHistory.show()
-		$DimBG.show()
+		_show_menu_window($RunHistory, true)
 
 
 func _input(event: InputEvent) -> void:
@@ -71,11 +64,35 @@ func _on_clear_history_pressed() -> void:
 
 func _on_how_to_pressed() -> void:
 	click_sound.emit()
+	if $HowTo.visible:
+		_show_menu_window($HowTo, false)
+	else:
+		_show_menu_window($HowTo, true)
+
+
+func _on_settings_pressed() -> void:
+	click_sound.emit()
+	if $Settings.visible:
+		_show_menu_window($Settings, false)
+	else:
+		_show_menu_window($Settings, true)
+
+
+func _show_menu_window(window: Control, enable: bool):
+	$HowTo.hide()
 	$Credits.hide()
 	$RunHistory.hide()
-	if $HowTo.visible:
-		$HowTo.hide()
-		$DimBG.hide()
-	else:
-		$HowTo.show()
+	$Settings.hide()
+	if enable:
+		window.show()
 		$DimBG.show()
+	else:
+		$DimBG.hide()
+
+
+func _on_music_volume_value_changed(value: float) -> void:
+	music_changed.emit(value)
+
+
+func _on_sounds_volume_value_changed(value: float) -> void:
+	sounds_changed.emit(value)
