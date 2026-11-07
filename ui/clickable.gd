@@ -24,6 +24,7 @@ var enable = false
 var complete = false
 var is_done = false
 var in_phase = false
+var color_accessible = false
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -31,19 +32,26 @@ var in_phase = false
 
 func _ready() -> void:
 	add_to_group("tasks")
+	add_to_group("clickables")
 
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 
 
 func _on_mouse_entered() -> void:
-	sprite.modulate = Color(1.3, 1.3, 1.3) # brighten sprite
+	if color_accessible:
+		sprite.modulate = Color("00aaffff")
+	else:
+		sprite.modulate = Color(1.3, 1.3, 1.3)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	hover.emit(hover_message, true)
 
 
 func _on_mouse_exited() -> void:
-	sprite.modulate = Color(1, 1, 1) # dim sprite
+	if color_accessible:
+		sprite.modulate = Color("00fff2ff")
+	else:
+		sprite.modulate = Color(1, 1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	#hover.emit(hover_message, false)
 
@@ -60,3 +68,12 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 func complete_task() -> void:
 	is_done = true
 	complete = true
+
+
+func enable_accessible_colors(enable_access: bool):
+	if enable_access:
+		sprite.modulate = Color("00fff2ff")
+		color_accessible = true
+	else:
+		sprite.modulate = Color(1, 1, 1)
+		color_accessible = false

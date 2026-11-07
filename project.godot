@@ -45,6 +45,7 @@ tasks=""
 Afternoon=""
 Dawn=""
 Morning=""
+clickables=""
 
 [input]
 

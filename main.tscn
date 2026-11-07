@@ -71,6 +71,7 @@ script = ExtResource("6_7mycd")
 [connection signal="go_to_title" from="HUD" to="." method="_on_to_title"]
 [connection signal="new_game" from="HUD" to="." method="_on_new_game"]
 [connection signal="click_sound" from="Menu" to="." method="_play_click_audio"]
+[connection signal="color_access" from="Menu" to="." method="_on_menu_color_access"]
 [connection signal="music_changed" from="Menu" to="." method="_on_menu_music_changed"]
 [connection signal="new_game" from="Menu" to="." method="_on_new_game"]
 [connection signal="sounds_changed" from="Menu" to="." method="_on_menu_sounds_changed"]

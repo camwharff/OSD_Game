@@ -124,3 +124,23 @@ func _show_component(node):
 	for child in get_children():
 		child.hide()
 	node.show()
+
+
+func make_color_accessible(enable: bool):
+	var all_buttons: Array[Button] = []
+	get_all_buttons(self, all_buttons)
+	var t
+	if enable:
+		t = load("res://resources/style_theme_accessible.tres")
+	else:
+		t = load("res://resources/style_theme.tres")
+	for button in all_buttons:
+		button.theme = t
+
+
+func get_all_buttons(root: Node, button_list: Array[Button]):
+	if root is Button:
+		button_list.append(root)
+
+	for child in root.get_children():
+		get_all_buttons(child, button_list)

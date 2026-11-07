@@ -11,38 +11,6 @@ content_margin_right = 250.0
 content_margin_bottom = 120.0
 bg_color = Color(1, 1, 1, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lti8b"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8720001, 0.04000002, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mae5d"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(1, 0.78431374, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(1, 0.050980393, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ytr4m"]
 content_margin_left = 20.0
 content_margin_top = 20.0
@@ -70,22 +38,6 @@ border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
 border_color = Color(1, 0, 0, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ouk20"]
-content_margin_left = 15.0
-content_margin_top = 5.0
-content_margin_right = 15.0
-content_margin_bottom = 5.0
-bg_color = Color(0.8352941, 0.6039216, 0.87058824, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.8720001, 0.04000002, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
@@ -121,9 +73,6 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 0
 theme = ExtResource("2_ouk20")
-theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
 text = "Clear History"
 
 [node name="HistScroll" type="ScrollContainer" parent="RunHistory/VBoxContainer" unique_id=1145369435]
@@ -187,13 +136,11 @@ theme_override_constants/separation = 10
 [node name="Close" type="Button" parent="HowTo" unique_id=397566798]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
 text = "Close"
 
 [node name="TextBG" type="PanelContainer" parent="HowTo" unique_id=29795059]
@@ -224,13 +171,11 @@ theme_override_constants/separation = 10
 [node name="Close" type="Button" parent="Settings" unique_id=527880765]
 layout_mode = 2
 size_flags_horizontal = 0
+theme = ExtResource("2_ouk20")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
 text = "Close"
 
 [node name="TextBG" type="PanelContainer" parent="Settings" unique_id=1124940535]
@@ -305,6 +250,34 @@ max_value = 3.0
 step = 0.01
 value = 1.0
 
+[node name="Accessibility" type="RichTextLabel" parent="Settings/TextBG/VBoxContainer" unique_id=1354806856]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "ACCESSIBILITY"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Color" type="HBoxContainer" parent="Settings/TextBG/VBoxContainer" unique_id=1441563439]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Settings/TextBG/VBoxContainer/Color" unique_id=2009727606]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Blue Colorblind Friendly: "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ColorAccessibility" type="CheckButton" parent="Settings/TextBG/VBoxContainer/Color" unique_id=1028309092]
+layout_mode = 2
+size_flags_horizontal = 2
+
 [node name="MenuControl" type="VBoxContainer" parent="." unique_id=31572163]
 anchors_preset = 1
 anchor_left = 1.0
@@ -321,14 +294,12 @@ theme_override_constants/separation = 10
 [node name="Menu" type="Button" parent="MenuControl" unique_id=1604634769]
 layout_mode = 2
 size_flags_horizontal = 8
+theme = ExtResource("2_ouk20")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_lti8b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ouk20")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mae5d")
 text = "Menu"
 
 [node name="MenuList" type="VBoxContainer" parent="MenuControl" unique_id=794847343]
@@ -391,6 +362,7 @@ text = "Exit"
 [connection signal="pressed" from="Settings/Close" to="." method="_on_settings_pressed"]
 [connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Music/MusicVolume" to="." method="_on_music_volume_value_changed"]
 [connection signal="value_changed" from="Settings/TextBG/VBoxContainer/Sounds/SoundsVolume" to="." method="_on_sounds_volume_value_changed"]
+[connection signal="toggled" from="Settings/TextBG/VBoxContainer/Color/ColorAccessibility" to="." method="_on_color_accessibility_toggled"]
 [connection signal="pressed" from="MenuControl/Menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MenuControl/MenuList/HowTo" to="." method="_on_how_to_pressed"]

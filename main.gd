@@ -67,3 +67,11 @@ func _on_menu_music_changed(value: float) -> void:
 func _on_menu_sounds_changed(value: float) -> void:
 	var bus_index = AudioServer.get_bus_index("Sounds")
 	AudioServer.set_bus_volume_db(bus_index, linear_to_db(value))
+
+
+func _on_menu_color_access(toggled_on: bool) -> void:
+	for n in get_tree().get_nodes_in_group("clickables"):
+		n.enable_accessible_colors(toggled_on)
+
+	$HUD.make_color_accessible(toggled_on)
+	$Menu.make_color_accessible(toggled_on)

@@ -5,6 +5,7 @@ signal to_title
 signal click_sound
 signal music_changed(value: float)
 signal sounds_changed(value: float)
+signal color_access(toggled_on: bool)
 
 
 func _on_menu_pressed() -> void:
@@ -40,9 +41,11 @@ func _on_credits_pressed() -> void:
 
 func _on_history_pressed() -> void:
 	click_sound.emit()
+	$RunHistory.show_runs()
 	if $RunHistory.visible:
 		_show_menu_window($RunHistory, false)
 	else:
+		$RunHistory.show_runs()
 		_show_menu_window($RunHistory, true)
 
 
@@ -96,3 +99,27 @@ func _on_music_volume_value_changed(value: float) -> void:
 
 func _on_sounds_volume_value_changed(value: float) -> void:
 	sounds_changed.emit(value)
+
+
+func _on_color_accessibility_toggled(toggled_on: bool) -> void:
+	color_access.emit(toggled_on)
+
+
+func make_color_accessible(enable: bool):
+	var all_buttons: Array[Button] = []
+	get_all_buttons(self, all_buttons)
+	var t
+	if enable:
+		t = load("res://resources/menu_button_accessible.tres")
+	else:
+		t = load("res://resources/menu_button.tres")
+	for button in all_buttons:
+		button.theme = t
+
+
+func get_all_buttons(root: Node, button_list: Array[Button]):
+	if root is Button:
+		button_list.append(root)
+
+	for child in root.get_children():
+		get_all_buttons(child, button_list)
