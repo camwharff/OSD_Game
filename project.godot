@@ -33,6 +33,8 @@ RunManager="*uid://cey6lkxsgfc5q"
 
 window/size/viewport_width=1458
 window/size/viewport_height=820
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

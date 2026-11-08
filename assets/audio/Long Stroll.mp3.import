@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Long Stroll.mp3-dfb87b1794a2aab9b62a29d248045
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

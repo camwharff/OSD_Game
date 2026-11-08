@@ -46,6 +46,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="HUD" type="CanvasLayer" unique_id=1066121775]
+follow_viewport_enabled = true
 script = ExtResource("1_37p78")
 
 [node name="DimBG" type="ColorRect" parent="." unique_id=1509859401]

@@ -15,6 +15,7 @@ var satisfaction: int = 0
 var performance: int = 0
 var carryover: int = 0
 var current_phase = 0
+var extra_time = 0
 
 var completed: Dictionary = { }
 var tasks: Dictionary = { }
@@ -77,9 +78,10 @@ func _init_task_availabilities():
 
 
 func start_phase(phase: Phase):
-	time_left = phase.time_limit + carryover
+	time_left = phase.time_limit + carryover + extra_time
 	time_max = time_left
 	carryover = 0
+	extra_time = 0
 	stats_changed.emit()
 	_enable_phase_tasks(phase.phase_name)
 
@@ -100,6 +102,7 @@ func apply_task(current_task: Clickable) -> void:
 	energy += current_task.energy_change
 	satisfaction += current_task.satisfaction_change
 	performance += current_task.performance_change
+	carryover += current_task.carryover_change
 	stats_changed.emit()
 
 	completed[current_task.task_name] = true
@@ -108,12 +111,12 @@ func apply_task(current_task: Clickable) -> void:
 		for task in dependencies[current_task.task_name]:
 			_update_availability(tasks[task])
 
-	# TODO: Fix this to only update availability for time sensitive tasks
+	# TODO: Fix this to only update availability for time sensitive tasks, saves unnecessary checking
 	for task in tasks.values():
 		_update_availability(task)
 
 	if current_task.early_exit:
-		carryover = time_left
+		extra_time = time_left
 		time_left = 0
 
 	if time_left <= 0:
@@ -156,6 +159,10 @@ func time_out():
 	if current_phase >= LAST_PHASE:
 		var stats = normalize_stats()
 		game_end.emit()
+
+		var high_three = stats.duplicate()
+		high_three.erase(high_three.min())
+
 		RunManager.add_run(
 			{
 				"timestamp": Time.get_unix_time_from_system(),
@@ -163,7 +170,12 @@ func time_out():
 				"performance": stats[1],
 				"satisfaction": stats[2],
 				"tidiness": stats[3],
-				"total": (stats[0] + stats[1] + stats[2] + stats[3]) / 4,
+				"total": high_three.reduce(
+					func(accum, num):
+						return accum + num,
+					0,
+				)
+				/ 3,
 			}
 		)
 	else:
@@ -172,8 +184,8 @@ func time_out():
 
 func normalize_stats() -> Array[int]:
 	return [
-		int(floor(((energy + 26) / 54.0) * 100)),
-		int(floor(((performance + 11) / 53.0) * 100)),
-		int(floor(((satisfaction + 5) / 42.0) * 100)),
-		int(floor(((tidiness + 15) / 32.0) * 100)),
+		clampi(100 * ((energy + 7) / 25.0), 0, 100),
+		clampi(100 * ((performance - 8) / 22.0), 0, 100),
+		clampi(100 * ((satisfaction - 9) / 17.0), 0, 100),
+		clampi(100 * ((tidiness + 4) / 16.0), 0, 100),
 	]

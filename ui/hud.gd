@@ -41,16 +41,20 @@ func _hud_setup():
 
 func _on_phase_end() -> void:
 	var normed_stats = GameState.normalize_stats()
+
+	var high_three = normed_stats.duplicate()
+	high_three.erase(high_three.min())
+
 	$PhaseFlash/Content/Stats/ExtraTime/ExtraTime.text = str(
-		GameState.carryover
-	)
+		GameState.extra_time
+	) + " (+ " + str(GameState.carryover) + ")"
 	$PhaseFlash/Content/Stats/Score/Score.text = str(
-		normed_stats.reduce(
+		high_three.reduce(
 			func(accum, num):
 				return accum + num,
 			0,
 		)
-		/ 4
+		/ 3
 	) + "/100"
 	_show_component($PhaseFlash)
 	$DimBG.show()
@@ -81,13 +85,17 @@ func _on_advance_button_pressed() -> void:
 
 func _on_game_end():
 	var normed_stats = GameState.normalize_stats()
+
+	var high_three = normed_stats.duplicate()
+	high_three.erase(high_three.min())
+
 	final_score.text = str(
-		normed_stats.reduce(
+		high_three.reduce(
 			func(accum, num):
 				return accum + num,
 			0,
 		)
-		/ 4
+		/ 3
 	) + "/100"
 	final_energy.text = str(normed_stats[0]) + "/100"
 	final_perf.text = str(normed_stats[1]) + "/100"

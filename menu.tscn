@@ -37,6 +37,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="Menu" type="CanvasLayer" unique_id=1192830433]
+follow_viewport_enabled = true
 script = ExtResource("1_lti8b")
 
 [node name="DimBG" type="ColorRect" parent="." unique_id=1123136157]
@@ -134,7 +135,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_l48gv")
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
-text = "Created by Camille Wharff
+text = "Created by camilles-corner.itch.io
 Background Music:
 \"Long Stroll\" Kevin MacLeod (incompetech.com)
 Licensed under Creative Commons: By Attribution 4.0
@@ -383,6 +384,7 @@ theme_override_font_sizes/font_size = 24
 text = "Title"
 
 [node name="Exit" type="Button" parent="MenuControl/MenuList" unique_id=1550480109]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 theme = ExtResource("2_ouk20")

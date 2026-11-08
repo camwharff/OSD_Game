@@ -51,8 +51,7 @@ func _work_text():
 				s += "After work you went out for dinner with your coworkers. "
 				if GameState.completed["socialize-manager"]:
 					s += "Even your manager came! "
-
-	if GameState.completed["present"]:
+	elif GameState.completed["present"]:
 		if GameState.completed["call-mom"]:
 			s += "You told your mom about your day over a nice dinner. "
 			if GameState.completed["respond-groupchat"]:
@@ -63,8 +62,8 @@ func _work_text():
 			s += "After work you went out for dinner with your coworkers. "
 			if GameState.completed["socialize-manager"]:
 				s += "Even your manager came! "
-	elif not GameState.completed["present"]:
-		s += "At the end of the day your manager called you over and berated you in front of everyone for skipping the big presentation. "
+	else:
+		s += "At the end of the day your manager called you over and berated you in front of everyone for skipping the big presentation that she messaged you about. "
 		if performance < 10:
 			s += "Unfortunately, your performance at work was not enough to save you and she fired you on the spot. "
 			if GameState.completed["respond-groupchat"]:
