@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://exrp2u2kl0n0" path="res://ui/hud.gd" id="1_37p78"]
 [ext_resource type="Theme" uid="uid://cd28cejhwjqxe" path="res://resources/style_theme.tres" id="2_276te"]
+[ext_resource type="Texture2D" uid="uid://8xxvsv68avfj" path="res://assets/icons/clock.png" id="3_7ihmi"]
+[ext_resource type="Texture2D" uid="uid://b53fb14tjquc" path="res://assets/icons/arrow.png" id="4_en2x2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdpi0"]
 content_margin_left = 60.0
@@ -301,7 +303,6 @@ shortcut_in_tooltip = false
 text = "Quit To Title"
 
 [node name="Display" type="GridContainer" parent="." unique_id=217778712]
-visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 682.0
@@ -409,12 +410,44 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="HoverText" type="Label" parent="Display" unique_id=1857968969]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 2
 theme = ExtResource("2_276te")
 text = "Hover Text"
 vertical_alignment = 1
+
+[node name="Icons" type="VBoxContainer" parent="Display" unique_id=612108364]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="UpIcon" type="HBoxContainer" parent="Display/Icons" unique_id=1825638027]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="Display/Icons/UpIcon" unique_id=1306673132]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_7ihmi")
+
+[node name="Arrow" type="TextureRect" parent="Display/Icons/UpIcon" unique_id=1213523052]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_en2x2")
+
+[node name="DownIcon" type="HBoxContainer" parent="Display/Icons" unique_id=481131932]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="Display/Icons/DownIcon" unique_id=1263929457]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("3_7ihmi")
+
+[node name="Arrow" type="TextureRect" parent="Display/Icons/DownIcon" unique_id=1727407567]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("4_en2x2")
+flip_v = true
 
 [connection signal="pressed" from="PhaseFlash/AdvanceButton" to="." method="_on_advance_button_pressed"]
 [connection signal="pressed" from="EndScreen/Buttons/Restart" to="." method="_on_restart_pressed"]
