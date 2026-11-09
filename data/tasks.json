@@ -1,0 +1,1283 @@
+[
+	{
+		"feed-cat": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#66119010195>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": true,
+			"energy_change": -1,
+			"hover_message": "Feed cat",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#66068678544>",
+			"task_name": "feed-cat",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"clean-litter": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#66270005147>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": true,
+			"energy_change": -1,
+			"hover_message": "Clean cat's litter box",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 0,
+			"sprite": "Sprite2D:<Sprite2D#66219673496>",
+			"task_name": "clean-litter",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"check-calendar": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#66421000099>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 3,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "satisfaction",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Organize your schedule",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": -2,
+			"sprite": "Sprite2D:<Sprite2D#66370668448>",
+			"task_name": "check-calendar",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "time"
+		}
+	},
+	{
+		"leave-early": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#66672658352>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": true,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Go to work early",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": -1,
+			"sprite": "Sprite2D:<Sprite2D#66622326701>",
+			"task_name": "leave-early",
+			"tidiness_change": 0,
+			"time_cost": 0,
+			"up_icon": "time"
+		}
+	},
+	{
+		"make-bed": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#66840430521>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Make bed",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#66790098870>",
+			"task_name": "make-bed",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"pet-cat": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#67276638162>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": true,
+			"energy_change": 2,
+			"hover_message": "Pet cat",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [
+				"clean-litter",
+				"feed-cat"
+			],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#67226306511>",
+			"task_name": "pet-cat",
+			"tidiness_change": -1,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"fold-clothes": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#67427633114>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Fold laundry",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#67377301463>",
+			"task_name": "fold-clothes",
+			"tidiness_change": 2,
+			"time_cost": 1,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"espresso": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#67561850849>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Have a coffee",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 0,
+			"sprite": "Sprite2D:<Sprite2D#67511519198>",
+			"task_name": "espresso",
+			"tidiness_change": -2,
+			"time_cost": 1,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"eat-breakfast": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#67779954669>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 3,
+			"hover_message": "Have breakfast",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#67729623018>",
+			"task_name": "eat-breakfast",
+			"tidiness_change": -3,
+			"time_cost": 2,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"doomscroll": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#67897395187>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": -1,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 1,
+			"hover_message": "Doomscroll",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -2,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#67847063536>",
+			"task_name": "doomscroll",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"watch-news": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68014835705>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "satisfaction",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Check the news",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 2,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": -2,
+			"sprite": "Sprite2D:<Sprite2D#67964504054>",
+			"task_name": "watch-news",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"sleep-in": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68132276223>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 0,
+			"ending_flag": false,
+			"energy_change": 3,
+			"hover_message": "Sleep in",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#68081944572>",
+			"task_name": "sleep-in",
+			"tidiness_change": -1,
+			"time_cost": 2,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"call-mom": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68266493958>",
+			"begin": 3,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": true,
+			"energy_change": 1,
+			"hover_message": "Talk to mom",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 3,
+			"sprite": "Sprite2D:<Sprite2D#68216162307>",
+			"task_name": "call-mom",
+			"tidiness_change": 0,
+			"time_cost": 2,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"Mirror": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68484597778>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Do hair and makeup",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#68434266127>",
+			"task_name": "Mirror",
+			"tidiness_change": 2,
+			"time_cost": 2,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"Shower": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68786587683>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Shower",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#68736256032>",
+			"task_name": "Shower",
+			"tidiness_change": 3,
+			"time_cost": 2,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"Toothbrush": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#68987914286>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Brush Teeth",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Dawn"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#68937582635>",
+			"task_name": "Toothbrush",
+			"tidiness_change": 2,
+			"time_cost": 1,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"snack": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#69340235841>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Get a snack",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 0,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": true,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#69289904190>",
+			"task_name": "snack",
+			"tidiness_change": -1,
+			"time_cost": 1,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"break": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#69524785227>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Take a load off",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 3,
+			"sprite": "Sprite2D:<Sprite2D#69474453576>",
+			"task_name": "break",
+			"tidiness_change": 0,
+			"time_cost": 2,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"coffee": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#69709334613>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Have a coffee",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": true,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#69659002962>",
+			"task_name": "coffee",
+			"tidiness_change": -1,
+			"time_cost": 1,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"cold-lunch": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#69826775131>",
+			"begin": 0,
+			"blocked_by": [
+				"hot-lunch"
+			],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 3,
+			"hover_message": "Have a cold lunch",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#69776443480>",
+			"task_name": "cold-lunch",
+			"tidiness_change": -1,
+			"time_cost": 2,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"hot-lunch": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#69944215649>",
+			"begin": 0,
+			"blocked_by": [
+				"cold-lunch"
+			],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 5,
+			"hover_message": "Have a hot lunch",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 3,
+			"sprite": "Sprite2D:<Sprite2D#69893883998>",
+			"task_name": "hot-lunch",
+			"tidiness_change": -2,
+			"time_cost": 4,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"watercooler": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70061656167>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Water cooler chat",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -2,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#70011324516>",
+			"task_name": "watercooler",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"email": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70380423288>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "satisfaction",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Check your email",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": -2,
+			"sprite": "Sprite2D:<Sprite2D#70330091637>",
+			"task_name": "email",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"respond-groupchat": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70531418240>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 0,
+			"hover_message": "Respond to the groupchat",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 3,
+			"sprite": "Sprite2D:<Sprite2D#70481086589>",
+			"task_name": "respond-groupchat",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"respond-manager": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70648858758>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "satisfaction",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Check message from manager",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": -2,
+			"sprite": "Sprite2D:<Sprite2D#70598527107>",
+			"task_name": "respond-manager",
+			"tidiness_change": 1,
+			"time_cost": 1,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"refine-presentation": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70766299276>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Polish your presentation",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 2,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [
+				"create-presentation"
+			],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#70715967625>",
+			"task_name": "refine-presentation",
+			"tidiness_change": 2,
+			"time_cost": 2,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"create-presentation": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#70883739794>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Create your presentation",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [
+				"respond-manager"
+			],
+			"repeatable": false,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#70833408143>",
+			"task_name": "create-presentation",
+			"tidiness_change": -1,
+			"time_cost": 3,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"present": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#71168952481>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -3,
+			"hover_message": "Give presentation to CEO",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 5,
+			"phases": [
+				"Afternoon"
+			],
+			"prereqs": [
+				"respond-manager"
+			],
+			"repeatable": false,
+			"satisfaction_change": 4,
+			"sprite": "Sprite2D:<Sprite2D#71118620830>",
+			"task_name": "present",
+			"tidiness_change": 0,
+			"time_cost": 6,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"socialize-coworker": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#71571605686>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Chat with your coworker",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#71521274035>",
+			"task_name": "socialize-coworker",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "energy"
+		}
+	},
+	{
+		"leave-work-early": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#71689046204>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": true,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 2,
+			"hover_message": "Leave work early",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -3,
+			"phases": [
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#71638714553>",
+			"task_name": "leave-work-early",
+			"tidiness_change": 0,
+			"time_cost": 0,
+			"up_icon": "time"
+		}
+	},
+	{
+		"long-lunch": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#71890372807>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "performance",
+			"early_exit": true,
+			"enable": false,
+			"end": 100,
+			"ending_flag": true,
+			"energy_change": 6,
+			"hover_message": "Go for a long lunch",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": -4,
+			"phases": [
+				"Morning"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 5,
+			"sprite": "Sprite2D:<Sprite2D#71840041156>",
+			"task_name": "long-lunch",
+			"tidiness_change": -1,
+			"time_cost": 0,
+			"up_icon": "time"
+		}
+	},
+	{
+		"organize-files": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72091699410>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Organize files",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": true,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#72041367759>",
+			"task_name": "organize-files",
+			"tidiness_change": 2,
+			"time_cost": 2,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"socialize-manager": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72225917145>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 0,
+			"hover_message": "Chat with your manager",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Morning"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72175585494>",
+			"task_name": "socialize-manager",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"presentation-debrief": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72343357663>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Debrief about your presentation",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 2,
+			"phases": [
+				"Afternoon"
+			],
+			"prereqs": [
+				"present"
+			],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72293026012>",
+			"task_name": "presentation-debrief",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"tidy-desk": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72460798181>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Clean your desk",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": true,
+			"satisfaction_change": 1,
+			"sprite": "Sprite2D:<Sprite2D#72410466530>",
+			"task_name": "tidy-desk",
+			"tidiness_change": 3,
+			"time_cost": 2,
+			"up_icon": "tidiness"
+		}
+	},
+	{
+		"practice-presentation": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72578238699>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Practice giving your presentation",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [
+				"create-presentation"
+			],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72527907048>",
+			"task_name": "practice-presentation",
+			"tidiness_change": -1,
+			"time_cost": 3,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"write-proposal": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72746010868>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 0,
+			"hover_message": "Turn your ideas into a proposal",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 2,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [
+				"refine-ideas"
+			],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72695679217>",
+			"task_name": "write-proposal",
+			"tidiness_change": -1,
+			"time_cost": 2,
+			"up_icon": "performance"
+		}
+	},
+	{
+		"refine-ideas": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72863451386>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "time",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -1,
+			"hover_message": "Refine your ideas",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 2,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [
+				"jot-idea"
+			],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72813119735>",
+			"task_name": "refine-ideas",
+			"tidiness_change": 0,
+			"time_cost": 2,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"jot-idea": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#72980891904>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "tidiness",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": 0,
+			"hover_message": "Jot down some ideas",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 1,
+			"phases": [
+				"Morning",
+				"Afternoon"
+			],
+			"prereqs": [],
+			"repeatable": false,
+			"satisfaction_change": 2,
+			"sprite": "Sprite2D:<Sprite2D#72930560253>",
+			"task_name": "jot-idea",
+			"tidiness_change": -1,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	},
+	{
+		"pitch-manager": {
+			"audio": "AudioStreamPlayer2D:<AudioStreamPlayer2D#73098332422>",
+			"begin": 0,
+			"blocked_by": [],
+			"carryover_change": 0,
+			"color_accessible": false,
+			"complete": false,
+			"down_icon": "energy",
+			"early_exit": false,
+			"enable": false,
+			"end": 100,
+			"ending_flag": false,
+			"energy_change": -2,
+			"hover_message": "Pitch your ideas to your manager",
+			"in_phase": false,
+			"is_done": false,
+			"performance_change": 3,
+			"phases": [
+				"Afternoon"
+			],
+			"prereqs": [
+				"jot-idea"
+			],
+			"repeatable": false,
+			"satisfaction_change": 3,
+			"sprite": "Sprite2D:<Sprite2D#73048000771>",
+			"task_name": "pitch-manager",
+			"tidiness_change": 0,
+			"time_cost": 1,
+			"up_icon": "satisfaction"
+		}
+	}
+]

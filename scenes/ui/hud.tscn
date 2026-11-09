@@ -428,6 +428,7 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 
 [node name="HoverBox" type="PanelContainer" parent="Display" unique_id=393994671]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_6trje")

@@ -32,7 +32,6 @@ func setup():
 	_init_phase_groups()
 	_build_dependencies()
 	_init_task_availabilities()
-
 	setup_complete.emit()
 
 
@@ -58,6 +57,7 @@ func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
 		completed[task.task_name] = false
 		tasks[task.task_name] = task
+	save_task_data()
 
 
 func _init_phase_groups():
@@ -189,3 +189,18 @@ func normalize_stats() -> Array[int]:
 		clampi(100 * ((satisfaction - 9) / 17.0), 0, 100),
 		clampi(100 * ((tidiness + 4) / 16.0), 0, 100),
 	]
+
+
+func save_task_data():
+	var file = FileAccess.open("res://data/tasks.json", FileAccess.WRITE)
+	var data = []
+
+	for task in get_tree().get_nodes_in_group("tasks"):
+		var task_data: Dictionary = { }
+		for prop in task.get_property_list():
+			if prop["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE:
+				task_data.get_or_add(prop["name"], task.get(prop["name"]))
+		data.append({ task.task_name: task_data })
+
+	if file:
+		file.store_string(JSON.stringify(data, "\t"))

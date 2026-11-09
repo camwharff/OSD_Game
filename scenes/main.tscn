@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpv6j0tvx13cq" path="res://scenes/rooms/apartment.tscn" id="5_kek77"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="5_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://dnqmjllxntkhn" path="res://scenes/rooms/bathroom.tscn" id="6_4c57u"]
-[ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://scripts/rooms.gd" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://dxm02c3m8c5gf" path="res://rooms.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://btw2q168uxdwv" path="res://scenes/rooms/breakroom.tscn" id="7_efxa6"]
 [ext_resource type="PackedScene" uid="uid://c6l4qi1wfq5ft" path="res://scenes/rooms/computer.tscn" id="8_dg77c"]
 [ext_resource type="PackedScene" uid="uid://cbrto2q4mp3bh" path="res://scenes/rooms/office.tscn" id="9_ycdy4"]
