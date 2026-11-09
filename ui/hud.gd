@@ -11,13 +11,19 @@ signal click_sound
 @onready var sat_text = $Display/Scores/ScoreGrid/Satisfaction/Score
 @onready var perf_text = $Display/Scores/ScoreGrid/Performance/Score
 @onready var tidy_text = $Display/Scores/ScoreGrid/Tidiness/Score
-@onready var hover_text: Label = $Display/HoverText
+
+@onready var hover_box: Control = $Display/HoverBox
+
+@onready var hover_text: Label = $Display/HoverBox/HoverCols/HoverText
 @onready var final_score: Label = $EndScreen/StatsBG/Stats/TotalScore/Score
 @onready var final_energy: Label = $EndScreen/StatsBG/Stats/FinalStats/Energy/Score
 @onready var final_sat: Label = $EndScreen/StatsBG/Stats/FinalStats/Satisfaction/Score
 @onready var final_perf: Label = $EndScreen/StatsBG/Stats/FinalStats/Performance/Score
 @onready var final_tidy: Label = $EndScreen/StatsBG/Stats/FinalStats/Tidiness/Score
 @onready var final_description: Label = $EndScreen/StatsBG/Stats/Description
+
+@onready var up_icon: TextureRect = $Display/HoverBox/HoverCols/UpIcon/Icon
+@onready var down_icon: TextureRect = $Display/HoverBox/HoverCols/DownIcon/Icon
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,6 +32,15 @@ func _ready():
 	GameState.phase_end.connect(_on_phase_end)
 	GameState.game_end.connect(_on_game_end)
 	GameState.setup_complete.connect(_hud_setup)
+
+
+var icons: Dictionary = {
+	"clock": load("res://assets/icons/clock.png"),
+	"graph": load("res://assets/icons/graph.png"),
+	"sleep": load("res://assets/icons/sleep.png"),
+	"smile": load("res://assets/icons/smile.png"),
+	"trash": load("res://assets/icons/trash.png"),
+}
 
 
 func _hud_setup():
@@ -68,12 +83,14 @@ func _update_hud() -> void:
 	tidy_text.text = str(GameState.tidiness)
 
 
-func _hover_handler(message: String, enable: bool):
+func _hover_handler(message: String, up: String, down: String, enable: bool):
 	if enable:
 		hover_text.text = message
-		hover_text.show()
+		up_icon.texture = icons[up]
+		down_icon.texture = icons[down]
+		hover_box.show()
 	else:
-		hover_text.hide()
+		hover_box.hide()
 
 
 func _on_advance_button_pressed() -> void:
