@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsxvo881uhg3b"]
 
-[ext_resource type="Script" uid="uid://i7gbeaf127dr" path="res://ui/portal.gd" id="1_0r486"]
+[ext_resource type="Script" uid="uid://i7gbeaf127dr" path="res://scenes/ui/portal.gd" id="1_0r486"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="2_rvqk2"]
 
 [node name="Portal" type="Area2D" unique_id=184511040]

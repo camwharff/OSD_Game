@@ -25,7 +25,7 @@ buses/default_bus_layout="uid://b0gfk1tfqoe8l"
 
 [autoload]
 
-GameState="*res://game_state.gd"
+GameState="*res://scripts/game_state.gd"
 Endings="*uid://badkmj8y8ak8x"
 RunManager="*uid://cey6lkxsgfc5q"
 

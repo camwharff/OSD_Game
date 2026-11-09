@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dpv6j0tvx13cq"]
 
-[ext_resource type="Script" uid="uid://ow8nxno5jvix" path="res://rooms/apartment.gd" id="1_y78ir"]
+[ext_resource type="Script" uid="uid://ow8nxno5jvix" path="res://scenes/rooms/apartment.gd" id="1_y78ir"]
 [ext_resource type="Texture2D" uid="uid://1xvvv1t0plmg" path="res://assets/apartment/background.png" id="2_hq0fg"]
-[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://ui/clickable.tscn" id="2_j0ocu"]
-[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://ui/portal.tscn" id="3_j0ocu"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://scenes/ui/clickable.tscn" id="2_j0ocu"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://scenes/ui/portal.tscn" id="3_j0ocu"]
 [ext_resource type="Texture2D" uid="uid://wii58yktdppq" path="res://assets/apartment/cell.png" id="4_bv14x"]
 [ext_resource type="Texture2D" uid="uid://4qtcfyjmyjkc" path="res://assets/apartment/phone.png" id="4_irbrm"]
 [ext_resource type="Texture2D" uid="uid://debfkwqwr6w40" path="res://assets/apartment/food.png" id="4_ks0ae"]
@@ -238,7 +238,6 @@ tidiness_change = -2
 energy_change = 2
 performance_change = 1
 hover_message = "Have a coffee"
-up_icon = "energy"
 down_icon = "tidiness"
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
@@ -262,7 +261,6 @@ energy_change = 3
 satisfaction_change = 1
 performance_change = 1
 hover_message = "Have breakfast"
-up_icon = "energy"
 down_icon = "tidiness"
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
@@ -338,7 +336,6 @@ satisfaction_change = 2
 performance_change = 1
 hover_message = "Sleep in"
 end = 0
-up_icon = "energy"
 down_icon = "tidiness"
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
@@ -364,7 +361,6 @@ hover_message = "Talk to mom"
 begin = 3
 ending_flag = true
 up_icon = "satisfaction"
-down_icon = "time"
 phases = Array[String](["Dawn"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c6l4qi1wfq5ft"]
 
-[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://ui/clickable.tscn" id="1_gxl5a"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://scenes/ui/clickable.tscn" id="1_gxl5a"]
 [ext_resource type="Texture2D" uid="uid://bjsx5vxc868c5" path="res://assets/computer/background.png" id="1_iiass"]
-[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://ui/portal.tscn" id="2_18hgq"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://scenes/ui/portal.tscn" id="2_18hgq"]
 [ext_resource type="Texture2D" uid="uid://cun7if7pk0540" path="res://assets/computer/email.png" id="3_pgtsp"]
 [ext_resource type="Texture2D" uid="uid://rroakuj31e2v" path="res://assets/computer/groupchat.png" id="4_o7oi2"]
 [ext_resource type="Texture2D" uid="uid://b3bkrntti1yfp" path="res://assets/computer/manager.png" id="5_a1vod"]
@@ -51,7 +51,6 @@ satisfaction_change = 3
 performance_change = -1
 hover_message = "Respond to the groupchat"
 up_icon = "satisfaction"
-down_icon = "time"
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -100,7 +99,6 @@ satisfaction_change = 1
 performance_change = 2
 hover_message = "Polish your presentation"
 up_icon = "performance"
-down_icon = "time"
 prereqs = Array[String](["create-presentation"])
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
@@ -126,7 +124,6 @@ satisfaction_change = 1
 performance_change = 3
 hover_message = "Create your presentation"
 up_icon = "performance"
-down_icon = "time"
 prereqs = Array[String](["respond-manager"])
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true

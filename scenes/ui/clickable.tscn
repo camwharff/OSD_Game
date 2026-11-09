@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dqe0l8loftfj2"]
 
-[ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://ui/clickable.gd" id="1_0jthp"]
+[ext_resource type="Script" uid="uid://b1n0aua25pbbl" path="res://scenes/ui/clickable.gd" id="1_0jthp"]
 [ext_resource type="AudioStream" uid="uid://bkrmufot4d4i" path="res://assets/audio/zapsplat_multimedia_button_click_bright_003_92100.mp3" id="2_57i2q"]
 
 [node name="Clickable" type="Area2D" unique_id=1671882795]

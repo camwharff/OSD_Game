@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dvd7cqum686d5" path="res://assets/Title page.png" id="1_kpexm"]
 [ext_resource type="Texture2D" uid="uid://b013nmvsefhf8" path="res://assets/start button.png" id="2_3xoar"]
-[ext_resource type="Script" uid="uid://cfbk0fwb0x84p" path="res://rooms/start_button.gd" id="2_kpexm"]
-[ext_resource type="Script" uid="uid://bw6swiwl3ek6y" path="res://rooms/hover_start.gd" id="4_3xoar"]
+[ext_resource type="Script" uid="uid://cfbk0fwb0x84p" path="res://scenes/rooms/start_button.gd" id="2_kpexm"]
+[ext_resource type="Script" uid="uid://bw6swiwl3ek6y" path="res://scenes/rooms/hover_start.gd" id="4_3xoar"]
 [ext_resource type="Theme" uid="uid://cd28cejhwjqxe" path="res://resources/style_theme.tres" id="4_mom7w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g61v0"]

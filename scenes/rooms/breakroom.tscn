@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://btw2q168uxdwv"]
 
 [ext_resource type="Texture2D" uid="uid://d3krhh6iigwra" path="res://assets/breakroom/background.png" id="1_dgceo"]
-[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://ui/clickable.tscn" id="1_e4rg8"]
-[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://ui/portal.tscn" id="2_xbi64"]
+[ext_resource type="PackedScene" uid="uid://dqe0l8loftfj2" path="res://scenes/ui/clickable.tscn" id="1_e4rg8"]
+[ext_resource type="PackedScene" uid="uid://dsxvo881uhg3b" path="res://scenes/ui/portal.tscn" id="2_xbi64"]
 [ext_resource type="Texture2D" uid="uid://dcpyjsk6ngdnb" path="res://assets/breakroom/vending.png" id="3_0bajx"]
 [ext_resource type="Texture2D" uid="uid://dd06f0cd1lv4k" path="res://assets/breakroom/chair.png" id="3_2sest"]
 [ext_resource type="Texture2D" uid="uid://de3nwj86ctk5c" path="res://assets/breakroom/coffee.png" id="4_u2sgn"]
@@ -29,7 +29,6 @@ energy_change = 2
 satisfaction_change = 1
 hover_message = "Get a snack"
 repeatable = true
-up_icon = "energy"
 down_icon = "tidiness"
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_lock_ = true
@@ -78,7 +77,6 @@ satisfaction_change = 1
 performance_change = -1
 hover_message = "Have a coffee"
 repeatable = true
-up_icon = "energy"
 down_icon = "tidiness"
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
@@ -103,8 +101,6 @@ energy_change = 3
 satisfaction_change = 1
 performance_change = -1
 hover_message = "Have a cold lunch"
-up_icon = "energy"
-down_icon = "time"
 blocked_by = Array[String](["hot-lunch"])
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
@@ -129,8 +125,6 @@ energy_change = 5
 satisfaction_change = 3
 performance_change = 1
 hover_message = "Have a hot lunch"
-up_icon = "energy"
-down_icon = "time"
 blocked_by = Array[String](["cold-lunch"])
 phases = Array[String](["Morning", "Afternoon"])
 metadata/_edit_group_ = true
