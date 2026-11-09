@@ -25,6 +25,12 @@ signal click_sound
 @onready var up_icon: TextureRect = $Display/HoverBox/HoverCols/UpIcon/Icon
 @onready var down_icon: TextureRect = $Display/HoverBox/HoverCols/DownIcon/Icon
 
+@onready var up_enable: Control = $Display/HoverBox/HoverCols/UpIcon
+@onready var down_enable: Control = $Display/HoverBox/HoverCols/DownIcon
+
+var hovered: Node2D
+var hover_mutex: Mutex
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,13 +39,15 @@ func _ready():
 	GameState.game_end.connect(_on_game_end)
 	GameState.setup_complete.connect(_hud_setup)
 
+	hover_mutex = Mutex.new()
+
 
 var icons: Dictionary = {
-	"clock": load("res://assets/icons/clock.png"),
-	"graph": load("res://assets/icons/graph.png"),
-	"sleep": load("res://assets/icons/sleep.png"),
-	"smile": load("res://assets/icons/smile.png"),
-	"trash": load("res://assets/icons/trash.png"),
+	"time": load("res://assets/icons/clock.png"),
+	"performance": load("res://assets/icons/graph.png"),
+	"energy": load("res://assets/icons/sleep.png"),
+	"satisfaction": load("res://assets/icons/smile.png"),
+	"tidiness": load("res://assets/icons/trash.png"),
 }
 
 
@@ -83,14 +91,29 @@ func _update_hud() -> void:
 	tidy_text.text = str(GameState.tidiness)
 
 
-func _hover_handler(message: String, up: String, down: String, enable: bool):
+func _hover_handler(
+	message: String,
+	enable: bool,
+	up: String,
+	down: String,
+	subject: Node2D,
+):
+	hover_mutex.lock()
 	if enable:
 		hover_text.text = message
-		up_icon.texture = icons[up]
-		down_icon.texture = icons[down]
+		if subject is Portal:
+			up_enable.hide()
+			down_enable.hide()
+		else:
+			up_enable.show()
+			down_enable.show()
+			up_icon.texture = icons[up]
+			down_icon.texture = icons[down]
 		hover_box.show()
-	else:
+		hovered = subject
+	elif hovered == subject:
 		hover_box.hide()
+	hover_mutex.unlock()
 
 
 func _on_advance_button_pressed() -> void:

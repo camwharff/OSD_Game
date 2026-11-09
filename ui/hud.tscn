@@ -48,9 +48,9 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6trje"]
-content_margin_left = 30.0
+content_margin_left = 15.0
 content_margin_top = 15.0
-content_margin_right = 15.0
+content_margin_right = 30.0
 content_margin_bottom = 15.0
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 5
@@ -63,10 +63,8 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pdpi0"]
-content_margin_right = 30.0
-
 [node name="HUD" type="CanvasLayer" unique_id=1066121775]
+visible = false
 follow_viewport_enabled = true
 script = ExtResource("1_37p78")
 
@@ -322,6 +320,7 @@ shortcut_in_tooltip = false
 text = "Quit To Title"
 
 [node name="Display" type="VBoxContainer" parent="." unique_id=1025195601]
+visible = false
 offset_left = 20.0
 offset_top = 20.0
 offset_right = 682.0
@@ -438,43 +437,42 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 10
 
-[node name="HoverText" type="Label" parent="Display/HoverBox/HoverCols" unique_id=1857968969]
+[node name="UpIcon" type="HBoxContainer" parent="Display/HoverBox/HoverCols" unique_id=1825638027]
 layout_mode = 2
-size_flags_horizontal = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_pdpi0")
-text = "Hover Text"
-vertical_alignment = 1
+theme_override_constants/separation = 0
+
+[node name="Icon" type="TextureRect" parent="Display/HoverBox/HoverCols/UpIcon" unique_id=1306673132]
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("3_7ihmi")
+
+[node name="Arrow" type="TextureRect" parent="Display/HoverBox/HoverCols/UpIcon" unique_id=1213523052]
+custom_maximum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("4_en2x2")
 
 [node name="DownIcon" type="HBoxContainer" parent="Display/HoverBox/HoverCols" unique_id=481131932]
 layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="Icon" type="TextureRect" parent="Display/HoverBox/HoverCols/DownIcon" unique_id=1263929457]
-custom_maximum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("3_7ihmi")
 
 [node name="Arrow" type="TextureRect" parent="Display/HoverBox/HoverCols/DownIcon" unique_id=1727407567]
-custom_maximum_size = Vector2(50, 50)
+custom_maximum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("4_en2x2")
 flip_v = true
 
-[node name="UpIcon" type="HBoxContainer" parent="Display/HoverBox/HoverCols" unique_id=1825638027]
+[node name="HoverText" type="Label" parent="Display/HoverBox/HoverCols" unique_id=1857968969]
 layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Icon" type="TextureRect" parent="Display/HoverBox/HoverCols/UpIcon" unique_id=1306673132]
-custom_maximum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("3_7ihmi")
-
-[node name="Arrow" type="TextureRect" parent="Display/HoverBox/HoverCols/UpIcon" unique_id=1213523052]
-custom_maximum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("4_en2x2")
+size_flags_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Hover Text"
+vertical_alignment = 1
 
 [connection signal="pressed" from="PhaseFlash/AdvanceButton" to="." method="_on_advance_button_pressed"]
 [connection signal="pressed" from="EndScreen/Buttons/Restart" to="." method="_on_restart_pressed"]

@@ -1,3 +1,5 @@
+class_name Portal
+
 extends Area2D
 
 signal update_scene(dest: String)
@@ -32,7 +34,7 @@ func _on_mouse_entered() -> void:
 	else:
 		sprite.modulate = Color(1.3, 1.3, 1.3)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	hover.emit(hover_message, true)
+	hover.emit(hover_message, true, "up", "down", self)
 
 
 func _on_mouse_exited() -> void:
@@ -41,7 +43,7 @@ func _on_mouse_exited() -> void:
 	else:
 		sprite.modulate = Color(1, 1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	#hover.emit(hover_message, false)
+	hover.emit(hover_message, false, "up", "down", self)
 
 
 # Called when a portal is clicked. Changes the scene to the destination.

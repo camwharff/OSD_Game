@@ -1,7 +1,7 @@
 class_name Clickable
 extends Area2D
 
-signal hover(message: String, enable: bool)
+signal hover(message: String, enable: bool, up: String, down: String)
 
 @export var task_name: String = "Task"
 @export var time_cost: int = 1
@@ -16,6 +16,8 @@ signal hover(message: String, enable: bool)
 @export var end: int = 100
 @export var repeatable: bool = false
 @export var ending_flag: bool = false
+@export var up_icon: String = "energy"
+@export var down_icon: String = "time"
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
 @export var phases: Array[String] = []
@@ -44,7 +46,7 @@ func _on_mouse_entered() -> void:
 	else:
 		sprite.modulate = Color(1.3, 1.3, 1.3)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	hover.emit(hover_message, true)
+	hover.emit(hover_message, true, up_icon, down_icon, self)
 
 
 func _on_mouse_exited() -> void:
@@ -53,7 +55,7 @@ func _on_mouse_exited() -> void:
 	else:
 		sprite.modulate = Color(1, 1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	#hover.emit(hover_message, false)
+	hover.emit(hover_message, false, up_icon, down_icon, self)
 
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
