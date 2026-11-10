@@ -24,7 +24,21 @@ metadata/_edit_lock_ = true
 [node name="Mirror" parent="." unique_id=408284135 instance=ExtResource("1_fed4x")]
 position = Vector2(1064, 156)
 scale = Vector2(0.5, 0.5)
-task_name = "mirror"
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -2,
+"performance": 1,
+"satisfaction": 1,
+"tidiness": 1,
+"time": 2
+})
+icons = {
+"down": "energy",
+"up": "satisfaction"
+}
+task_name = "get-ready"
 hover_message = "Do hair and makeup"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
@@ -48,8 +62,22 @@ metadata/_edit_lock_ = true
 [node name="Towel" parent="." unique_id=594067695 instance=ExtResource("1_fed4x")]
 position = Vector2(124, 417)
 scale = Vector2(0.5, 0.5)
-task_name = "towel"
-hover_message = "Take a shower"
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -2,
+"performance": 1,
+"satisfaction": 1,
+"tidiness": 1,
+"time": 2
+})
+icons = {
+"down": "energy",
+"up": "satisfaction"
+}
+task_name = "shower"
+hover_message = "Shower"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -65,8 +93,22 @@ polygon = PackedVector2Array(-5.105854, -0.46475983, -7.33786, 4.704109, -1.0476
 [node name="Toothbrush" parent="." unique_id=878596294 instance=ExtResource("1_fed4x")]
 position = Vector2(889, 334)
 scale = Vector2(0.5, 0.5)
-task_name = "toothbrush"
-hover_message = "Brush Teeth"
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 1,
+"satisfaction": 0,
+"tidiness": 1,
+"time": 1
+})
+icons = {
+"down": "energy",
+"up": "performance"
+}
+task_name = "brush-teeth"
+hover_message = "Brush teeth"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true

@@ -101,7 +101,7 @@ polygon = PackedVector2Array(-2.0291061, -5.40382, 11.261459, -4.581501, 11.0585
 
 [node name="Exit" parent="." unique_id=1456918008 instance=ExtResource("1_ei2s5")]
 position = Vector2(1320, 81)
-task_name = "leave-work-early"
+task_name = "leave-early"
 hover_message = "Leave work early"
 phases = Array[String](["Afternoon"])
 metadata/_edit_group_ = true
@@ -285,7 +285,7 @@ polygon = PackedVector2Array(0.6087303, -3.054329, 6.188736, -1.6446381, -1.7247
 
 [node name="PitchManager" parent="." unique_id=1082681855 instance=ExtResource("1_ei2s5")]
 position = Vector2(1297, 431)
-task_name = "pitch-manager"
+task_name = "share-ideas"
 hover_message = "Pitch your ideas to your manager"
 prereqs = Array[String](["jot-idea"])
 phases = Array[String](["Afternoon"])

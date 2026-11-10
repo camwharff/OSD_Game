@@ -23,14 +23,27 @@ metadata/_edit_lock_ = true
 
 [node name="Vending" parent="." unique_id=717359299 instance=ExtResource("1_e4rg8")]
 position = Vector2(355, 291)
-task_name = "snack"
-tidiness_change = -1
-energy_change = 2
-satisfaction_change = 1
-hover_message = "Get a snack"
-repeatable = true
-down_icon = "tidiness"
-phases = Array[String](["Morning", "Afternoon"])
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 1,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -1,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": true
+}
+icons = {
+"down": "tidiness",
+"up": "energy"
+}
+task_name = "have-snack"
+hover_message = "Have snack"
+phases = ["Morning", "Afternoon"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
 
@@ -46,15 +59,23 @@ polygon = PackedVector2Array(-9.435284, -13.392072, 10.044014, -13.392072, 11.56
 
 [node name="Chair" parent="." unique_id=1671882795 instance=ExtResource("1_e4rg8")]
 position = Vector2(487, 654)
-task_name = "break"
-time_cost = 2
-energy_change = 2
-satisfaction_change = 3
-performance_change = -3
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": -1,
+"end": 100,
+"energy": 2,
+"performance": -1,
+"satisfaction": 2,
+"tidiness": 0,
+"time": 2
+})
+flags = {
+"early_exit": false,
+"repeatable": true
+}
+task_name = "rest"
 hover_message = "Take a load off"
-up_icon = "satisfaction"
-down_icon = "performance"
-phases = Array[String](["Morning", "Afternoon"])
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -70,15 +91,27 @@ polygon = PackedVector2Array(-20.493843, 4.111599, -18.566204, 1.9970627, -14.60
 
 [node name="Coffee" parent="." unique_id=845083965 instance=ExtResource("1_e4rg8")]
 position = Vector2(946, 341)
-task_name = "coffee"
-tidiness_change = -1
-energy_change = 2
-satisfaction_change = 1
-performance_change = -1
-hover_message = "Have a coffee"
-repeatable = true
-down_icon = "tidiness"
-phases = Array[String](["Morning", "Afternoon"])
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 1,
+"end": 100,
+"energy": 3,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -1,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": true
+}
+icons = {
+"down": "tidiness",
+"up": "energy"
+}
+task_name = "have-coffee"
+hover_message = "Get coffee"
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -94,15 +127,24 @@ polygon = PackedVector2Array(-6.1887436, -0.1174736, -1.0145569, -0.35242462, -1
 
 [node name="Fridge" parent="." unique_id=1845631786 instance=ExtResource("1_e4rg8")]
 position = Vector2(582, 269)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 5,
+"performance": -1,
+"satisfaction": 1,
+"tidiness": -2,
+"time": 2
+})
+icons = {
+"down": "tidiness",
+"up": "energy"
+}
 task_name = "cold-lunch"
-time_cost = 2
-tidiness_change = -1
-energy_change = 3
-satisfaction_change = 1
-performance_change = -1
-hover_message = "Have a cold lunch"
-blocked_by = Array[String](["hot-lunch"])
-phases = Array[String](["Morning", "Afternoon"])
+hover_message = "Have cold lunch"
+blocked_by = ["hot-lunch"]
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -118,15 +160,20 @@ polygon = PackedVector2Array(-9.942558, -13.509546, 14.60947, -13.509546, 15.624
 
 [node name="Microwave" parent="." unique_id=489621305 instance=ExtResource("1_e4rg8")]
 position = Vector2(796, 344)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 7,
+"performance": 0,
+"satisfaction": 2,
+"tidiness": -3,
+"time": 4
+})
 task_name = "hot-lunch"
-time_cost = 4
-tidiness_change = -2
-energy_change = 5
-satisfaction_change = 3
-performance_change = 1
-hover_message = "Have a hot lunch"
-blocked_by = Array[String](["cold-lunch"])
-phases = Array[String](["Morning", "Afternoon"])
+hover_message = "Have hot lunch"
+blocked_by = ["cold-lunch"]
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -142,14 +189,23 @@ polygon = PackedVector2Array(-4.464012, 8.810574, -4.464012, 0.35242462, 7.00036
 
 [node name="Water" parent="." unique_id=1596034695 instance=ExtResource("1_e4rg8")]
 position = Vector2(1359, 452)
-task_name = "watercooler"
-energy_change = 2
-satisfaction_change = 2
-performance_change = -2
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 2,
+"performance": -2,
+"satisfaction": 2,
+"tidiness": 0,
+"time": 1
+})
+icons = {
+"down": "performance",
+"up": "energy"
+}
+task_name = "water-chat"
 hover_message = "Water cooler chat"
-up_icon = "satisfaction"
-down_icon = "performance"
-phases = Array[String](["Morning", "Afternoon"])
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -167,7 +223,7 @@ polygon = PackedVector2Array(2.5363617, -8.693096, 10.551285, -6.813507, 11.5658
 position = Vector2(111, 225)
 destination = "Office"
 hover_message = "Return to office"
-phases = Array[String](["Morning", "Afternoon"])
+phases = ["Morning", "Afternoon"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 

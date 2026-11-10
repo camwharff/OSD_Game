@@ -42,20 +42,16 @@ stats = Dictionary[String, int]({
 "end": 100,
 "energy": -1,
 "performance": 0,
-"satisfaction": 2,
+"satisfaction": 1,
 "tidiness": 1,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "energy",
 "up": "satisfaction"
 }
 task_name = "feed-cat"
-hover_message = "Feed the cat"
+hover_message = "Feed cat"
 phases = ["Dawn"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -72,12 +68,22 @@ polygon = PackedVector2Array(4.0581894, -9.045517, 6.898918, -4.46402, 6.2901917
 
 [node name="Litter" parent="." unique_id=1313741587 instance=ExtResource("2_j0ocu")]
 position = Vector2(430, 386)
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 0,
+"satisfaction": -1,
+"tidiness": 2,
+"time": 1
+})
 icons = {
 "down": "energy",
 "up": "tidiness"
 }
 task_name = "clean-litter"
-hover_message = "Clean cat's litter box"
+hover_message = "Clean litter box"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -100,20 +106,16 @@ stats = Dictionary[String, int]({
 "end": 100,
 "energy": -1,
 "performance": 1,
-"satisfaction": -2,
+"satisfaction": -1,
 "tidiness": 1,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
-"down": "satisfaction",
+"down": "energy",
 "up": "time"
 }
-task_name = "check-calendar"
-hover_message = "Organize your schedule"
+task_name = "review-schedule"
+hover_message = "Review schedule"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -166,8 +168,8 @@ icons = {
 "down": "energy",
 "up": "time"
 }
-task_name = "leave-early"
-hover_message = "Go to work early"
+task_name = "work-early"
+hover_message = "Get to work early"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -190,14 +192,10 @@ stats = Dictionary[String, int]({
 "end": 100,
 "energy": -1,
 "performance": 0,
-"satisfaction": 1,
+"satisfaction": -1,
 "tidiness": 1,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "energy",
 "up": "tidiness"
@@ -231,23 +229,18 @@ stats = Dictionary[String, int]({
 "begin": 0,
 "carryover": 0,
 "end": 100,
-"energy": 2,
+"energy": 1,
 "performance": 0,
 "satisfaction": 2,
-"tidiness": -1,
+"tidiness": -2,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "tidiness",
 "up": "satisfaction"
 }
 task_name = "pet-cat"
-hover_message = "Pet cat"
-prereqs = ["clean-litter", "feed-cat"]
+hover_message = "Snuggle cat"
 phases = ["Dawn"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -274,20 +267,16 @@ stats = Dictionary[String, int]({
 "end": 100,
 "energy": -1,
 "performance": 0,
-"satisfaction": 1,
-"tidiness": 2,
-"time": 1
+"satisfaction": -2,
+"tidiness": 3,
+"time": 2
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
-"down": "energy",
+"down": "satisfaction",
 "up": "tidiness"
 }
-task_name = "fold-clothes"
-hover_message = "Fold laundry"
+task_name = "tidy-livingroom"
+hover_message = "Tidy livingroom"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -308,22 +297,18 @@ stats = Dictionary[String, int]({
 "begin": 0,
 "carryover": 0,
 "end": 100,
-"energy": 2,
-"performance": 1,
+"energy": 3,
+"performance": -1,
 "satisfaction": 0,
 "tidiness": -2,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "tidiness",
 "up": "energy"
 }
-task_name = "espresso"
-hover_message = "Have a coffee"
+task_name = "have-espresso"
+hover_message = "Have coffee"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -343,21 +328,17 @@ stats = Dictionary[String, int]({
 "begin": 0,
 "carryover": 0,
 "end": 100,
-"energy": 3,
+"energy": 4,
 "performance": 1,
 "satisfaction": 1,
 "tidiness": -3,
 "time": 2
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "tidiness",
 "up": "energy"
 }
-task_name = "eat-breakfast"
+task_name = "have-breakfast"
 hover_message = "Have breakfast"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
@@ -381,24 +362,20 @@ volume_db = 5.0
 position = Vector2(701, 517)
 stats = Dictionary[String, int]({
 "begin": 0,
-"carryover": -1,
+"carryover": 0,
 "end": 100,
-"energy": 1,
+"energy": 0,
 "performance": -2,
 "satisfaction": 2,
 "tidiness": 0,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "performance",
 "up": "satisfaction"
 }
 task_name = "doomscroll"
-hover_message = "Doomscroll"
+hover_message = "Check social media"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -416,24 +393,20 @@ polygon = PackedVector2Array(-28.744797, -19.143173, -22.758972, -13.621883, -26
 position = Vector2(304, 256)
 stats = Dictionary[String, int]({
 "begin": 0,
-"carryover": 0,
+"carryover": 1,
 "end": 100,
 "energy": -1,
 "performance": 2,
-"satisfaction": -2,
+"satisfaction": -3,
 "tidiness": 0,
 "time": 1
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "satisfaction",
 "up": "performance"
 }
 task_name = "watch-news"
-hover_message = "Check the news"
+hover_message = "Watch news"
 phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
@@ -452,22 +425,14 @@ polygon = PackedVector2Array(-24.450575, -11.39501, -19.986568, -11.512484, -18.
 position = Vector2(749, 325)
 stats = Dictionary[String, int]({
 "begin": 0,
-"carryover": 0,
-"end": 0,
+"carryover": -1,
+"end": 1,
 "energy": 3,
-"performance": 1,
+"performance": -2,
 "satisfaction": 2,
 "tidiness": -1,
 "time": 2
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
-icons = {
-"down": "tidiness",
-"up": "energy"
-}
 task_name = "sleep-in"
 hover_message = "Sleep in"
 phases = ["Dawn"]
@@ -496,10 +461,6 @@ stats = Dictionary[String, int]({
 "tidiness": 0,
 "time": 2
 })
-flags = {
-"early_exit": false,
-"repeatable": false
-}
 icons = {
 "down": "time",
 "up": "satisfaction"
