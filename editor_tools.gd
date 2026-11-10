@@ -25,13 +25,13 @@ func save_task_data():
 
 
 func load_task_data_to_editor():
-	if not FileAccess.file_exists("res://data/tasks_v2.json"):
-		push_error("JSON file not found: res://data/tasks_v2.json")
+	if not FileAccess.file_exists("res://data/tasks.json"):
+		push_error("JSON file not found: res://data/tasks.json")
 		return
-	var text = FileAccess.get_file_as_string("res://data/tasks_v2.json")
+	var text = FileAccess.get_file_as_string("res://data/tasks.json")
 	var data = JSON.parse_string(text)
 	if typeof(data) != TYPE_DICTIONARY:
-		push_error("Invalid JSON in res://data/tasks_v2.json")
+		push_error("Invalid JSON in res://data/tasks.json")
 		return
 
 	for task in get_editor_interface().get_selection().get_selected_nodes():

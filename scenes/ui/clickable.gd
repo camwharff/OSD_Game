@@ -67,7 +67,6 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 	if event.is_action_pressed("leftclick"):
 		GameState.apply_task(self)
 		input_pickable = false
-		#hover.emit("plonk", false)
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 		audio.play()
 

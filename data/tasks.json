@@ -1,31 +1,30 @@
 {
-	"break": {
+	"brush-teeth": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Take a load off",
+		"hover_message": "Brush teeth",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "energy",
+			"up": "performance"
 		},
 		"phases": [
-			"Morning",
-			"Afternoon"
+			"Dawn"
 		],
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
+			"energy": -1,
+			"performance": 1,
 			"satisfaction": 0,
-			"tidiness": 0,
+			"tidiness": 1,
 			"time": 1
 		},
-		"task_name": "break"
+		"task_name": "brush-teeth"
 	},
 	"call-mom": {
 		"blocked_by": [],
@@ -54,40 +53,41 @@
 		},
 		"task_name": "call-mom"
 	},
-	"check-calendar": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": false
-		},
-		"hover_message": "Organize your schedule",
-		"icons": {
-			"down": "satisfaction",
-			"up": "time"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 3,
-			"end": 100,
-			"energy": -1,
-			"performance": 1,
-			"satisfaction": -2,
-			"tidiness": 1,
-			"time": 1
-		},
-		"task_name": "check-calendar"
-	},
-	"clean-litter": {
+	"check-email": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
 			"repeatable": true
 		},
-		"hover_message": "Clean cat's litter box",
+		"hover_message": "Send emails",
+		"icons": {
+			"down": "time",
+			"up": "performance"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 2,
+			"satisfaction": -1,
+			"tidiness": 1,
+			"time": 2
+		},
+		"task_name": "check-email"
+	},
+	"clean-litter": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Clean litter box",
 		"icons": {
 			"down": "energy",
 			"up": "tidiness"
@@ -100,41 +100,13 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
+			"energy": -1,
 			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
+			"satisfaction": -1,
+			"tidiness": 2,
 			"time": 1
 		},
 		"task_name": "clean-litter"
-	},
-	"coffee": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Have a coffee",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Morning",
-			"Afternoon"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "coffee"
 	},
 	"cold-lunch": {
 		"blocked_by": [
@@ -142,11 +114,11 @@
 		],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Have a cold lunch",
+		"hover_message": "Have cold lunch",
 		"icons": {
-			"down": "time",
+			"down": "tidiness",
 			"up": "energy"
 		},
 		"phases": [
@@ -158,11 +130,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"energy": 5,
+			"performance": -1,
+			"satisfaction": 1,
+			"tidiness": -2,
+			"time": 2
 		},
 		"task_name": "cold-lunch"
 	},
@@ -170,12 +142,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Create your presentation",
+		"hover_message": "Create presentation",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "energy",
+			"up": "performance"
 		},
 		"phases": [
 			"Morning",
@@ -188,11 +160,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
+			"energy": -2,
+			"performance": 3,
 			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"tidiness": -1,
+			"time": 2
 		},
 		"task_name": "create-presentation"
 	},
@@ -202,7 +174,7 @@
 			"early_exit": false,
 			"repeatable": false
 		},
-		"hover_message": "Doomscroll",
+		"hover_message": "Check social media",
 		"icons": {
 			"down": "performance",
 			"up": "satisfaction"
@@ -213,9 +185,9 @@
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
-			"carryover": -1,
+			"carryover": 0,
 			"end": 100,
-			"energy": 1,
+			"energy": 0,
 			"performance": -2,
 			"satisfaction": 2,
 			"tidiness": 0,
@@ -223,7 +195,61 @@
 		},
 		"task_name": "doomscroll"
 	},
-	"eat-breakfast": {
+	"feed-cat": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Feed cat",
+		"icons": {
+			"down": "energy",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 0,
+			"satisfaction": 1,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "feed-cat"
+	},
+	"get-ready": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Do hair and makeup",
+		"icons": {
+			"down": "energy",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -2,
+			"performance": 1,
+			"satisfaction": 1,
+			"tidiness": 1,
+			"time": 2
+		},
+		"task_name": "get-ready"
+	},
+	"have-breakfast": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
@@ -242,23 +268,23 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 3,
+			"energy": 4,
 			"performance": 1,
 			"satisfaction": 1,
 			"tidiness": -3,
 			"time": 2
 		},
-		"task_name": "eat-breakfast"
+		"task_name": "have-breakfast"
 	},
-	"email": {
+	"have-coffee": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
 			"repeatable": true
 		},
-		"hover_message": "Check your email",
+		"hover_message": "Get coffee",
 		"icons": {
-			"down": "time",
+			"down": "tidiness",
 			"up": "energy"
 		},
 		"phases": [
@@ -268,23 +294,23 @@
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
-			"carryover": 0,
+			"carryover": 1,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
+			"energy": 3,
+			"performance": -1,
+			"satisfaction": 1,
+			"tidiness": -1,
 			"time": 1
 		},
-		"task_name": "email"
+		"task_name": "have-coffee"
 	},
-	"espresso": {
+	"have-espresso": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
 			"repeatable": false
 		},
-		"hover_message": "Have a coffee",
+		"hover_message": "Have coffee",
 		"icons": {
 			"down": "tidiness",
 			"up": "energy"
@@ -297,67 +323,41 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 2,
-			"performance": 1,
+			"energy": 3,
+			"performance": -1,
 			"satisfaction": 0,
 			"tidiness": -2,
 			"time": 1
 		},
-		"task_name": "espresso"
+		"task_name": "have-espresso"
 	},
-	"feed-cat": {
+	"have-snack": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": false
+			"repeatable": true
 		},
-		"hover_message": "Feed the cat",
+		"hover_message": "Have snack",
 		"icons": {
-			"down": "energy",
-			"up": "satisfaction"
+			"down": "tidiness",
+			"up": "energy"
 		},
 		"phases": [
-			"Dawn"
+			"Morning",
+			"Afternoon"
 		],
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": -1,
-			"performance": 0,
-			"satisfaction": 2,
-			"tidiness": 1,
-			"time": 1
-		},
-		"task_name": "feed-cat"
-	},
-	"fold-clothes": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": false
-		},
-		"hover_message": "Fold laundry",
-		"icons": {
-			"down": "energy",
-			"up": "tidiness"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": -1,
-			"performance": 0,
+			"energy": 1,
+			"performance": -1,
 			"satisfaction": 1,
-			"tidiness": 2,
+			"tidiness": -1,
 			"time": 1
 		},
-		"task_name": "fold-clothes"
+		"task_name": "have-snack"
 	},
 	"hot-lunch": {
 		"blocked_by": [
@@ -365,9 +365,9 @@
 		],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Have a hot lunch",
+		"hover_message": "Have hot lunch",
 		"icons": {
 			"down": "time",
 			"up": "energy"
@@ -381,11 +381,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
+			"energy": 7,
 			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"satisfaction": 2,
+			"tidiness": -3,
+			"time": 4
 		},
 		"task_name": "hot-lunch"
 	},
@@ -393,12 +393,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Jot down some ideas",
+		"hover_message": "Jot down idea",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "tidiness",
+			"up": "satisfaction"
 		},
 		"phases": [
 			"Morning",
@@ -411,8 +411,8 @@
 			"end": 100,
 			"energy": 0,
 			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
+			"satisfaction": 1,
+			"tidiness": -1,
 			"time": 1
 		},
 		"task_name": "jot-idea"
@@ -423,37 +423,10 @@
 			"early_exit": true,
 			"repeatable": false
 		},
-		"hover_message": "Go to work early",
+		"hover_message": "Leave early",
 		"icons": {
-			"down": "energy",
+			"down": "performance",
 			"up": "time"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": -1,
-			"performance": 3,
-			"satisfaction": -1,
-			"tidiness": 0,
-			"time": 0
-		},
-		"task_name": "leave-early"
-	},
-	"leave-work-early": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": true,
-			"repeatable": false
-		},
-		"hover_message": "Leave work early",
-		"icons": {
-			"down": "time",
-			"up": "energy"
 		},
 		"phases": [
 			"Afternoon"
@@ -463,24 +436,24 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"energy": 1,
+			"performance": -3,
+			"satisfaction": 3,
 			"tidiness": 0,
-			"time": 1
+			"time": 0
 		},
-		"task_name": "leave-work-early"
+		"task_name": "leave-early"
 	},
 	"long-lunch": {
 		"blocked_by": [],
 		"flags": {
-			"early_exit": false,
-			"repeatable": true
+			"early_exit": true,
+			"repeatable": false
 		},
 		"hover_message": "Go for a long lunch",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "performance",
+			"up": "time"
 		},
 		"phases": [
 			"Morning"
@@ -488,13 +461,13 @@
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
-			"carryover": 0,
+			"carryover": -2,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"energy": 4,
+			"performance": -3,
+			"satisfaction": 3,
 			"tidiness": 0,
-			"time": 1
+			"time": 0
 		},
 		"task_name": "long-lunch"
 	},
@@ -519,38 +492,11 @@
 			"end": 100,
 			"energy": -1,
 			"performance": 0,
-			"satisfaction": 1,
+			"satisfaction": -1,
 			"tidiness": 1,
 			"time": 1
 		},
 		"task_name": "make-bed"
-	},
-	"mirror": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Do hair and makeup",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "mirror"
 	},
 	"organize-files": {
 		"blocked_by": [],
@@ -558,10 +504,10 @@
 			"early_exit": false,
 			"repeatable": true
 		},
-		"hover_message": "Organize files",
+		"hover_message": "Organize paperwork",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "tidiness"
 		},
 		"phases": [
 			"Morning",
@@ -572,11 +518,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
+			"energy": -1,
 			"performance": 0,
 			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"tidiness": 3,
+			"time": 2
 		},
 		"task_name": "organize-files"
 	},
@@ -586,7 +532,7 @@
 			"early_exit": false,
 			"repeatable": false
 		},
-		"hover_message": "Pet cat",
+		"hover_message": "Snuggle cat",
 		"icons": {
 			"down": "tidiness",
 			"up": "satisfaction"
@@ -594,78 +540,46 @@
 		"phases": [
 			"Dawn"
 		],
-		"prereqs": [
-			"clean-litter",
-			"feed-cat"
-		],
+		"prereqs": [],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 2,
+			"energy": 1,
 			"performance": 0,
 			"satisfaction": 2,
-			"tidiness": -1,
+			"tidiness": -2,
 			"time": 1
 		},
 		"task_name": "pet-cat"
-	},
-	"pitch-manager": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Pitch your ideas to your manager",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Afternoon"
-		],
-		"prereqs": [
-			"jot-idea"
-		],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "pitch-manager"
 	},
 	"practice-presentation": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Practice giving your presentation",
+		"hover_message": "Practice presenting",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "energy",
+			"up": "performance"
 		},
 		"phases": [
 			"Morning",
 			"Afternoon"
 		],
 		"prereqs": [
-			"create-presentation"
+			"refine-presentation"
 		],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
+			"energy": -2,
+			"performance": 4,
 			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"tidiness": -1,
+			"time": 2
 		},
 		"task_name": "practice-presentation"
 	},
@@ -675,7 +589,7 @@
 			"early_exit": false,
 			"repeatable": false
 		},
-		"hover_message": "Give presentation to CEO",
+		"hover_message": "Presentation",
 		"icons": {
 			"down": "time",
 			"up": "performance"
@@ -684,17 +598,17 @@
 			"Afternoon"
 		],
 		"prereqs": [
-			"respond-manager"
+			"create-presentation"
 		],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
+			"energy": -3,
+			"performance": 6,
 			"satisfaction": 0,
 			"tidiness": 0,
-			"time": 1
+			"time": 6
 		},
 		"task_name": "present"
 	},
@@ -702,12 +616,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Debrief about your presentation",
+		"hover_message": "Presentation debrief",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "performance"
 		},
 		"phases": [
 			"Afternoon"
@@ -719,11 +633,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"energy": -1,
+			"performance": 3,
+			"satisfaction": 2,
 			"tidiness": 0,
-			"time": 1
+			"time": 2
 		},
 		"task_name": "presentation-debrief"
 	},
@@ -731,12 +645,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Refine your ideas",
+		"hover_message": "Refine ideas",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "performance"
 		},
 		"phases": [
 			"Morning",
@@ -749,11 +663,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
+			"energy": -1,
+			"performance": 3,
 			"satisfaction": 0,
 			"tidiness": 0,
-			"time": 1
+			"time": 3
 		},
 		"task_name": "refine-ideas"
 	},
@@ -761,12 +675,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Polish your presentation",
+		"hover_message": "Polish presentation",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "performance"
 		},
 		"phases": [
 			"Morning",
@@ -779,11 +693,11 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"energy": -1,
+			"performance": 2,
+			"satisfaction": -1,
+			"tidiness": 1,
+			"time": 2
 		},
 		"task_name": "refine-presentation"
 	},
@@ -791,12 +705,12 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Respond to the groupchat",
+		"hover_message": "Respond to coworkers",
 		"icons": {
-			"down": "time",
-			"up": "energy"
+			"down": "energy",
+			"up": "satisfaction"
 		},
 		"phases": [
 			"Morning",
@@ -807,10 +721,10 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
+			"energy": -1,
+			"performance": -1,
+			"satisfaction": 2,
+			"tidiness": 1,
 			"time": 1
 		},
 		"task_name": "respond-groupchat"
@@ -819,9 +733,37 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Respond to manager",
+		"icons": {
+			"down": "energy",
+			"up": "performance"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 2,
+			"satisfaction": 0,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "respond-manager"
+	},
+	"rest": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
 			"repeatable": true
 		},
-		"hover_message": "Check message from manager",
+		"hover_message": "Take a load off",
 		"icons": {
 			"down": "time",
 			"up": "energy"
@@ -833,15 +775,98 @@
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
+			"carryover": -1,
+			"end": 100,
+			"energy": 2,
+			"performance": -1,
+			"satisfaction": 2,
+			"tidiness": 0,
+			"time": 2
+		},
+		"task_name": "rest"
+	},
+	"review-schedule": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Review schedule",
+		"icons": {
+			"down": "energy",
+			"up": "time"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 3,
+			"end": 100,
+			"energy": -1,
+			"performance": 1,
+			"satisfaction": -1,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "review-schedule"
+	},
+	"share-ideas": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Share ideas with manager",
+		"icons": {
+			"down": "time",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Afternoon"
+		],
+		"prereqs": [
+			"jot-idea"
+		],
+		"stats": {
+			"begin": 0,
 			"carryover": 0,
 			"end": 100,
 			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"performance": 2,
+			"satisfaction": 4,
 			"tidiness": 0,
-			"time": 1
+			"time": 2
 		},
-		"task_name": "respond-manager"
+		"task_name": "share-ideas"
+	},
+	"shower": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Shower",
+		"icons": {
+			"down": "energy",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -2,
+			"performance": 1,
+			"satisfaction": 1,
+			"tidiness": 1,
+			"time": 2
+		},
+		"task_name": "shower"
 	},
 	"sleep-in": {
 		"blocked_by": [],
@@ -851,7 +876,7 @@
 		},
 		"hover_message": "Sleep in",
 		"icons": {
-			"down": "tidiness",
+			"down": "time",
 			"up": "energy"
 		},
 		"phases": [
@@ -860,53 +885,25 @@
 		"prereqs": [],
 		"stats": {
 			"begin": 0,
-			"carryover": 0,
-			"end": 0,
+			"carryover": -1,
+			"end": 1,
 			"energy": 3,
-			"performance": 1,
+			"performance": -2,
 			"satisfaction": 2,
 			"tidiness": -1,
 			"time": 2
 		},
 		"task_name": "sleep-in"
 	},
-	"snack": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Get a snack",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Morning",
-			"Afternoon"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "snack"
-	},
 	"socialize-coworker": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Chat with your coworker",
+		"hover_message": "Chat with coworker at desk",
 		"icons": {
-			"down": "time",
+			"down": "performance",
 			"up": "energy"
 		},
 		"phases": [
@@ -918,9 +915,9 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"energy": 2,
+			"performance": -2,
+			"satisfaction": 2,
 			"tidiness": 0,
 			"time": 1
 		},
@@ -930,24 +927,27 @@
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Chat with your manager",
+		"hover_message": "Socialize with manager",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "satisfaction"
 		},
 		"phases": [
-			"Morning"
+			"Morning",
+			"Afternoon"
 		],
-		"prereqs": [],
+		"prereqs": [
+			"respond-manager"
+		],
 		"stats": {
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
 			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"performance": 1,
+			"satisfaction": 2,
 			"tidiness": 0,
 			"time": 1
 		},
@@ -959,10 +959,10 @@
 			"early_exit": false,
 			"repeatable": true
 		},
-		"hover_message": "Clean your desk",
+		"hover_message": "Tidy desk",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "tidiness"
 		},
 		"phases": [
 			"Morning",
@@ -973,78 +973,24 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
+			"energy": -1,
+			"performance": 1,
+			"satisfaction": -1,
+			"tidiness": 3,
+			"time": 2
 		},
 		"task_name": "tidy-desk"
 	},
-	"toothbrush": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Brush Teeth",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "toothbrush"
-	},
-	"towel": {
-		"blocked_by": [],
-		"flags": {
-			"early_exit": false,
-			"repeatable": true
-		},
-		"hover_message": "Take a shower",
-		"icons": {
-			"down": "time",
-			"up": "energy"
-		},
-		"phases": [
-			"Dawn"
-		],
-		"prereqs": [],
-		"stats": {
-			"begin": 0,
-			"carryover": 0,
-			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
-			"tidiness": 0,
-			"time": 1
-		},
-		"task_name": "towel"
-	},
-	"watch-news": {
+	"tidy-livingroom": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
 			"repeatable": false
 		},
-		"hover_message": "Check the news",
+		"hover_message": "Tidy livingroom",
 		"icons": {
 			"down": "satisfaction",
-			"up": "performance"
+			"up": "tidiness"
 		},
 		"phases": [
 			"Dawn"
@@ -1055,22 +1001,49 @@
 			"carryover": 0,
 			"end": 100,
 			"energy": -1,
-			"performance": 2,
+			"performance": 0,
 			"satisfaction": -2,
+			"tidiness": 3,
+			"time": 2
+		},
+		"task_name": "tidy-livingroom"
+	},
+	"watch-news": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Watch news",
+		"icons": {
+			"down": "satisfaction",
+			"up": "performance"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 1,
+			"end": 100,
+			"energy": -1,
+			"performance": 2,
+			"satisfaction": -3,
 			"tidiness": 0,
 			"time": 1
 		},
 		"task_name": "watch-news"
 	},
-	"watercooler": {
+	"water-chat": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
 		"hover_message": "Water cooler chat",
 		"icons": {
-			"down": "time",
+			"down": "performance",
 			"up": "energy"
 		},
 		"phases": [
@@ -1082,24 +1055,51 @@
 			"begin": 0,
 			"carryover": 0,
 			"end": 100,
-			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"energy": 2,
+			"performance": -2,
+			"satisfaction": 2,
 			"tidiness": 0,
 			"time": 1
 		},
-		"task_name": "watercooler"
+		"task_name": "water-chat"
+	},
+	"work-early": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": true,
+			"repeatable": false
+		},
+		"hover_message": "Get to work early",
+		"icons": {
+			"down": "energy",
+			"up": "time"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 3,
+			"satisfaction": -1,
+			"tidiness": 0,
+			"time": 0
+		},
+		"task_name": "work-early"
 	},
 	"write-proposal": {
 		"blocked_by": [],
 		"flags": {
 			"early_exit": false,
-			"repeatable": true
+			"repeatable": false
 		},
-		"hover_message": "Turn your ideas into a proposal",
+		"hover_message": "Write proposal",
 		"icons": {
 			"down": "time",
-			"up": "energy"
+			"up": "performance"
 		},
 		"phases": [
 			"Morning",
@@ -1113,10 +1113,10 @@
 			"carryover": 0,
 			"end": 100,
 			"energy": 0,
-			"performance": 0,
-			"satisfaction": 0,
+			"performance": 2,
+			"satisfaction": 1,
 			"tidiness": 0,
-			"time": 1
+			"time": 2
 		},
 		"task_name": "write-proposal"
 	}

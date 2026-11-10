@@ -32,6 +32,7 @@ func setup():
 	_init_phase_groups()
 	_build_dependencies()
 	_init_task_availabilities()
+	DataManager.load_task_data()
 	setup_complete.emit()
 
 
@@ -57,7 +58,6 @@ func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
 		completed[task.task_name] = false
 		tasks[task.task_name] = task
-	DataManager.save_task_data()
 
 
 func _init_phase_groups():
