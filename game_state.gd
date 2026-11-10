@@ -57,7 +57,7 @@ func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
 		completed[task.task_name] = false
 		tasks[task.task_name] = task
-	DataManager.load_task_data()
+	DataManager.save_task_data()
 
 
 func _init_phase_groups():

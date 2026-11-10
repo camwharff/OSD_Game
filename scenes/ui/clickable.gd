@@ -15,14 +15,12 @@ signal hover(message: String, enable: bool, up: String, down: String)
 }
 @export var flags: Dictionary[String, bool] = {
 	"early_exit": false,
-	"repeatable": true,
+	"repeatable": false,
 }
-
 @export var icons: Dictionary[String, String] = {
 	"up": "energy",
 	"down": "time",
 }
-
 @export var task_name: String = "Task"
 @export var hover_message: String
 @export var prereqs: Array[String] = []

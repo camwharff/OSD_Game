@@ -42,7 +42,7 @@ stats = Dictionary[String, int]({
 "end": 100,
 "energy": -1,
 "performance": 0,
-"satisfaction": 1,
+"satisfaction": 2,
 "tidiness": 1,
 "time": 1
 })
@@ -72,10 +72,10 @@ polygon = PackedVector2Array(4.0581894, -9.045517, 6.898918, -4.46402, 6.2901917
 
 [node name="Litter" parent="." unique_id=1313741587 instance=ExtResource("2_j0ocu")]
 position = Vector2(430, 386)
-icons = Dictionary[String, String]({
+icons = {
 "down": "energy",
 "up": "tidiness"
-})
+}
 task_name = "clean-litter"
 hover_message = "Clean cat's litter box"
 phases = ["Dawn"]
@@ -94,10 +94,24 @@ polygon = PackedVector2Array(-0.8116379, 0.2349472, 0.6087265, 1.5271645, 0.8116
 
 [node name="Calendar" parent="." unique_id=1658548734 instance=ExtResource("2_j0ocu")]
 position = Vector2(957, 211)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 3,
+"end": 100,
+"energy": -1,
+"performance": 1,
+"satisfaction": -2,
+"tidiness": 1,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "satisfaction",
 "up": "time"
-})
+}
 task_name = "check-calendar"
 hover_message = "Organize your schedule"
 phases = ["Dawn"]
@@ -134,10 +148,24 @@ polygon = PackedVector2Array(-116, -294, 131, -244, 128.10652, 302.86578, 121, 3
 
 [node name="Shoes" parent="." unique_id=1404418289 instance=ExtResource("2_j0ocu")]
 position = Vector2(1385, 761)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 3,
+"satisfaction": -1,
+"tidiness": 0,
+"time": 0
+})
+flags = {
+"early_exit": true,
+"repeatable": false
+}
+icons = {
 "down": "energy",
 "up": "time"
-})
+}
 task_name = "leave-early"
 hover_message = "Go to work early"
 phases = ["Dawn"]
@@ -156,10 +184,24 @@ polygon = PackedVector2Array(18.363297, 5.0513916, 22.218582, 8.340675, 24.34912
 
 [node name="Blanket" parent="." unique_id=841174042 instance=ExtResource("2_j0ocu")]
 position = Vector2(603, 349)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 0,
+"satisfaction": 1,
+"tidiness": 1,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "energy",
 "up": "tidiness"
-})
+}
 task_name = "make-bed"
 hover_message = "Make bed"
 phases = ["Dawn"]
@@ -185,13 +227,27 @@ metadata/_edit_lock_ = true
 
 [node name="Cat" parent="." unique_id=1663209509 instance=ExtResource("2_j0ocu")]
 position = Vector2(638, 350)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 2,
+"performance": 0,
+"satisfaction": 2,
+"tidiness": -1,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "tidiness",
 "up": "satisfaction"
-})
+}
 task_name = "pet-cat"
 hover_message = "Pet cat"
-prereqs = Array[String](["clean-litter", "feed-cat"])
+prereqs = ["clean-litter", "feed-cat"]
 phases = ["Dawn"]
 metadata/_edit_lock_ = true
 metadata/_edit_group_ = true
@@ -212,10 +268,24 @@ volume_db = 5.0
 
 [node name="Clothes" parent="." unique_id=870267243 instance=ExtResource("2_j0ocu")]
 position = Vector2(937, 432)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 0,
+"satisfaction": 1,
+"tidiness": 2,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "energy",
 "up": "tidiness"
-})
+}
 task_name = "fold-clothes"
 hover_message = "Fold laundry"
 phases = ["Dawn"]
@@ -234,10 +304,24 @@ polygon = PackedVector2Array(-3.4494705, -9.045521, -0.40583038, -6.1086655, 2.5
 
 [node name="Coffee" parent="." unique_id=1429221052 instance=ExtResource("2_j0ocu")]
 position = Vector2(187, 465)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 2,
+"performance": 1,
+"satisfaction": 0,
+"tidiness": -2,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "tidiness",
 "up": "energy"
-})
+}
 task_name = "espresso"
 hover_message = "Have a coffee"
 phases = ["Dawn"]
@@ -255,10 +339,24 @@ polygon = PackedVector2Array(-29.759342, -27.718796, -21.135695, -27.366375, -21
 
 [node name="Toaster" parent="." unique_id=379871230 instance=ExtResource("2_j0ocu")]
 position = Vector2(162, 603)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": 3,
+"performance": 1,
+"satisfaction": 1,
+"tidiness": -3,
+"time": 2
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "tidiness",
 "up": "energy"
-})
+}
 task_name = "eat-breakfast"
 hover_message = "Have breakfast"
 phases = ["Dawn"]
@@ -281,10 +379,24 @@ volume_db = 5.0
 
 [node name="Cell" parent="." unique_id=1527210970 instance=ExtResource("2_j0ocu")]
 position = Vector2(701, 517)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": -1,
+"end": 100,
+"energy": 1,
+"performance": -2,
+"satisfaction": 2,
+"tidiness": 0,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "performance",
 "up": "satisfaction"
-})
+}
 task_name = "doomscroll"
 hover_message = "Doomscroll"
 phases = ["Dawn"]
@@ -302,10 +414,24 @@ polygon = PackedVector2Array(-28.744797, -19.143173, -22.758972, -13.621883, -26
 
 [node name="TV" parent="." unique_id=2041736332 instance=ExtResource("2_j0ocu")]
 position = Vector2(304, 256)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 100,
+"energy": -1,
+"performance": 2,
+"satisfaction": -2,
+"tidiness": 0,
+"time": 1
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "satisfaction",
 "up": "performance"
-})
+}
 task_name = "watch-news"
 hover_message = "Check the news"
 phases = ["Dawn"]
@@ -324,10 +450,24 @@ polygon = PackedVector2Array(-24.450575, -11.39501, -19.986568, -11.512484, -18.
 
 [node name="Pillow" parent="." unique_id=1210239270 instance=ExtResource("2_j0ocu")]
 position = Vector2(749, 325)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 0,
+"carryover": 0,
+"end": 0,
+"energy": 3,
+"performance": 1,
+"satisfaction": 2,
+"tidiness": -1,
+"time": 2
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "tidiness",
 "up": "energy"
-})
+}
 task_name = "sleep-in"
 hover_message = "Sleep in"
 phases = ["Dawn"]
@@ -346,10 +486,24 @@ polygon = PackedVector2Array(-0.5072708, -5.0513954, 3.550911, -3.8766518, 10.24
 
 [node name="Landline" parent="." unique_id=1040426584 instance=ExtResource("2_j0ocu")]
 position = Vector2(79, 265)
-icons = Dictionary[String, String]({
+stats = Dictionary[String, int]({
+"begin": 3,
+"carryover": 0,
+"end": 100,
+"energy": 1,
+"performance": 0,
+"satisfaction": 3,
+"tidiness": 0,
+"time": 2
+})
+flags = {
+"early_exit": false,
+"repeatable": false
+}
+icons = {
 "down": "time",
 "up": "satisfaction"
-})
+}
 task_name = "call-mom"
 hover_message = "Talk to mom"
 phases = ["Dawn"]

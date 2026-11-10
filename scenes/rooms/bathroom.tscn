@@ -26,7 +26,7 @@ position = Vector2(1064, 156)
 scale = Vector2(0.5, 0.5)
 task_name = "mirror"
 hover_message = "Do hair and makeup"
-phases = Array[String](["Dawn"])
+phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -49,8 +49,8 @@ metadata/_edit_lock_ = true
 position = Vector2(124, 417)
 scale = Vector2(0.5, 0.5)
 task_name = "towel"
-hover_message = "Shower"
-phases = Array[String](["Dawn"])
+hover_message = "Take a shower"
+phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -67,7 +67,7 @@ position = Vector2(889, 334)
 scale = Vector2(0.5, 0.5)
 task_name = "toothbrush"
 hover_message = "Brush Teeth"
-phases = Array[String](["Dawn"])
+phases = ["Dawn"]
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -85,7 +85,7 @@ position = Vector2(1344, 391)
 scale = Vector2(0.5, 0.5)
 destination = "Apartment"
 hover_message = "Go to main room"
-phases = Array[String](["Dawn"])
+phases = ["Dawn"]
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" parent="Door" index="0" unique_id=1405594283]
