@@ -25,6 +25,7 @@ buses/default_bus_layout="uid://b0gfk1tfqoe8l"
 
 [autoload]
 
+DataManager="*uid://cn5qj6mppvphk"
 GameState="*res://game_state.gd"
 Endings="*uid://badkmj8y8ak8x"
 RunManager="*uid://cey6lkxsgfc5q"
@@ -38,7 +39,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg")
+enabled=PackedStringArray("res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/script-ide/plugin.cfg")
 
 [global_group]
 

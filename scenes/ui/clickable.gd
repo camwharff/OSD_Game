@@ -3,21 +3,28 @@ extends Area2D
 
 signal hover(message: String, enable: bool, up: String, down: String)
 
+@export var stats: Dictionary[String, int] = {
+	"time": 1,
+	"tidiness": 0,
+	"energy": 0,
+	"satisfaction": 0,
+	"performance": 0,
+	"carryover": 0,
+	"begin": 0,
+	"end": 100,
+}
+@export var flags: Dictionary[String, bool] = {
+	"early_exit": false,
+	"repeatable": true,
+}
+
+@export var icons: Dictionary[String, String] = {
+	"up": "energy",
+	"down": "time",
+}
+
 @export var task_name: String = "Task"
-@export var time_cost: int = 1
-@export var tidiness_change: int = 0
-@export var energy_change: int = 0
-@export var satisfaction_change: int = 0
-@export var performance_change: int = 0
-@export var carryover_change: int = 0
-@export var early_exit: bool = false
 @export var hover_message: String
-@export var begin: int = 0
-@export var end: int = 100
-@export var repeatable: bool = false
-@export var ending_flag: bool = false
-@export var up_icon: String = "energy"
-@export var down_icon: String = "time"
 @export var prereqs: Array[String] = []
 @export var blocked_by: Array[String] = []
 @export var phases: Array[String] = []
@@ -46,7 +53,7 @@ func _on_mouse_entered() -> void:
 	else:
 		sprite.modulate = Color(1.3, 1.3, 1.3)
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
-	hover.emit(hover_message, true, up_icon, down_icon, self)
+	hover.emit(hover_message, true, icons["up"], icons["down"], self)
 
 
 func _on_mouse_exited() -> void:
@@ -55,7 +62,7 @@ func _on_mouse_exited() -> void:
 	else:
 		sprite.modulate = Color(1, 1, 1)
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
-	hover.emit(hover_message, false, up_icon, down_icon, self)
+	hover.emit(hover_message, false, icons["up"], icons["down"], self)
 
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:

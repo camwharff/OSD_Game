@@ -57,7 +57,7 @@ func _init_task_lists():
 	for task in get_tree().get_nodes_in_group("tasks"):
 		completed[task.task_name] = false
 		tasks[task.task_name] = task
-	save_task_data()
+	DataManager.load_task_data()
 
 
 func _init_phase_groups():
@@ -89,7 +89,7 @@ func start_phase(phase: Phase):
 func _enable_phase_tasks(phase: String):
 	for task in tasks.values():
 		task.in_phase = task.phases.has(phase)
-		if task.in_phase and task.repeatable:
+		if task.in_phase and task.flags["repeatable"]:
 			completed[task.task_name] = false
 			task.complete = false
 			task.sprite.visible = true
@@ -97,12 +97,12 @@ func _enable_phase_tasks(phase: String):
 
 
 func apply_task(current_task: Clickable) -> void:
-	time_left = clampi(time_left - current_task.time_cost, 0, 100)
-	tidiness += current_task.tidiness_change
-	energy += current_task.energy_change
-	satisfaction += current_task.satisfaction_change
-	performance += current_task.performance_change
-	carryover += current_task.carryover_change
+	time_left = clampi(time_left - current_task.stats["time"], 0, 100)
+	tidiness += current_task.stats["tidiness"]
+	energy += current_task.stats["energy"]
+	satisfaction += current_task.stats["satisfaction"]
+	performance += current_task.stats["performance"]
+	carryover += current_task.stats["carryover"]
 	stats_changed.emit()
 
 	completed[current_task.task_name] = true
@@ -115,7 +115,7 @@ func apply_task(current_task: Clickable) -> void:
 	for task in tasks.values():
 		_update_availability(task)
 
-	if current_task.early_exit:
+	if current_task.flags["early_exit"]:
 		extra_time = time_left
 		time_left = 0
 
@@ -142,7 +142,7 @@ func _availability_handler(task: Clickable) -> bool:
 	if completed[task.task_name]:
 		return false
 
-	if task.begin > time_max - time_left || task.end < time_max - time_left:
+	if task.stats["begin"] > time_max - time_left || task.stats["end"] < time_max - time_left:
 		return false
 
 	for req in task.prereqs:
@@ -189,18 +189,3 @@ func normalize_stats() -> Array[int]:
 		clampi(100 * ((satisfaction - 9) / 17.0), 0, 100),
 		clampi(100 * ((tidiness + 4) / 16.0), 0, 100),
 	]
-
-
-func save_task_data():
-	var file = FileAccess.open("res://data/tasks.json", FileAccess.WRITE)
-	var data = []
-
-	for task in get_tree().get_nodes_in_group("tasks"):
-		var task_data: Dictionary = { }
-		for prop in task.get_property_list():
-			if prop["usage"] & PROPERTY_USAGE_SCRIPT_VARIABLE:
-				task_data.get_or_add(prop["name"], task.get(prop["name"]))
-		data.append({ task.task_name: task_data })
-
-	if file:
-		file.store_string(JSON.stringify(data, "\t"))
