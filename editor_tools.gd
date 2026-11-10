@@ -3,7 +3,7 @@ extends EditorScript
 
 
 func _run():
-	save_task_data()
+	load_task_data_to_editor()
 
 
 func save_task_data():
@@ -24,20 +24,29 @@ func save_task_data():
 		file.store_string(JSON.stringify(data, "\t"))
 
 
-func load_task_data():
+func load_task_data_to_editor():
 	if not FileAccess.file_exists("res://data/tasks.json"):
 		push_error("JSON file not found: res://data/tasks.json")
 		return
 	var text = FileAccess.get_file_as_string("res://data/tasks.json")
 	var data = JSON.parse_string(text)
-	if typeof(data) != TYPE_ARRAY:
+	if typeof(data) != TYPE_DICTIONARY:
 		push_error("Invalid JSON in res://data/tasks.json")
 		return
 
-	for task in data:
-		var t: Clickable = GameState.tasks[task.keys()[0]]
-		for prop in task[t.task_name].keys():
-			t.set(prop, task[t.task_name][prop])
+	for task in get_editor_interface().get_selection().get_selected_nodes():
+		if task is Clickable:
+			var task_data: Dictionary = data[task.task_name]
+			var task_stats: Dictionary[String, int] = { }
+			for stat in task_data["stats"]:
+				task_stats.get_or_add(stat, int(task_data["stats"][stat]))
+			task.stats = task_stats
+			task.flags = task_data["flags"]
+			task.icons = task_data["icons"]
+			task.hover_message = task_data["hover_message"]
+			task.prereqs = task_data["prereqs"]
+			task.blocked_by = task_data["blocked_by"]
+			task.phases = task_data["phases"]
 
 
 func update_task_data():
