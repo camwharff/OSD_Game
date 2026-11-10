@@ -1,1203 +1,1123 @@
-[
-	{
-		"feed-cat": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Feed the cat",
-			"icons": {
-				"down": "energy",
-				"up": "satisfaction"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 0,
-				"satisfaction": 1,
-				"tidiness": 1,
-				"time": 1
-			},
-			"task_name": "feed-cat"
-		}
+{
+	"break": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Take a load off",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "break"
 	},
-	{
-		"clean-litter": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Clean cat's litter box",
-			"icons": {
-				"down": "energy",
-				"up": "tidiness"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 1,
-				"time": 1
-			},
-			"task_name": "clean-litter"
-		}
+	"call-mom": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Talk to mom",
+		"icons": {
+			"down": "time",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 3,
+			"carryover": 0,
+			"end": 100,
+			"energy": 1,
+			"performance": 0,
+			"satisfaction": 3,
+			"tidiness": 0,
+			"time": 2
+		},
+		"task_name": "call-mom"
 	},
-	{
-		"check-calendar": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Organize your schedule",
-			"icons": {
-				"down": "satisfaction",
-				"up": "time"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 3,
-				"end": 100,
-				"energy": -1,
-				"performance": 1,
-				"satisfaction": -2,
-				"tidiness": 1,
-				"time": 1
-			},
-			"task_name": "check-calendar"
-		}
+	"check-calendar": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Organize your schedule",
+		"icons": {
+			"down": "satisfaction",
+			"up": "time"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 3,
+			"end": 100,
+			"energy": -1,
+			"performance": 1,
+			"satisfaction": -2,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "check-calendar"
 	},
-	{
-		"leave-early": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": true,
-				"repeatable": false
-			},
-			"hover_message": "Go to work early",
-			"icons": {
-				"down": "energy",
-				"up": "time"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 3,
-				"satisfaction": -1,
-				"tidiness": 0,
-				"time": 0
-			},
-			"task_name": "leave-early"
-		}
+	"clean-litter": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Clean cat's litter box",
+		"icons": {
+			"down": "energy",
+			"up": "tidiness"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "clean-litter"
 	},
-	{
-		"make-bed": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Make bed",
-			"icons": {
-				"down": "energy",
-				"up": "tidiness"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 0,
-				"satisfaction": 1,
-				"tidiness": 1,
-				"time": 1
-			},
-			"task_name": "make-bed"
-		}
+	"coffee": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Have a coffee",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "coffee"
 	},
-	{
-		"pet-cat": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Pet cat",
-			"icons": {
-				"down": "tidiness",
-				"up": "satisfaction"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [
-				"clean-litter",
-				"feed-cat"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 2,
-				"performance": 0,
-				"satisfaction": 2,
-				"tidiness": -1,
-				"time": 1
-			},
-			"task_name": "pet-cat"
-		}
+	"cold-lunch": {
+		"blocked_by": [
+			"hot-lunch"
+		],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Have a cold lunch",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "cold-lunch"
 	},
-	{
-		"fold-clothes": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Fold laundry",
-			"icons": {
-				"down": "energy",
-				"up": "tidiness"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 0,
-				"satisfaction": 1,
-				"tidiness": 2,
-				"time": 1
-			},
-			"task_name": "fold-clothes"
-		}
+	"create-presentation": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Create your presentation",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [
+			"respond-manager"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "create-presentation"
 	},
-	{
-		"espresso": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Have a coffee",
-			"icons": {
-				"down": "tidiness",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 2,
-				"performance": 1,
-				"satisfaction": 0,
-				"tidiness": -2,
-				"time": 1
-			},
-			"task_name": "espresso"
-		}
+	"doomscroll": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Doomscroll",
+		"icons": {
+			"down": "performance",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": -1,
+			"end": 100,
+			"energy": 1,
+			"performance": -2,
+			"satisfaction": 2,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "doomscroll"
 	},
-	{
-		"eat-breakfast": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Have breakfast",
-			"icons": {
-				"down": "tidiness",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 3,
-				"performance": 1,
-				"satisfaction": 1,
-				"tidiness": -3,
-				"time": 2
-			},
-			"task_name": "eat-breakfast"
-		}
+	"eat-breakfast": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Have breakfast",
+		"icons": {
+			"down": "tidiness",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 3,
+			"performance": 1,
+			"satisfaction": 1,
+			"tidiness": -3,
+			"time": 2
+		},
+		"task_name": "eat-breakfast"
 	},
-	{
-		"doomscroll": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Doomscroll",
-			"icons": {
-				"down": "performance",
-				"up": "satisfaction"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": -1,
-				"end": 100,
-				"energy": 1,
-				"performance": -2,
-				"satisfaction": 2,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "doomscroll"
-		}
+	"email": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Check your email",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "email"
 	},
-	{
-		"watch-news": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Check the news",
-			"icons": {
-				"down": "satisfaction",
-				"up": "performance"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": -1,
-				"performance": 2,
-				"satisfaction": -2,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "watch-news"
-		}
+	"espresso": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Have a coffee",
+		"icons": {
+			"down": "tidiness",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 2,
+			"performance": 1,
+			"satisfaction": 0,
+			"tidiness": -2,
+			"time": 1
+		},
+		"task_name": "espresso"
 	},
-	{
-		"sleep-in": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Sleep in",
-			"icons": {
-				"down": "tidiness",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 0,
-				"energy": 3,
-				"performance": 1,
-				"satisfaction": 2,
-				"tidiness": -1,
-				"time": 2
-			},
-			"task_name": "sleep-in"
-		}
+	"feed-cat": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Feed your cat",
+		"icons": {
+			"down": "energy",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 0,
+			"satisfaction": 1,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "feed-cat"
 	},
-	{
-		"call-mom": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": false
-			},
-			"hover_message": "Talk to mom",
-			"icons": {
-				"down": "time",
-				"up": "satisfaction"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 3,
-				"carryover": 0,
-				"end": 100,
-				"energy": 1,
-				"performance": 0,
-				"satisfaction": 3,
-				"tidiness": 0,
-				"time": 2
-			},
-			"task_name": "call-mom"
-		}
+	"fold-clothes": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Fold laundry",
+		"icons": {
+			"down": "energy",
+			"up": "tidiness"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 0,
+			"satisfaction": 1,
+			"tidiness": 2,
+			"time": 1
+		},
+		"task_name": "fold-clothes"
 	},
-	{
-		"Mirror": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Do hair and makeup",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "Mirror"
-		}
+	"hot-lunch": {
+		"blocked_by": [
+			"cold-lunch"
+		],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Have a hot lunch",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "hot-lunch"
 	},
-	{
-		"Shower": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Shower",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "Shower"
-		}
+	"jot-idea": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Jot down some ideas",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "jot-idea"
 	},
-	{
-		"Toothbrush": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Brush Teeth",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Dawn"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "Toothbrush"
-		}
+	"leave-early": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": true,
+			"repeatable": false
+		},
+		"hover_message": "Go to work early",
+		"icons": {
+			"down": "energy",
+			"up": "time"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 3,
+			"satisfaction": -1,
+			"tidiness": 0,
+			"time": 0
+		},
+		"task_name": "leave-early"
 	},
-	{
-		"snack": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Get a snack",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "snack"
-		}
+	"leave-work-early": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Leave work early",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "leave-work-early"
 	},
-	{
-		"break": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Take a load off",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "break"
-		}
+	"long-lunch": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Go for a long lunch",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "long-lunch"
 	},
-	{
-		"coffee": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Have a coffee",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "coffee"
-		}
+	"make-bed": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Make bed",
+		"icons": {
+			"down": "energy",
+			"up": "tidiness"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 0,
+			"satisfaction": 1,
+			"tidiness": 1,
+			"time": 1
+		},
+		"task_name": "make-bed"
 	},
-	{
-		"cold-lunch": {
-			"blocked_by": [
-				"hot-lunch"
-			],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Have a cold lunch",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "cold-lunch"
-		}
+	"mirror": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Do hair and makeup",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "mirror"
 	},
-	{
-		"hot-lunch": {
-			"blocked_by": [
-				"cold-lunch"
-			],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Have a hot lunch",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "hot-lunch"
-		}
+	"organize-files": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Organize files",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "organize-files"
 	},
-	{
-		"watercooler": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Water cooler chat",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "watercooler"
-		}
+	"pet-cat": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Pet cat",
+		"icons": {
+			"down": "tidiness",
+			"up": "satisfaction"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [
+			"clean-litter",
+			"feed-cat"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 2,
+			"performance": 0,
+			"satisfaction": 2,
+			"tidiness": -1,
+			"time": 1
+		},
+		"task_name": "pet-cat"
 	},
-	{
-		"email": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Check your email",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "email"
-		}
+	"pitch-manager": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Pitch your ideas to your manager",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Afternoon"
+		],
+		"prereqs": [
+			"jot-idea"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "pitch-manager"
 	},
-	{
-		"respond-groupchat": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Respond to the groupchat",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "respond-groupchat"
-		}
+	"practice-presentation": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Practice giving your presentation",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [
+			"create-presentation"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "practice-presentation"
 	},
-	{
-		"respond-manager": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Check message from manager",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "respond-manager"
-		}
+	"present": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Give presentation to CEO",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Afternoon"
+		],
+		"prereqs": [
+			"respond-manager"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "present"
 	},
-	{
-		"refine-presentation": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Polish your presentation",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [
-				"create-presentation"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "refine-presentation"
-		}
+	"presentation-debrief": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Debrief about your presentation",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Afternoon"
+		],
+		"prereqs": [
+			"present"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "presentation-debrief"
 	},
-	{
-		"create-presentation": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Create your presentation",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [
-				"respond-manager"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "create-presentation"
-		}
+	"refine-ideas": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Refine your ideas",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [
+			"jot-idea"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "refine-ideas"
 	},
-	{
-		"present": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Give presentation to CEO",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Afternoon"
-			],
-			"prereqs": [
-				"respond-manager"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "present"
-		}
+	"refine-presentation": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Polish your presentation",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [
+			"create-presentation"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "refine-presentation"
 	},
-	{
-		"socialize-coworker": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Chat with your coworker",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "socialize-coworker"
-		}
+	"respond-groupchat": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Respond to the groupchat",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "respond-groupchat"
 	},
-	{
-		"leave-work-early": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Leave work early",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "leave-work-early"
-		}
+	"respond-manager": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Check message from manager",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "respond-manager"
 	},
-	{
-		"long-lunch": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Go for a long lunch",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "long-lunch"
-		}
+	"sleep-in": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Sleep in",
+		"icons": {
+			"down": "tidiness",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 0,
+			"energy": 3,
+			"performance": 1,
+			"satisfaction": 2,
+			"tidiness": -1,
+			"time": 2
+		},
+		"task_name": "sleep-in"
 	},
-	{
-		"organize-files": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Organize files",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "organize-files"
-		}
+	"snack": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Get a snack",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "snack"
 	},
-	{
-		"socialize-manager": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Chat with your manager",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "socialize-manager"
-		}
+	"socialize-coworker": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Chat with your coworker",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "socialize-coworker"
 	},
-	{
-		"presentation-debrief": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Debrief about your presentation",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Afternoon"
-			],
-			"prereqs": [
-				"present"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "presentation-debrief"
-		}
+	"socialize-manager": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Chat with your manager",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "socialize-manager"
 	},
-	{
-		"tidy-desk": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Clean your desk",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "tidy-desk"
-		}
+	"tidy-desk": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Clean your desk",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "tidy-desk"
 	},
-	{
-		"practice-presentation": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Practice giving your presentation",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [
-				"create-presentation"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "practice-presentation"
-		}
+	"toothbrush": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Brush Teeth",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "toothbrush"
 	},
-	{
-		"write-proposal": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Turn your ideas into a proposal",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [
-				"refine-ideas"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "write-proposal"
-		}
+	"towel": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Shower",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "towel"
 	},
-	{
-		"refine-ideas": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Refine your ideas",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [
-				"jot-idea"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "refine-ideas"
-		}
+	"watch-news": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": false
+		},
+		"hover_message": "Check the news",
+		"icons": {
+			"down": "satisfaction",
+			"up": "performance"
+		},
+		"phases": [
+			"Dawn"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": -1,
+			"performance": 2,
+			"satisfaction": -2,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "watch-news"
 	},
-	{
-		"jot-idea": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Jot down some ideas",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Morning",
-				"Afternoon"
-			],
-			"prereqs": [],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "jot-idea"
-		}
+	"watercooler": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Water cooler chat",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "watercooler"
 	},
-	{
-		"pitch-manager": {
-			"blocked_by": [],
-			"flags": {
-				"early_exit": false,
-				"repeatable": true
-			},
-			"hover_message": "Pitch your ideas to your manager",
-			"icons": {
-				"down": "time",
-				"up": "energy"
-			},
-			"phases": [
-				"Afternoon"
-			],
-			"prereqs": [
-				"jot-idea"
-			],
-			"stats": {
-				"begin": 0,
-				"carryover": 0,
-				"end": 100,
-				"energy": 0,
-				"performance": 0,
-				"satisfaction": 0,
-				"tidiness": 0,
-				"time": 1
-			},
-			"task_name": "pitch-manager"
-		}
+	"write-proposal": {
+		"blocked_by": [],
+		"flags": {
+			"early_exit": false,
+			"repeatable": true
+		},
+		"hover_message": "Turn your ideas into a proposal",
+		"icons": {
+			"down": "time",
+			"up": "energy"
+		},
+		"phases": [
+			"Morning",
+			"Afternoon"
+		],
+		"prereqs": [
+			"refine-ideas"
+		],
+		"stats": {
+			"begin": 0,
+			"carryover": 0,
+			"end": 100,
+			"energy": 0,
+			"performance": 0,
+			"satisfaction": 0,
+			"tidiness": 0,
+			"time": 1
+		},
+		"task_name": "write-proposal"
 	}
-]
+}

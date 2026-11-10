@@ -4,7 +4,7 @@ extends Node
 
 func save_task_data():
 	var file = FileAccess.open("res://data/tasks.json", FileAccess.WRITE)
-	var data = []
+	var data = { }
 
 	for task in GameState.tasks.values():
 		var task_data: Dictionary = { }
@@ -14,7 +14,7 @@ func save_task_data():
 				and prop["usage"] & PROPERTY_USAGE_EDITOR
 			):
 				task_data.get_or_add(prop["name"], task.get(prop["name"]))
-		data.append({ task.task_name: task_data })
+		data.get_or_add(task.task_name, task_data)
 
 	if file:
 		file.store_string(JSON.stringify(data, "\t"))
@@ -26,11 +26,11 @@ func load_task_data():
 		return
 	var text = FileAccess.get_file_as_string("res://data/tasks.json")
 	var data = JSON.parse_string(text)
-	if typeof(data) != TYPE_ARRAY:
+	if typeof(data) != TYPE_DICTIONARY:
 		push_error("Invalid JSON in res://data/tasks.json")
 		return
 
-	for task in data:
-		var t: Clickable = GameState.tasks[task.keys()[0]]
-		for prop in task[t.task_name].keys():
-			t.set(prop, task[t.task_name][prop])
+	for task in data.keys():
+		var t: Clickable = GameState.tasks[task]
+		for prop in data[task].keys():
+			t.set(prop, data[task][prop])
